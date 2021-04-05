@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = "/")
-public class DogeController {
+public class HomePageController {
 
     @GetMapping
     public ModelAndView renderPageLayout() {
