@@ -12,12 +12,10 @@ const {BabelMultiTargetPlugin} = require('webpack-babel-multi-target-plugin');
 const path = require('path');
 const baseDir = path.resolve(__dirname);
 // the folder of app resources (main.js and flow templates)
-const frontendFolder = require('path').resolve(__dirname, './frontend');
+const frontendFolder = require('path').resolve(__dirname, 'frontend');
 
 const fileNameOfTheFlowGeneratedMainEntryPoint = require('path').resolve(__dirname, 'target/frontend/generated-flow-imports.js');
-const mavenOutputFolderForFlowBundledFiles = require('path').resolve(__dirname, '');
-
-const devmodeGizmoJS = '@vaadin/flow-frontend/VaadinDevmodeGizmo.js'
+const mavenOutputFolderForFlowBundledFiles = require('path').resolve(__dirname, 'build/resources/main/META-INF/VAADIN');
 
 // public path for resources, must match Flow VAADIN_BUILD
 const build = 'build';
@@ -39,31 +37,36 @@ mkdirp(confFolder);
 
 let stats;
 
+const watchDogPrefix = '--watchDogPort=';
+let watchDogPort = process.argv.find(v => v.indexOf(watchDogPrefix) >= 0);
+if (watchDogPort){
+    watchDogPort = watchDogPort.substr(watchDogPrefix.length);
+}
+
 const transpile = !devMode || process.argv.find(v => v.indexOf('--transpile-es5') >= 0);
 
-const watchDogPrefix = '--watchDogPort=';
-let watchDogPort = devMode && process.argv.find(v => v.indexOf(watchDogPrefix) >= 0);
-let client;
-if (watchDogPort) {
-  watchDogPort = watchDogPort.substr(watchDogPrefix.length);
-  const runWatchDog = () => {
-    client = new require('net').Socket();
-    client.setEncoding('utf8');
-    client.on('error', function () {
-      console.log("Watchdog connection error. Terminating webpack process...");
-      client.destroy();
-      process.exit(0);
-    });
-    client.on('close', function () {
-      client.destroy();
-      runWatchDog();
-    });
+const net = require('net');
 
+function setupWatchDog(){
+    var client = new net.Socket();
     client.connect(watchDogPort, 'localhost');
-  }
 
-  runWatchDog();
+    client.on('error', function(){
+        console.log("Watchdog connection error. Terminating webpack process...");
+        client.destroy();
+        process.exit(0);
+    });
+
+    client.on('close', function() {
+        client.destroy();
+        setupWatchDog();
+    });  
 }
+
+if (watchDogPort){
+    setupWatchDog();
+}
+
 
 exports = {
   frontendFolder: `${frontendFolder}`,
@@ -75,8 +78,7 @@ module.exports = {
   mode: 'production',
   context: frontendFolder,
   entry: {
-    bundle: fileNameOfTheFlowGeneratedMainEntryPoint,
-    ...(devMode && { gizmo: devmodeGizmoJS })
+    bundle: fileNameOfTheFlowGeneratedMainEntryPoint
   },
 
   output: {
@@ -86,7 +88,6 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js'],
     alias: {
       Frontend: frontendFolder
     }
@@ -115,10 +116,6 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        use: ['ts-loader']
-      },
       ...(transpile ? [{ // Files that Babel has to transpile
         test: /\.js$/,
         use: [BabelMultiTargetPlugin.loader()]
@@ -202,14 +199,6 @@ module.exports = {
           stats = customStats;
           done();
         }
-      });
-
-      compiler.hooks.done.tapAsync('FlowIdPlugin', (compilation, done) => {
-        // trigger live reload via server
-        if (client) {
-          client.write('reload\n');
-        }
-        done();
       });
     },
 
