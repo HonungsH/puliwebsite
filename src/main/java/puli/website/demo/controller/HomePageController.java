@@ -7,14 +7,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = "/")
-public class DogeController {
+public class HomePageController {
 
     @GetMapping
     public ModelAndView renderPageLayout() {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("welcome.html");
+        mv.setViewName("homepage.html");
         mv.getModel().put("data", "Welcome home man");
-
         return mv;
     }
 }
