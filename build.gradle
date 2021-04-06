@@ -3,6 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'com.vaadin' version '0.14.3.7'
     id 'java'
+    id "org.flywaydb.flyway" version "7.7.2"
 }
 
 group = 'puli.website'
@@ -29,6 +30,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-batch'
     implementation 'org.springframework.boot:spring-boot-starter-cache'
     /*implementation 'org.springframework.boot:spring-boot-starter-data-ldap'*/
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
     implementation 'org.springframework.boot:spring-boot-starter-integration'
@@ -53,6 +55,8 @@ dependencies {
     implementation 'org.springframework.integration:spring-integration-webflux'
     implementation 'org.springframework.integration:spring-integration-ws'
     implementation 'org.springframework.session:spring-session-core'
+    implementation 'mysql:mysql-connector-java:8.0.15'
+    implementation 'org.flywaydb:flyway-core'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -61,7 +65,8 @@ dependencies {
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation 'org.springframework.batch:spring-batch-test'
     testImplementation 'org.springframework.integration:spring-integration-test'
- /*   testImplementation 'org.springframework.security:spring-security-test'*/
+
+    /*   testImplementation 'org.springframework.security:spring-security-test'*/
 }
 
 dependencyManagement {
@@ -73,4 +78,10 @@ dependencyManagement {
 
 test {
     useJUnitPlatform()
+}
+
+flyway {
+    url = 'jdbc:mysql://localhost:3306/PULI_DB?useSSL=false'
+    user = 'root'
+    password = 'skat&skat'
 }
