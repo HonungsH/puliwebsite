@@ -92,6 +92,6 @@ test {
 
 flyway {
     url = 'jdbc:mysql://localhost:3306/PULI_DB?useSSL=false'
-    user = 'root'
-    password = 'skat&skat'
+    user = 'puli'
+    password = 'puli'
 }
