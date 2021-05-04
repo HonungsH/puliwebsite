@@ -1,7 +1,6 @@
 plugins {
     id 'org.springframework.boot' version '2.4.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'com.vaadin' version '0.14.3.7'
     id 'java'
     id "org.flywaydb.flyway" version "7.7.2"
     id 'war'
@@ -27,7 +26,6 @@ repositories {
 
 ext {
     set('springCloudVersion', "2020.0.2")
-    set('vaadinVersion', "14.5.1")
 }
 
 dependencies {
@@ -86,7 +84,6 @@ dependencies {
 
 dependencyManagement {
     imports {
-        mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
 }
