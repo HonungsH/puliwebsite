@@ -101,3 +101,10 @@ div.aboutUsText {
     padding: 50px;
     margin: 20px;
 }
+
+#logoheader {
+    height: auto;
+    width: auto;
+    max-width: 500px;
+    max-height: 500px;
+}

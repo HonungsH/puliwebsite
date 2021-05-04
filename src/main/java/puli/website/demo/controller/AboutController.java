@@ -16,16 +16,15 @@ import java.util.List;
 @RequestMapping(value = "/about")
 public class AboutController {
 
-    final DogRepository dogRepository;
-
-    public AboutController(DogRepository dogRepository) {
-        this.dogRepository = dogRepository;
-    }
+    @Autowired
+    DogRepository dogRepository;
 
     @GetMapping
     public String renderPageLayout( Model model ) {
-        List<Dog> dogs = dogRepository.findByName("skat");
+        List<Dog> dogs = dogRepository.findAll();
         model.addAttribute("dogs", dogs);
         return "about";
     }
 }
+
+

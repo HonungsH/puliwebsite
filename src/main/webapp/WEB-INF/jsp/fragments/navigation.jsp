@@ -1,4 +1,4 @@
-<div class="topnav" style="display:flex;justify-content: center; margin-top: 150px;">
+<div class="topnav" style="display:flex;justify-content: center;">
     <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
     <div><a class="${pageURI.endsWith('/') ? 'active' : ''}" href="${pageContext.request.contextPath}/">Hem</a></div>
