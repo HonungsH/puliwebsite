@@ -15,4 +15,5 @@ public interface DogRepository extends JpaRepository<Dog, Long> {
 
     @Query("SELECT dog FROM Dog dog WHERE dog.name=(:name)")
     List<Dog> findByName(@Param("name") String name);
+
 }

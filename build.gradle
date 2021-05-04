@@ -4,6 +4,11 @@ plugins {
     id 'com.vaadin' version '0.14.3.7'
     id 'java'
     id "org.flywaydb.flyway" version "7.7.2"
+    id 'war'
+}
+
+war {
+    enabled=true
 }
 
 group = 'puli.website'
@@ -29,18 +34,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-batch'
     implementation 'org.springframework.boot:spring-boot-starter-cache'
-    /*implementation 'org.springframework.boot:spring-boot-starter-data-ldap'*/
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
     implementation 'org.springframework.boot:spring-boot-starter-integration'
     implementation 'org.springframework.boot:spring-boot-starter-jersey'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
-/*    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'*/
     implementation 'org.springframework.boot:spring-boot-starter-quartz'
-    /*implementation 'org.springframework.boot:spring-boot-starter-security'*/
-  /*  implementation 'org.springframework.boot:spring-boot-starter-validation'*/
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
@@ -51,7 +51,6 @@ dependencies {
     implementation 'org.springframework.data:spring-data-rest-hal-explorer'
     implementation 'org.springframework.integration:spring-integration-http'
     implementation 'org.springframework.integration:spring-integration-mail'
-   /* implementation 'org.springframework.integration:spring-integration-security'*/
     implementation 'org.springframework.integration:spring-integration-webflux'
     implementation 'org.springframework.integration:spring-integration-ws'
     implementation 'org.springframework.session:spring-session-core'
@@ -67,7 +66,14 @@ dependencies {
     testImplementation 'org.springframework.integration:spring-integration-test'
     testCompile 'com.h2database:h2'
 
-    /*   testImplementation 'org.springframework.security:spring-security-test'*/
+    //Required dependencies for JSP
+//    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '10.0.5'
+//    implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '10.0.5'
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '1.2.1.RELEASE'
+    providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'
+
 }
 
 dependencyManagement {
