@@ -77,6 +77,12 @@ dependencies {
     implementation group: 'org.springframework.security', name: 'spring-security-web', version: '5.4.6'
     implementation group: 'org.springframework.security', name: 'spring-security-taglibs', version: '5.4.6'
 
+    // https://mvnrepository.com/artifact/org.webjars/bootstrap
+    implementation group: 'org.webjars', name: 'bootstrap', version: '5.0.0-beta3'
+
+    // https://mvnrepository.com/artifact/org.webjars/jquery
+    implementation group: 'org.webjars', name: 'jquery', version: '3.3.1'
+
 }
 
 dependencyManagement {
