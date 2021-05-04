@@ -98,9 +98,13 @@ a:hover, .subnav:hover .subnavbtn {
 
 div.aboutUsText {
     width: auto;
-    border: 15px solid green;
+    border: 15px #8E8D8A;
     padding: 50px;
-    margin: 20px;
+}
+
+.h4-contact {
+    font-family: Monaco, monospace;
+    color: #E85A4F;
 }
 
 #logoheader {

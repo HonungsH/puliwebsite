@@ -10,11 +10,11 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <h4>Namn</h4>
+            <h4 class="h4-contact">Namn</h4>
             <p>Carina Karlsson</p>
-            <h4>Telefon</h4>
+            <h4 class="h4-contact">Telefon</h4>
             <p>+46(0)708 48 75 02</p>
-            <h4>Address</h4>
+            <h4 class="h4-contact">Address</h4>
             <p>Slågarpsvägen 264-0</p>
             <p>Trelleborg - Sverige</p>
             <div>
