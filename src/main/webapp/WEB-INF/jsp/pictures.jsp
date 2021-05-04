@@ -7,4 +7,5 @@
 pictures
 </body>
 
+<%@ include file = "fragments/footer.jsp" %>
 </html>

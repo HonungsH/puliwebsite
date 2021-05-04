@@ -1,7 +1,11 @@
 <div class="topnav" style="display:flex;justify-content: center; margin-top: 150px;">
-    <div><a class="active" href="/">Hem</a></div>
+    <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
+
+    <div><a class="active" href="${pageContext.request.contextPath}/">Hem</a></div>
     <div><a href="${pageContext.request.contextPath}/ourDogs">Våra Hundar</a></div>
-    <div><a href="${pageContext.request.contextPath}/puppies">Valpar</a></div>
+    <c:if test="${isAdmin}">
+        <div><a href="${pageContext.request.contextPath}/puppies">Valpar</a></div>
+    </c:if>
     <div class="subnav">
         <button class="subnavbtn">Bildgalleri<i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
