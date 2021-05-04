@@ -6,7 +6,7 @@
     <div><a class="${pageURI.endsWith('/ourDogs') ? 'active' : ''}" href="${pageContext.request.contextPath}/ourDogs">Våra Hundar</a></div>
 
     <c:if test="${isAdmin}">
-        <div><a class="${pageURI.endsWith('/puppies') ? 'active' : ''}" href="${pageContext.request.contextPath}/puppies">Valpar</a></div>
+        <div><a class="${pageURI.endsWith('/puppies') ? 'active' : ''}" href="${pageContext.request.contextPath}/puppies">Avelsplaner och valpkullar</a></div>
     </c:if>
 
     <div class="subnav">
