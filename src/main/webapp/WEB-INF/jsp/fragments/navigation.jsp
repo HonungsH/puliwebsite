@@ -1,4 +1,4 @@
-<div class="topnav" style="display:flex;justify-content: center; margin-top: 150px;">
+<div class="topnav" style="display:flex;justify-content: center;">
     <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
     <div><a class="${pageURI.endsWith('/') ? 'active' : ''}" href="${pageContext.request.contextPath}/">Hem</a></div>
@@ -6,7 +6,7 @@
     <div><a class="${pageURI.endsWith('/ourDogs') ? 'active' : ''}" href="${pageContext.request.contextPath}/ourDogs">Våra Hundar</a></div>
 
     <c:if test="${isAdmin}">
-        <div><a class="${pageURI.endsWith('/puppies') ? 'active' : ''}" href="${pageContext.request.contextPath}/puppies">Valpar</a></div>
+        <div><a class="${pageURI.endsWith('/puppies') ? 'active' : ''}" href="${pageContext.request.contextPath}/puppies">Avelsplaner och valpkullar</a></div>
     </c:if>
 
     <div class="subnav">
