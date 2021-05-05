@@ -1,3 +1,4 @@
+<%@page pageEncoding="UTF-8" %>
 <div class="topnav" style="display:flex;justify-content: center;">
     <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 

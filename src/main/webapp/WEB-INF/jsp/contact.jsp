@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@page pageEncoding="UTF-8" %>
+
 <%@ include file = "fragments/header.jsp" %>
 <%@ include file = "fragments/navigation.jsp" %>
 
 <body>
-
-
-
 <div class="container">
     <div class="row">
         <div class="col-sm">
