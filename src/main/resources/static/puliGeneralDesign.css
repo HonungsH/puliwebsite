@@ -93,13 +93,7 @@ a:hover, .subnav:hover .subnavbtn {
     background-color: red;
     color: white;
     text-align: center;
-}
-
-
-div.aboutUsText {
-    width: auto;
-    border: 15px #8E8D8A;
-    padding: 50px;
+    margin-bottom: 50px;
 }
 
 .h4-contact {

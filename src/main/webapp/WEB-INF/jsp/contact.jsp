@@ -22,7 +22,7 @@
         </div>
         <div class="col-sm">
             <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1440.640730469985!2d13.157510316264355!3d55.4521819984549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDI3JzA3LjkiTiAxM8KwMDknMjkuMyJF!5e1!3m2!1ssv!2sse!4v1620159006606!5m2!1ssv!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1380.24577620273!2d13.157718834779251!3d55.452181861807105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDI3JzA3LjkiTiAxM8KwMDknMzAuMCJF!5e1!3m2!1sda!2sse!4v1620244243281!5m2!1sda!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>

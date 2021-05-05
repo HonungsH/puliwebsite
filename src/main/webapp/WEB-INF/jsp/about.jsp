@@ -5,7 +5,7 @@
 
 <body>
 
-<div class="container aboutUsText">
+<div class="container">
     <div class="row col-6">
         <h2>Om vår kennel</h2>
     </div>
