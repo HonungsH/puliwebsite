@@ -6,7 +6,7 @@
 <body>
 
 <div class="container aboutUsText">
-    <div class="row">
+    <div class="row col-6">
         <h2>Om vår kennel</h2>
     </div>
     <div class="row">
@@ -51,7 +51,7 @@
     </div>
 
     <div class="col-6">
-        <img id="aboutpuli" style="" src="<c:url value="/resources/static/xaidazligan.png" />"/>
+        <img id="aboutpuli" style="" src="<c:url value="/images/xaidazligan.png" />"/>
     </div>
     </div>
 
