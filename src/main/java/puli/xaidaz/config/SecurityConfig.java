@@ -1,4 +1,4 @@
-package puli.website.demo.config;
+package puli.xaidaz.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

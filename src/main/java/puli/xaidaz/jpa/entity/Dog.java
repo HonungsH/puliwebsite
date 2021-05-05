@@ -1,4 +1,4 @@
-package puli.website.demo.jpa.entity;
+package puli.xaidaz.jpa.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

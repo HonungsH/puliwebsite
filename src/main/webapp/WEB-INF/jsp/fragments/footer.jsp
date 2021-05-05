@@ -1,3 +1,4 @@
+<%@page pageEncoding="UTF-8" %>
 <footer class="footer">
     <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
