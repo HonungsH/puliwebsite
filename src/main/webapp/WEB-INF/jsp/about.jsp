@@ -13,7 +13,7 @@
         <div class="col-6">
 
 
-       <p>Vår kennel föder upp rasen Puli. Vår kennel vill ha sunda och friska hundar med bra temperament.
+       <p>Vår kennel har uppfödning av den ungerska rasen Puli. Vår kennel vill ha sunda och friska hundar med bra temperament.
            De ska vara rastypiska och bör ha kvar sitt arv som vakt och vallhund.
            Vi strävar efter att alla hundar som är i avel är HD-röntgade med godkänt resultat och ska vara ögonlysta.
            Kollar även avelshundar för DM.</p>

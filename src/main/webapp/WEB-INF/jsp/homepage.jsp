@@ -4,7 +4,9 @@
 <%@ include file = "fragments/navigation.jsp" %>
 
 <body>
-homepage
+<div class="container">
+    <img id="" style="" src="/landing.png">
+</div>
 </body>
 
 <%@ include file = "fragments/footer.jsp" %>
