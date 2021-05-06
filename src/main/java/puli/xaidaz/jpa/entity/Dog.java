@@ -1,6 +1,7 @@
 package puli.xaidaz.jpa.entity;
 
 import javax.persistence.*;
+import java.sql.Blob;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,6 +17,8 @@ public class Dog {
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
     private String description;
+    @Lob
+    private Blob profilePicture;
 
     @OneToMany(mappedBy = "dog")
     private List<Picture> pictures;
@@ -60,6 +63,30 @@ public class Dog {
 
     public void setModifiedAt(LocalDateTime modifiedAt) {
         this.modifiedAt = modifiedAt;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Blob getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(Blob profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
+    public List<Picture> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(List<Picture> pictures) {
+        this.pictures = pictures;
     }
 
     // Getters and setters end
