@@ -1,24 +1,22 @@
 package puli.xaidaz.jpa.entity;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-public class Dog {
+public class Picture {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private String name;
-    private LocalDate dateOfBirth;
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
     private String description;
+    private byte[] data;
 
-    @OneToMany(mappedBy = "dog")
-    private List<Picture> pictures;
+    @ManyToOne
+    @JoinColumn(name="dog_id")
+    private Dog dog;
 
     // Getters and setters start
 
@@ -28,22 +26,6 @@ public class Dog {
 
     public Long getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
     }
 
     public LocalDateTime getCreatedAt() {

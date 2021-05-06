@@ -51,7 +51,7 @@
     </div>
 
     <div class="col-6">
-        <img id="aboutpuli" style="" src="<c:url value="/images/xaidazligan.png" />"/>
+        <img id="aboutpuli" style="" src="<c:url value="/images/xaidazligan.png"/>"/>
     </div>
     </div>
 

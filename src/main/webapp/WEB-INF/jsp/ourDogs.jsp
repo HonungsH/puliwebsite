@@ -3,8 +3,16 @@
 <%@ include file = "fragments/navigation.jsp" %>
 
 <body>
-ourDogs
+
+<h2 style="text-align: center">Våra hundar</h2>
+<div class="container">
+
+</div>
 </body>
+
+
+
+
 
 <%@ include file = "fragments/footer.jsp" %>
 </html>
