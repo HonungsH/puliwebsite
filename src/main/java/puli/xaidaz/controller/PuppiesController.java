@@ -1,16 +1,15 @@
-package puli.website.demo.controller;
+package puli.xaidaz.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/ourDogs")
-public class OurDogsController {
+@RequestMapping(value = "/puppies")
+public class PuppiesController {
 
     @GetMapping
     public String renderPageLayout() {
-        return "ourDogs";
+        return "puppies";
     }
 }

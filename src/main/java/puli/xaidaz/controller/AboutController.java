@@ -1,14 +1,12 @@
-package puli.website.demo.controller;
+package puli.xaidaz.controller;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import puli.website.demo.jpa.entity.Dog;
-import puli.website.demo.jpa.repository.DogRepository;
+import puli.xaidaz.jpa.entity.Dog;
+import puli.xaidaz.jpa.repository.DogRepository;
 
 import java.util.List;
 

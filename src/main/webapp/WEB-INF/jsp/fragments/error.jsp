@@ -1,6 +1,5 @@
-<html lang="en">
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
     <title>Homepage of Xaida'z dot com</title>
 </head>
 <body>
