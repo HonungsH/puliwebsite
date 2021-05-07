@@ -17,8 +17,7 @@ public class Dog {
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
     private String description;
-    @Lob
-    private Blob profilePicture;
+    private String profilePicture;
 
     @OneToMany(mappedBy = "dog")
     private List<Picture> pictures;
@@ -73,11 +72,11 @@ public class Dog {
         this.description = description;
     }
 
-    public Blob getProfilePicture() {
+    public String getProfilePicture() {
         return profilePicture;
     }
 
-    public void setProfilePicture(Blob profilePicture) {
+    public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
     }
 

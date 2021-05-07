@@ -55,6 +55,10 @@
     </div>
     </div>
 
+    <c:forEach var="dog" items="${allDogs}">
+        <div>${dog.name}</div>
+        <img id="harryPP" style="" src="<c:url value="${dog.profilePicture}"/>"/>
+    </c:forEach>
 </div>
 
 </body>

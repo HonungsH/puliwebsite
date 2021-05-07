@@ -20,7 +20,7 @@ public class AboutController {
     @GetMapping
     public String renderPageLayout( Model model ) {
         List<Dog> dogs = dogRepository.findAll();
-        model.addAttribute("dogs", dogs);
+        model.addAttribute("allDogs", dogs);
         return "about";
     }
 }
