@@ -17,7 +17,7 @@
             <div class="row" style="margin-top: 15%">
                 <div class="col-sm-auto">
                     <a href="https://www.facebook.com/carina.karlssonxaidazpuli">
-                        <img style="width: 120px; height: 120px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
+                        <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
                     </a>
                 </div>
                 <div class="col-sm-auto">
