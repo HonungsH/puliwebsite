@@ -130,7 +130,7 @@ a.dogLinkBtn:hover {
     top: -20px;
     cursor: pointer;
 }
-.submitButton {
+.submitOrCancelRow {
     position: absolute;
     right: 0;
     bottom: -50px;

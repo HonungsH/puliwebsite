@@ -6,14 +6,19 @@
 
 <div>
     <div class="editableBox">
-        <input id="pageGroup" name="pageGroup" type="hidden" value="${pageGroup}"/>
-        <input id="textKey" name="textKey" type="hidden" value="${param.textKey}"/>
+        <input class="pageGroup" type="hidden" value="${pageGroup}"/>
+        <input class="textKey" type="hidden" value="${param.textKey}"/>
+
         <c:set var="textPath" value="${param.textKey}" />
         <p class="editableField">${textMap[textPath]}</p>
+        <input class="originalText" type="hidden" value="${textMap[textPath]}"/>
 
         <c:if test="${isAdmin}">
             <img class="editIcon" src="${pageContext.request.contextPath}/images/edit_icon2.png" alt="sad">
-            <button class="submitButton btn btn-primary btn-sm" style="display: none;">Spara</button>
+            <div class="submitOrCancelRow" style="display: none;">
+                <button class="submitButton btn btn-primary btn-sm">Spara</button>
+                <button class="cancelButton btn btn-primary btn-sm">Avbryt</button>
+            </div>
         </c:if>
 
     </div>
