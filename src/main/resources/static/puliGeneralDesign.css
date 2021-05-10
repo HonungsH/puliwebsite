@@ -106,3 +106,17 @@ a:hover, .subnav:hover .subnavbtn {
     max-width: 500px;
     max-height: 500px;
 }
+
+a.dogLinkBtn {
+    font-size: 15px;
+    color: black;
+    width: 150px;
+    margin-top: 8px;
+}
+
+a.dogLinkBtn:hover {
+    color: #E85A4F;
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+}
