@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/puppies**").hasRole("ADMIN")
-                .and().formLogin()
+                .and().formLogin().loginPage("/login")
                 .and().logout().logoutSuccessUrl("/").permitAll()
                 .and().csrf().disable();
     }
