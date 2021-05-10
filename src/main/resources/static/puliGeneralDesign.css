@@ -108,15 +108,23 @@ a:hover, .subnav:hover .subnavbtn {
 }
 
 a.dogLinkBtn {
-    font-size: 15px;
+    font-family: monospace, Monaco;
+    font-size: 20px;
     color: black;
-    width: 150px;
+    width: 300px;
     margin-top: 8px;
+    background-color: #EAE7DC;
+    border-color: #EAE7DC;
+    transition: box-shadow .3s;
+
 }
 
-a.dogLinkBtn:hover {
-    color: #E85A4F;
+a.dogLinkBtn:hover, a.dogLinkBtn:focus {
+    color: black;
     text-decoration: none;
-    background-color: transparent;
-    border-color: transparent;
+    background-color: #EAE7DC;
+    border-color: #EAE7DC;
+    box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 1);
+
 }
+
