@@ -1,4 +1,4 @@
-package puli.xaidaz.controller;
+package puli.xaidaz.controller.page;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,18 +11,19 @@ import puli.xaidaz.jpa.repository.DogRepository;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/about")
-public class AboutController {
+@RequestMapping(value = "/ourDogs")
+public class OurDogsController {
 
     @Autowired
     DogRepository dogRepository;
 
     @GetMapping
-    public String renderPageLayout( Model model ) {
-        List<Dog> dogs = dogRepository.findAll();
-        model.addAttribute("allDogs", dogs);
-        return "about";
+    public String renderPageLayout(Model model) {
+
+        List<Dog> allDogs = dogRepository.findAll();
+
+        model.addAttribute("listOfDoges", allDogs);
+
+        return "ourDogs";
     }
 }
-
-

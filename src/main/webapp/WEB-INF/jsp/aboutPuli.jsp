@@ -4,6 +4,8 @@
 <%@ include file = "fragments/navigation.jsp" %>
 
 <body>
-aboutPuli
+<jsp:include page="fragments/editableTextField.jsp" >
+    <jsp:param name="textKey" value="mainText" />
+</jsp:include>
 </body>
 </html>

@@ -1,15 +1,15 @@
-package puli.xaidaz.controller;
+package puli.xaidaz.controller.page;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/")
-public class HomePageController {
+@RequestMapping(value = "/pictures")
+public class PicturesController {
 
     @GetMapping
     public String renderPageLayout() {
-        return "homepage";
+        return "pictures";
     }
 }
