@@ -40,9 +40,10 @@ $(document).ready(function(){
                 savedText.val(field[0].innerHTML);
             },
             error: function(xhr) {
-                alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
+                editBox.find(".fa-exclamation-triangle").show();
+                console.log('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
             }
-            }); // TODO fejlhåndtering
+            });
         });
 
         $(".cancelButton").on("click", function() {
@@ -52,6 +53,7 @@ $(document).ready(function(){
             var field = editBox.find(".editableField");
             var savedText = editBox.find(".savedText");
             var editIcon = editBox.find(".editIcon");
+            var errorText = editBox.find(".fa-exclamation-triangle");
 
             field.attr("contenteditable", false);
             field.removeClass("border");
@@ -60,6 +62,7 @@ $(document).ready(function(){
             field.html(savedText.val());
             editIcon.show();
             submitOrCancelRow.hide();
+            errorText.hide();
 
         });
 
