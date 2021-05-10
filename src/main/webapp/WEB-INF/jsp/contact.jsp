@@ -8,11 +8,17 @@
     <div class="row">
         <div class="col-sm">
             <h4 class="h4-contact">Namn</h4>
-            <p>${textMap.name}</p>
+            <jsp:include page="fragments/editableTextField.jsp" >
+                <jsp:param name="textKey" value="name" />
+            </jsp:include>
             <h4 class="h4-contact">Telefon</h4>
-            <p>${textMap.number}</p>
+            <jsp:include page="fragments/editableTextField.jsp" >
+                <jsp:param name="textKey" value="number" />
+            </jsp:include>
             <h4 class="h4-contact">Adress</h4>
-            <p>${textMap.address}</p>
+            <jsp:include page="fragments/editableTextField.jsp" >
+                <jsp:param name="textKey" value="address" />
+            </jsp:include>
 
             <div class="row" style="margin-top: 15%">
                 <div class="col-sm-auto">

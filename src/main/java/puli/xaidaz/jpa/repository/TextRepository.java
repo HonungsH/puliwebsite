@@ -19,6 +19,9 @@ public interface TextRepository extends JpaRepository<Text, Long> {
     @Query("SELECT text FROM Text text WHERE text.textGroup=(:textGroup)")
     List<Text> findByGroup(@Param("textGroup") String textGroup);
 
+    @Query("SELECT text FROM Text text WHERE text.textGroup=(:textGroup) AND text.textKey=(:textKey)")
+    List<Text> findByGroupAndTextKey(@Param("textGroup") String textGroup, @Param("textKey") String testKey);
+
     default Map<String, String> findTextKeyAndTextByGroup(String textGroup) {
         List<Text> texts = findByGroup(textGroup);
         return texts.stream().collect(Collectors.toMap(Text::getTextKey, Text::getText));
