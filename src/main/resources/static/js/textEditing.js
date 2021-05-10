@@ -35,6 +35,9 @@ $(document).ready(function(){
                 field.removeClass("rounded");
                 editIcon.show();
                 submitOrCancelRow.hide();
+
+                var savedText = editBox.find(".savedText");
+                savedText.val(field[0].innerHTML);
             },
             error: function(xhr) {
                 alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
@@ -47,14 +50,14 @@ $(document).ready(function(){
             var submitOrCancelRow = cancelButton.closest(".submitOrCancelRow");
             var editBox = cancelButton.closest('.editableBox');
             var field = editBox.find(".editableField");
-            var originalText = editBox.find(".originalText");
+            var savedText = editBox.find(".savedText");
             var editIcon = editBox.find(".editIcon");
 
             field.attr("contenteditable", false);
             field.removeClass("border");
             field.removeClass("border-info");
             field.removeClass("rounded");
-            field.html(originalText.val());
+            field.html(savedText.val());
             editIcon.show();
             submitOrCancelRow.hide();
 

@@ -11,7 +11,7 @@
 
         <c:set var="textPath" value="${param.textKey}" />
         <p class="editableField">${textMap[textPath]}</p>
-        <input class="originalText" type="hidden" value="${textMap[textPath]}"/>
+        <input class="savedText" type="hidden" value="${textMap[textPath]}"/>
 
         <c:if test="${isAdmin}">
             <img class="editIcon" src="${pageContext.request.contextPath}/images/edit_icon2.png" alt="sad">
