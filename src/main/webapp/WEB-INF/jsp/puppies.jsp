@@ -5,6 +5,4 @@
 <body>
 puppies
 </body>
-
-<%@ include file = "fragments/footer.jsp" %>
 </html>

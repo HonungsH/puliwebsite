@@ -7,6 +7,4 @@
     <img id="" style="" src="/landing.png">
 </div>
 </body>
-
-<%@ include file="fragments/footer.jsp" %>
 </html>
