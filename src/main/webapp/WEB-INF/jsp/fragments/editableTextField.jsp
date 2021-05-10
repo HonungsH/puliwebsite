@@ -13,7 +13,7 @@
 
         <c:if test="${isAdmin}">
             <img class="editIcon" src="${pageContext.request.contextPath}/images/edit_icon2.png" alt="sad">
-            <img class="submitIcon" src="${pageContext.request.contextPath}/images/submit_icon.png" alt="sad" style="display: none;">
+            <button class="submitButton btn btn-primary btn-sm" style="display: none;">Spara</button>
         </c:if>
 
     </div>

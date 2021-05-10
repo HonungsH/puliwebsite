@@ -130,9 +130,9 @@ a.dogLinkBtn:hover {
     top: -20px;
     cursor: pointer;
 }
-.submitIcon {
+.submitButton {
     position: absolute;
-    right: -20px;
-    top: -30px;
+    right: 0;
+    bottom: -50px;
     cursor: pointer
 }

@@ -4,7 +4,7 @@ $(document).ready(function(){
             var editIcon = $(this);
             var editBox = editIcon.parent();
             var field = editBox.find(".editableField");
-            var submitIcon = editBox.find(".submitIcon");
+            var submitIcon = editBox.find(".submitButton");
             field.attr("contenteditable", true);
             field.addClass("border");
             field.addClass("border-info");
@@ -13,7 +13,7 @@ $(document).ready(function(){
             submitIcon.show();
         });
 
-        $(".submitIcon").on("click", function() {
+        $(".submitButton").on("click", function() {
             var submitIcon = $(this);
             var editBox = submitIcon.parent();
             var field = editBox.find(".editableField");
@@ -34,12 +34,16 @@ $(document).ready(function(){
                 field.removeClass("rounded");
                 editIcon.show();
                 submitIcon.hide();
-            }}); // TODO fejlhåndtering
+            },
+            error: function(xhr) {
+                alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
+            }
+            }); // TODO fejlhåndtering
         });
 
         $(".editableField").keydown(function(e) {
             if (e.ctrlKey && event.keyCode === 13) {
-                $(".submitIcon").click();
+                $(this).parent().find(".submitIcon").click();
             }
         });
 });
