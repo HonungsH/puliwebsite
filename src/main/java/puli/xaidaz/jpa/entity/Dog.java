@@ -18,6 +18,9 @@ public class Dog {
     private LocalDateTime modifiedAt;
     private String description;
     private String profilePicture;
+    private String owner;
+    private String pedigree;
+    private String linkToSkk;
 
     @OneToMany(mappedBy = "dog")
     private List<Picture> pictures;
@@ -86,6 +89,30 @@ public class Dog {
 
     public void setPictures(List<Picture> pictures) {
         this.pictures = pictures;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getPedigree() {
+        return pedigree;
+    }
+
+    public void setPedigree(String pedigree) {
+        this.pedigree = pedigree;
+    }
+
+    public String getLinkToSkk() {
+        return linkToSkk;
+    }
+
+    public void setLinkToSkk(String linkToSkk) {
+        this.linkToSkk = linkToSkk;
     }
 
     // Getters and setters end

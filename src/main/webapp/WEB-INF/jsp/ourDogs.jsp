@@ -3,15 +3,19 @@
 <%@ include file="fragments/header.jsp" %>
 <%@ include file="fragments/navigation.jsp" %>
 
-<head>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lora:ital,wght@1,500&family=Oxygen:wght@300&display=swap" rel="stylesheet">
-</head>
-
 <body>
 
 <h2 style="text-align: center;margin-bottom: 30px;">Våra hundar</h2>
+
 <div class="container">
+
+    <div class="row justify-content-end">
+        <div class="col-1">
+            <a href="/hundar/nyHund" class="btn btn-secondary addDog">Lägg till Hund
+                <i class="material-icons-round" style="font-size:20px;position: relative;top: 4px;">add_circle_outline</i>
+            </a>
+        </div>
+    </div>
 
     <c:forEach var="dog" items="${listOfDoges}" varStatus="i">
         <c:url value="/hundar/hund" var="dogUrl">
@@ -23,7 +27,7 @@
             <div class="row">
         </j:if>
         <div class="col" style="margin-bottom: 30px;">
-            <div class="profilePicDiv" style="margin-left: auto;margin-right: auto;display: block;text-align: center" class="">
+            <div class="profilePicDiv" style="margin-left: auto;margin-right: auto;display: block;text-align: center">
                 <img style="width: 300px; height: 300px;" id="${dog.name}"
                      src="<c:url value="${dog.profilePicture}"/>"/>
             </div>

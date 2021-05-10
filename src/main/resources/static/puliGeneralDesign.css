@@ -128,19 +128,35 @@ a.dogLinkBtn:hover, a.dogLinkBtn:focus {
 
 }
 
+.addDog {
+    margin-bottom: 50px;
+    white-space: nowrap;
+    font-size: 20px;
+}
 
 .editableBox {
     position: relative;
 }
+
 .editIcon {
     position: absolute;
     right: -20px;
     top: -20px;
     cursor: pointer;
 }
+
 .submitOrCancelRow {
     position: absolute;
     right: 0;
     bottom: -50px;
     cursor: pointer
+}
+
+.newLineLabel {
+    display: block;
+}
+
+.required::after {
+    content: ' *';
+    color: red;
 }
