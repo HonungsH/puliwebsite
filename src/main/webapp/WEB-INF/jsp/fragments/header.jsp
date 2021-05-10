@@ -9,7 +9,6 @@
     <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <c:set var="pageURI" value="${requestScope['javax.servlet.forward.request_uri']}" />
-    <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 

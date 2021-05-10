@@ -2,6 +2,7 @@
 <%@page pageEncoding="UTF-8" %>
 <%@ include file="fragments/header.jsp" %>
 <%@ include file="fragments/navigation.jsp" %>
+<sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
 <body>
 
