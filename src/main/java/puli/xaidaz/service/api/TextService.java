@@ -6,5 +6,5 @@ public interface TextService {
 
     void updateText(String group, String textKey, String text);
 
-    void setTextMapToModel(Model model, String rootMapping);
+    void setTextMapToModel(Model model, String pageName);
 }

@@ -16,10 +16,10 @@ public class TextServiceImpl implements TextService {
     private TextRepository textRepository;
 
     @Override
-    public void setTextMapToModel(Model model, String rootMapping) {
-        Map<String, String> texts = textRepository.findTextKeyAndTextByGroup(rootMapping);
+    public void setTextMapToModel(Model model, String pageName) {
+        Map<String, String> texts = textRepository.findTextKeyAndTextByGroup(pageName);
         model.addAttribute("textMap", texts);
-        model.addAttribute("pageGroup", rootMapping);
+        model.addAttribute("pageGroup", pageName);
     }
 
     @Override

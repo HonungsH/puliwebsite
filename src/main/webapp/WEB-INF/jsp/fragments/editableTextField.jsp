@@ -11,11 +11,12 @@
 
         <c:set var="textPath" value="${param.textKey}" />
         <p class="editableField">${textMap[textPath]}</p>
-        <input class="originalText" type="hidden" value="${textMap[textPath]}"/>
+        <input class="savedText" type="hidden" value="${textMap[textPath]}"/>
 
         <c:if test="${isAdmin}">
             <img class="editIcon" src="${pageContext.request.contextPath}/images/edit_icon2.png" alt="sad">
             <div class="submitOrCancelRow" style="display: none;">
+                <i class='fas fa-exclamation-triangle' style="font-size:16px;color:#E85A4F;display: none;">Error occured here text skaaaaat </i>
                 <button class="submitButton btn btn-primary btn-sm">Spara</button>
                 <button class="cancelButton btn btn-primary btn-sm">Avbryt</button>
             </div>
