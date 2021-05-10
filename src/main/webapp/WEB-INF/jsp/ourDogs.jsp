@@ -9,13 +9,15 @@
 
 <div class="container">
 
-    <div class="row justify-content-end">
-        <div class="col-1">
-            <a href="/hundar/nyHund" class="btn btn-secondary addDog">Lägg till Hund
-                <i class="material-icons-round" style="font-size:20px;position: relative;top: 4px;">add_circle_outline</i>
-            </a>
+    <c:if test="${isAdmin}">
+        <div class="row justify-content-end">
+            <div class="col-1">
+                <a href="${pageContext.request.contextPath}/hundar/nyHund" class="btn btn-secondary addDog">Lägg till Hund
+                    <i class="material-icons-round" style="font-size:20px;position: relative;top: 4px;">add_circle_outline</i>
+                </a>
+            </div>
         </div>
-    </div>
+    </c:if>
 
     <c:forEach var="dog" items="${listOfDoges}" varStatus="i">
         <c:url value="/hundar/hund" var="dogUrl">
