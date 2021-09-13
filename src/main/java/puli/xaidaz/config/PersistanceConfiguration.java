@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -30,6 +33,8 @@ public class PersistanceConfiguration {
 
     @Bean
     public DataSource dataSource() {
+        System.out.println("Initializing datasource in environment: " +environment)
+        ;
         DataSourceBuilder builder = DataSourceBuilder.create();
         builder.driverClassName("com.mysql.cj.jdbc.Driver");
         builder.username(DB_USER);
@@ -51,14 +56,12 @@ public class PersistanceConfiguration {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdaptor());
         entityManagerFactoryBean.setDataSource(dataSource());
         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
         entityManagerFactoryBean.setPackagesToScan(ENTITYMANAGER_PACKAGES_TO_SCAN);
         entityManagerFactoryBean.setJpaProperties(jpaHibernateProperties());
-
         return entityManagerFactoryBean;
     }
 
