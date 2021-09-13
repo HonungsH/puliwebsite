@@ -1,21 +1,28 @@
 package puli.xaidaz.jpa.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "Text")
 public class Text {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "ID")
     private Long id;
+    @Column(name = "TEXT_KEY")
     private String textKey;
+    @Column(name = "TEXT_GROUP")
     private String textGroup;
+    @Column(name = "TEXT")
     private String text;
 
     public Text() {

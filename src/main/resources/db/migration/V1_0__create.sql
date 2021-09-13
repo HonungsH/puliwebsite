@@ -1,1 +1,1 @@
-create schema if not exists puli_db;
+create schema if not exists PuliDb;

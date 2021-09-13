@@ -1,28 +1,38 @@
 package puli.xaidaz.jpa.entity;
 
 import javax.persistence.*;
-import java.sql.Blob;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name = "Dog")
 public class Dog {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "ID")
     private Long id;
+    @Column(name = "NAME")
     private String name;
+    @Column(name = "DATE_OF_BIRTH")
     private LocalDate dateOfBirth;
+    @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "MODIFIED_AT")
     private LocalDateTime modifiedAt;
-    private String description;
+    @Column(name = "PROFILE_PICTURE")
     private String profilePicture;
+    @Column(name = "DESCRIPTION")
+    private String description;
+    @Column(name = "OWNER")
     private String owner;
+    @Column(name = "PEDIGREE")
     private String pedigree;
+    @Column(name = "LINK_TO_SKK")
     private String linkToSkk;
 
-    @OneToMany(mappedBy = "dog")
+    @OneToMany(fetch=FetchType.LAZY, mappedBy = "dog")
     private List<Picture> pictures;
 
     // Getters and setters start
@@ -55,8 +65,8 @@ public class Dog {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt(LocalDateTime created_at) {
+        this.createdAt = created_at;
     }
 
     public LocalDateTime getModifiedAt() {

@@ -4,18 +4,24 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "Picture")
 public class Picture {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "ID")
     private Long id;
+    @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "MODIFIED_AT")
     private LocalDateTime modifiedAt;
+    @Column(name = "DESCIPTION")
     private String description;
+    @Column(name = "image_link")
     private byte[] data;
 
-    @ManyToOne
-    @JoinColumn(name="dog_id")
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="DOG_ID")
     private Dog dog;
 
     public Picture() {
@@ -61,6 +67,14 @@ public class Picture {
 
     public void setData(byte[] data) {
         this.data = data;
+    }
+
+    public Dog getDog() {
+        return dog;
+    }
+
+    public void setDog(Dog dog) {
+        this.dog = dog;
     }
 
     // Getters and setters end

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  puli-mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=PuliDb
+      - MYSQL_USER=puli-app-user
+      - MYSQL_PASSWORD=skat
+    ports:
+      - 3306:3306
+
+  puli-main:
+    image: puli.war
+    restart: on-failure
+    depends_on:
+      - puli-mysql
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_HOST=puli-mysql
+      - DATABASE_USER=puli-app-user
+      - DATABASE_PASSWORD=skat
+      - DATABASE_NAME=PuliDb
+      - DATABASE_PORT=3306
