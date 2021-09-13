@@ -18,7 +18,7 @@ services:
     depends_on:
       - puli-mysql
     ports:
-      - 8080:8080
+      - 8081:8081
     environment:
       - DATABASE_HOST=puli-mysql
       - DATABASE_USER=puli-app-user
