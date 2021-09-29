@@ -7,9 +7,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
+import javax.servlet.annotation.MultipartConfig;
+
 @SpringBootApplication
 @EntityScan( basePackages = {"puli.xaidaz.jpa.entity"} )
 @ComponentScan ("puli.xaidaz")
+@MultipartConfig(location = "\\images\\dogs\\")
 public class PuliApplication extends SpringBootServletInitializer {
 
     @Override
