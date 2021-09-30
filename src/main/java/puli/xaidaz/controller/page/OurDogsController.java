@@ -40,12 +40,12 @@ public class OurDogsController {
     }
 
     @RequestMapping(path = "/hund")
-    void renderDog(@RequestParam("hundNamn") String dogName, Model model) {
+    public String renderDog(@RequestParam("hundNamn") String dogName, Model model) {
 
-        List<Dog> allDogs = dogRepository.findAll();
+        List<Dog> dogsWithName = dogRepository.findByName(dogName);
 
-        model.addAttribute("listOfDoges", allDogs);
-
+        model.addAttribute("dog", dogsWithName.get(0));
+        return "dogProfile";
     }
 
     @RequestMapping(path = "/nyHund")

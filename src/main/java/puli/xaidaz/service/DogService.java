@@ -21,7 +21,11 @@ public class DogService {
         dogRepository.save(dog);
     }
 
-    public void  uploadFile(Part file) throws IOException {
-            file.write("doggy.jpg");
-        }
+    public void uploadFile(Part file) throws IOException {
+        file.write("doggy.jpg");
     }
+
+    public void getProfilePicture(String path) {
+
+    }
+}
