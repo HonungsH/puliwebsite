@@ -33,19 +33,11 @@ public class PuliApplication extends SpringBootServletInitializer {
         SpringApplication.run(PuliApplication.class, args);
     }
 
-//    @Bean
-//    public ServletWebServerFactory servletWebServerFactory(){
-//        TomcatServletWebServerFactory servletWebServerFactory = new TomcatServletWebServerFactory();
-////        servletWebServerFactory.setDocumentRoot(new File(documentRoot));
-//        return new TomcatServletWebServerFactory();
-//    }
-
-
-//    @Bean
-//    public FlywayMigrationStrategy clean() {
-//        return flyway -> {
-//            flyway.clean();
-//            flyway.migrate();
-//        };
-//    }
+    @Bean
+    public FlywayMigrationStrategy clean() {
+        return flyway -> {
+            flyway.clean();
+            flyway.migrate();
+        };
+    }
 }
