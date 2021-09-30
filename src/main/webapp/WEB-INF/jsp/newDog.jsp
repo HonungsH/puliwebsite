@@ -9,8 +9,12 @@
     <p style="color:red">* = obligatorisk</p>
 <form:form method="POST" action="/hundar/sparaHund" modelAttribute="dog" enctype="multipart/form-data">
     <div class="form-group">
-        <label class="required" for="dogName">Hundens namn:</label>
+        <label class="required" for="dogName">Hundens tilltalsnamn:</label>
         <input type="text" name="name" class="form-control" id="dogName" placeholder="">
+    </div>
+    <div class="form-group">
+        <label class="required" for="breedingName">Hundens uppfödarnamn:</label>
+        <input type="text" name="breedingName" class="form-control" id="breedingName" placeholder="">
     </div>
     <div class="form-group">
         <label for="birthYear" class="required">Hundens födelsedatum:</label>

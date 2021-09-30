@@ -25,13 +25,13 @@
             <c:param name="hundNamn" value="${dog.name}"/>
         </c:url>
 
-        <j:if test="${i.index % 2 == 0}">
-            <j:set var="makeNewRowIndex" value="${i.index + 1}"/>
-            <div class="row">
+        <j:if test="${i.index % 3 == 0}">
+            <j:set var="makeNewRowIndex" value="${i.index + 2}"/>
+            <div class="row mt-5">
         </j:if>
         <div class="col" style="margin-bottom: 30px;">
             <div class="profilePicDiv" style="margin-left: auto;margin-right: auto;display: block;text-align: center">
-                <img style="width: 300px; height: 300px;" id="${dog.name}"
+                <img style="height: 350px; width: auto;" class="img-fluid" id="${dog.name}"
                      src="<c:url value="${dog.profilePicture}"/>"/>
             </div>
             <div style="text-align: center">

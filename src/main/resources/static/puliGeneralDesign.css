@@ -111,7 +111,7 @@ a.dogLinkBtn {
     font-family: monospace, Monaco;
     font-size: 20px;
     color: black;
-    width: 300px;
+    width: 200px;
     margin-top: 8px;
     background-color: #EAE7DC;
     border-color: #EAE7DC;
@@ -127,9 +127,9 @@ a.dogLinkBtn:hover, a.dogLinkBtn:focus {
     box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 1);
 
 }
-
-#dogProfilePicture {
-    height: auto;
+.profileTitle {
+    font-family: Monaco, monospace;
+    color: #E85A4F;
 }
 
 .addDog {
