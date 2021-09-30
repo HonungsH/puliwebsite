@@ -1,5 +1,7 @@
 package puli.xaidaz.jpa.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,7 +18,7 @@ public class Dog {
     @Column(name = "NAME")
     private String name;
     @Column(name = "DATE_OF_BIRTH")
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
     @Column(name = "MODIFIED_AT")
@@ -31,6 +33,7 @@ public class Dog {
     private String pedigree;
     @Column(name = "LINK_TO_SKK")
     private String linkToSkk;
+    private String breedingHistory;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy = "dog")
     private List<Picture> pictures;
@@ -53,11 +56,11 @@ public class Dog {
         this.name = name;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -123,6 +126,14 @@ public class Dog {
 
     public void setLinkToSkk(String linkToSkk) {
         this.linkToSkk = linkToSkk;
+    }
+
+    public String getBreedingHistory() {
+        return breedingHistory;
+    }
+
+    public void setBreedingHistory(String breedingHistory) {
+        this.breedingHistory = breedingHistory;
     }
 
     // Getters and setters end
