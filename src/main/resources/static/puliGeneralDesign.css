@@ -132,10 +132,12 @@ a.dogLinkBtn:hover, a.dogLinkBtn:focus {
     color: #E85A4F;
 }
 
-.addDog {
+.dogButton {
     margin-bottom: 50px;
     white-space: nowrap;
-    font-size: 20px;
+    font-size: 30px !important;
+    background-color: transparent !important;
+    color: black !important;
 }
 
 .editableBox {

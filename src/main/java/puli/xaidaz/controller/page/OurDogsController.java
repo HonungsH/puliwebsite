@@ -70,4 +70,14 @@ public class OurDogsController {
         //dogService.saveDog(dog);
         return "ourDogs";
     }
+
+    @RequestMapping(path = "/redigeraHund")
+    public String editDog(@RequestParam("hundNamn") String dogName, Model model) {
+        //if (result.hasErrors()) {
+
+        //return "newDog";
+        //}
+        //dogService.saveDog(dog);
+        return "ourDogs";
+    }
 }

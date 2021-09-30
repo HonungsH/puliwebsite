@@ -8,6 +8,13 @@
 
 
 <div class="container">
+
+    <c:if test="${true}">
+        <a href="${pageContext.request.contextPath}/hundar/redigeraHund" class="btn btn-secondary dogButton">Redigera Hund
+            <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">mode_edit</i>
+        </a>
+    </c:if>
+
     <h2 style="font-size: 3rem; text-align: left;margin-bottom: 40px;">${dog.name}</h2>
     <div class="row">
         <div class="col-6">

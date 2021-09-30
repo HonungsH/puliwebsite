@@ -17,6 +17,10 @@
         <input type="text" name="breedingName" class="form-control" id="breedingName" placeholder="">
     </div>
     <div class="form-group">
+        <label class="required" for="colour">Hundens färg:</label>
+        <input type="text" name="colour" class="form-control" id="colour" placeholder="">
+    </div>
+    <div class="form-group">
         <label for="birthYear" class="required">Hundens födelsedatum:</label>
         <input type="date" name="dateOfBirth" class="form-control" id="birthYear">
     </div>
