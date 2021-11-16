@@ -28,11 +28,11 @@ public class PuliApplication extends SpringBootServletInitializer {
         SpringApplication.run(PuliApplication.class, args);
     }
 
-//    @Bean
-//    public FlywayMigrationStrategy clean() {
-//        return flyway -> {
-//            flyway.clean();
-//            flyway.migrate();
-//        };
-//    }
+    @Bean
+    public FlywayMigrationStrategy clean() {
+        return flyway -> {
+            flyway.clean();
+            flyway.migrate();
+        };
+    }
 }
