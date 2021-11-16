@@ -50,14 +50,11 @@ public class OurDogsController {
 
     @RequestMapping(value = "/sparaHund", method = RequestMethod.POST)
     public String saveDog(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("dog") Dog dog) throws IOException {
-
         dog.setCreatedAt(LocalDateTime.now());
         dog.setModifiedAt(LocalDateTime.now());
-        //dog.setDateOfBirth(LocalDate.now());
         dog = dogRepository.save(dog);
 
         String fileName = fileService.saveFile(profilePicture, dog.getName() + dog.getId().toString());
-
         dog.setProfilePicture(fileName);
         dogRepository.save(dog);
 
