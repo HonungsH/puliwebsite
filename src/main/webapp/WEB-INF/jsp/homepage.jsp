@@ -4,7 +4,7 @@
 
 <body>
 <div class="container">
-    <img id="" style="" src="${pageContext.request.contextPath}/landing.png" alt="">
+    <img id="" style="" src="${pageContext.request.contextPath}/images/landing.png" alt="">
 </div>
 </body>
 </html>
