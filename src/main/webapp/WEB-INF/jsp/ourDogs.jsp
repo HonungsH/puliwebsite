@@ -13,7 +13,7 @@
     <c:if test="${true}">
         <div class="row justify-content-end">
             <div class="col-1">
-                <a href="${pageContext.request.contextPath}/hundar/nyHund" class="btn btn-secondary dogButton">Lägg till Hund
+                <a href="${pageContext.request.contextPath}/hundar/nyHund" class="btn btn-secondary editDogButton">Lägg till Hund
                     <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">add_circle_outline</i>
                 </a>
             </div>

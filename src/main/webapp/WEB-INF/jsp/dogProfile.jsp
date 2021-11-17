@@ -5,90 +5,92 @@
 <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
 <body>
-
-
 <div class="container">
+    <form:form method="POST" enctype="multipart/form-data">
 
-    <c:if test="${true}">
-        <a href="${pageContext.request.contextPath}/hundar/redigeraHund" class="btn btn-secondary dogButton">Redigera Hund
-            <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">mode_edit</i>
-        </a>
-    </c:if>
+        <c:if test="${true}">
+            <button class="btn btn-secondary editDogButton">Redigera Hund
+                <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">mode_edit</i>
+            </button>
+        </c:if>
 
-    <h2 style="font-size: 3rem; text-align: left;margin-bottom: 40px;">${dog.name}</h2>
-    <div class="row">
-        <div class="col-6">
-            <img class="img-fluid" id="dogProfilePicture" style=""
-                 src="<c:url value="${dog.profilePicture}"/>"/>
+
+        <h2 style="font-size: 3rem; text-align: left;margin-bottom: 40px;">${dog.name}</h2>
+        <div class="row">
+            <div class="col-6">
+                <img class="img-fluid" id="dogProfilePicture" style=""
+                     src="<c:url value="${dog.profilePicture}"/>"/>
+            </div>
+            <div class="col-6">
+                <!-- BREEDING NAME -->
+                <div class="row">
+                    <h4 class="profileTitle">Uppfödarnamn</h4>
+                </div>
+                <div class="row">
+                    <input type="text" value="${dog.breedingName}" class="editableField" readonly/>
+
+                </div>
+
+                <!-- COLOUR -->
+                <div class="row">
+                    <h4 class="profileTitle">Färg</h4>
+                </div>
+                <div class="row">
+                    <p>${dog.colour}</p>
+                </div>
+
+                <!-- BIRTH -->
+                <div class="row">
+                    <h4 class="profileTitle">Födelsedatum</h4>
+                </div>
+                <div class="row">
+                    <p>${dog.dateOfBirth}</p>
+                </div>
+
+                <!-- OWNER -->
+                <c:if test="${dog.owner != null}">
+                    <div class="row">
+                        <h4 class="profileTitle">Ägare</h4>
+                    </div>
+                    <div class="row">
+                        <p>${dog.owner}</p>
+                    </div>
+                </c:if>
+
+                <!-- DESCRIPTION -->
+                <c:if test="${dog.description != null}">
+                    <div class="row">
+                        <h4 class="profileTitle">Om ${dog.name}</h4>
+                    </div>
+                    <div class="row">
+                        <p>${dog.description}</p>
+                    </div>
+                </c:if>
+
+                <!-- BREEDING HISTORY -->
+                <c:if test="${dog.breedingHistory != null}">
+                    <div class="row">
+                        <h4 class="profileTitle">Valpkullar</h4>
+                    </div>
+                    <div class="row">
+                        <p>${dog.breedingHistory}</p>
+                    </div>
+                </c:if>
+
+                <!-- LINK SKK -->
+                <c:if test="${dog.linkToSkk != null}">
+                    <div class="row">
+                        <h4 class="profileTitle">Hundinformation SKK</h4>
+                    </div>
+                    <div class="row">
+                        <p><a target="_blank" href="${dog.linkToSkk}">Tryck här</a></p>
+                    </div>
+                </c:if>
+            </div>
         </div>
-        <div class="col-6">
-            <!-- BREEDING NAME -->
-            <div class="row">
-                <h4 class="profileTitle">Uppfödarnamn</h4>
-            </div>
-            <div class="row">
-                <p>${dog.breedingName}</p>
-            </div>
+    </form:form>
 
-            <!-- COLOUR -->
-            <div class="row">
-                <h4 class="profileTitle">Färg</h4>
-            </div>
-            <div class="row">
-                <p>${dog.colour}</p>
-            </div>
-
-            <!-- BIRTH -->
-            <div class="row">
-                <h4 class="profileTitle">Födelsedatum</h4>
-            </div>
-            <div class="row">
-                <p>${dog.dateOfBirth}</p>
-            </div>
-
-            <!-- OWNER -->
-            <c:if test="${dog.owner != null}">
-                <div class="row">
-                    <h4 class="profileTitle">Ägare</h4>
-                </div>
-                <div class="row">
-                    <p>${dog.owner}</p>
-                </div>
-            </c:if>
-
-            <!-- DESCRIPTION -->
-            <c:if test="${dog.description != null}">
-                <div class="row">
-                    <h4 class="profileTitle">Om ${dog.name}</h4>
-                </div>
-                <div class="row">
-                    <p>${dog.description}</p>
-                </div>
-            </c:if>
-
-            <!-- BREEDING HISTORY -->
-            <c:if test="${dog.breedingHistory != null}">
-                <div class="row">
-                    <h4 class="profileTitle">Valpkullar</h4>
-                </div>
-                <div class="row">
-                    <p>${dog.breedingHistory}</p>
-                </div>
-            </c:if>
-
-            <!-- LINK SKK -->
-            <c:if test="${dog.linkToSkk != null}">
-                <div class="row">
-                    <h4 class="profileTitle">Hundinformation SKK</h4>
-                </div>
-                <div class="row">
-                    <p><a target="_blank" href="${dog.linkToSkk}">Tryck här</a></p>
-                </div>
-            </c:if>
-        </div>
-    </div>
 </div>
-
 
 </body>
 

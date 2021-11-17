@@ -132,7 +132,7 @@ a.dogLinkBtn:hover, a.dogLinkBtn:focus {
     color: #E85A4F;
 }
 
-.dogButton {
+.editDogButton {
     margin-bottom: 50px;
     white-space: nowrap;
     font-size: 30px !important;
