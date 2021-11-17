@@ -82,7 +82,6 @@
                     <div>
                         Rasen kan passa dig som är pälsallergiker då den inte fäller.
                     </div>
-                    <hr class="my-4">
                 </div>
             </div>
 
@@ -97,7 +96,6 @@
             <img class="img-responsive" id="bild2" style="height: 1000px" src="<c:url value="/images/dogs/4_dogs.jpg"/>"/>
         </div>
         <div class="col-6">
-
         </div>
     </div>
 </div>
