@@ -8,9 +8,9 @@
 <div class="row">
     <div class="col-md-12">
         <div class="jumbotron bg-cover"
-             style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), url(images/dogs/jump_puli.jpg)">
+             style="background-image: linear-gradient(to bottom, rgba(50,50,50,0.3) 0%,rgba(50,50,50,0.3) 100%), url(images/dogs/jump_puli.jpg)">
             <div class="container">
-
+                <%--<h1 class="" style="text-align:right; position: relative;font-size: 4rem;left: 500px; color:white;">Xaida'z Puli</h1>--%>
             </div>
             <!-- /.container   -->
         </div>

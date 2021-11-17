@@ -22,6 +22,7 @@
                         <br>
                         Puli är en lojal vän som gärna följer med dig på äventyr.
                     </div>
+                    <hr class="my-4">
                 </div>
             </div>
             <div class="row mt-3">
@@ -34,6 +35,7 @@
                         13–15 kg och för tikar 10–13 kg. Den har en tjock, filtad och vågig snörpäls. Färgerna är svart,
                         fawn (fakó) med svart mask, grå och pärlvit.
                     </div>
+                    <hr class="my-4">
                 </div>
             </div>
             <div class="row mt-3">
@@ -47,6 +49,7 @@
                         snörena inte blir för stora. Fullpälsad
                         blir den vid 4 till 6 års ålder.
                     </div>
+                    <hr class="my-4">
                 </div>
             </div>
             <div class="row mt-3">
@@ -57,6 +60,7 @@
                     <div>
                         Puli är en mycket frisk och sund hundras med få sjukdomsfall.
                     </div>
+                    <hr class="my-4">
                 </div>
             </div>
             <div class="row mt-3">
@@ -67,6 +71,7 @@
                     <div>
                         Puli är en självständig, snabb, pigg, klok, orädd, glad och lättlärd hund.
                     </div>
+                    <hr class="my-4">
                 </div>
             </div>
             <div class="row mt-3">
@@ -77,6 +82,7 @@
                     <div>
                         Rasen kan passa dig som är pälsallergiker då den inte fäller.
                     </div>
+                    <hr class="my-4">
                 </div>
             </div>
 
