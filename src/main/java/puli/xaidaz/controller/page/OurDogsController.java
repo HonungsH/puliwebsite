@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/hundar")
@@ -48,9 +49,19 @@ public class OurDogsController {
         return "newDog";
     }
 
+    @RequestMapping(path = "/redigeraHund", method = RequestMethod.POST)
+    public String editDog(@RequestParam("dogId") long dogId, Model model) {
+        Optional<Dog> dog = dogRepository.findById(dogId);
+
+        model.addAttribute("dog", dog.get());
+        return "newDog";
+    }
+
     @RequestMapping(value = "/sparaHund", method = RequestMethod.POST)
     public String saveDog(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("dog") Dog dog) throws IOException {
-        dog.setCreatedAt(LocalDateTime.now());
+        if (dog.getId() == null) {
+            dog.setCreatedAt(LocalDateTime.now());
+        }
         dog.setModifiedAt(LocalDateTime.now());
         dog = dogRepository.save(dog);
 
@@ -59,15 +70,5 @@ public class OurDogsController {
         dogRepository.save(dog);
 
         return "redirect:/hundar";
-    }
-
-    @RequestMapping(path = "/redigeraHund")
-    public String editDog(@RequestParam("hundNamn") String dogName, Model model) {
-        //if (result.hasErrors()) {
-
-        //return "newDog";
-        //}
-        //dogService.saveDog(dog);
-        return "ourDogs";
     }
 }

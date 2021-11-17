@@ -6,14 +6,13 @@
 
 <body>
 <div class="container">
-    <form:form method="POST" enctype="multipart/form-data">
-
+    <form:form action="redigeraHund" method="POST" enctype="multipart/form-data">
         <c:if test="${true}">
-            <button class="btn btn-secondary editDogButton">Redigera Hund
+            <button type="submit" class="btn btn-secondary editDogButton">Redigera Hund
                 <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">mode_edit</i>
             </button>
         </c:if>
-
+        <input type="hidden" name="dogId" value="${dog.id}">
 
         <h2 style="font-size: 3rem; text-align: left;margin-bottom: 40px;">${dog.name}</h2>
         <div class="row">
@@ -27,8 +26,7 @@
                     <h4 class="profileTitle">Uppfödarnamn</h4>
                 </div>
                 <div class="row">
-                    <input type="text" value="${dog.breedingName}" class="editableField" readonly/>
-
+                    <p name="breedingName">${dog.breedingName}</p>
                 </div>
 
                 <!-- COLOUR -->
@@ -89,7 +87,6 @@
             </div>
         </div>
     </form:form>
-
 </div>
 
 </body>
