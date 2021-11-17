@@ -4,9 +4,9 @@
 
     <div><a class="${pageURI.endsWith('/') ? 'active' : ''}" href="${pageContext.request.contextPath}/">Hem</a></div>
 
-    <div><a class="${pageURI.endsWith('/hundar') ? 'active' : ''}" href="${pageContext.request.contextPath}/hundar">Våra Hundar</a></div>
-
     <div><a class="${pageURI.endsWith('/news') ? 'active' : ''}" href="${pageContext.request.contextPath}/news">Nyheter</a></div>
+
+    <div><a class="${pageURI.endsWith('/hundar') ? 'active' : ''}" href="${pageContext.request.contextPath}/hundar">Våra Hundar</a></div>
 
     <div class="subnav">
         <button class="subnavbtn">Bildgalleri<i class="fa fa-caret-down"></i></button>
