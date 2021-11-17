@@ -82,15 +82,16 @@
 
         </div>
         <div class="col-6">
-            <img id="aboutpuli" style="" src="<c:url value="/images/xaidazligan.png"/>"/>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6">
+            <img id="bild1" style="" src="<c:url value="/images/dogs/agility_dog.jpg"/>"/>
 
         </div>
+    </div>
+    <div class="row mt-3">
         <div class="col-6">
-            <img id="hejsan" style="" src="<c:url value="/images/dogs/jump_puli_cut.jpg"/>"/>
+            <img class="img-responsive" id="bild2" style="height: 1000px" src="<c:url value="/images/dogs/4_dogs.jpg"/>"/>
+        </div>
+        <div class="col-6">
+
         </div>
     </div>
 </div>
