@@ -130,7 +130,7 @@ a.dogLinkBtn:hover, a.dogLinkBtn:focus {
     box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 1);
 }
 
-a.dogLinkBtn:active, a.dogLinkBtn:visited {
+a.dogLinkBtn:active {
     background-color: #e98074;
 }
 .profileTitle {

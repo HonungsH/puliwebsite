@@ -26,7 +26,7 @@
                 <hr class="my-4">
                 <p style="font-size: 1.1rem">Vår kennel vill ha sunda och friska hundar med bra temperament.<br>De ska vara rastypiska och bör ha
                     kvar sitt arv som vakt och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
-                    HD-röntgade med godkänt resultat och ska vara ögonlysta.<br>Kollar även avelshundar för DM.<br><br>En
+                    HD-röntgade med godkänt resultat och ska vara ögonlysta.<br>Vi kollar även avelshundar för DM.<br><br>En
                     Puli är väldigt lättlärd och älskar att få göra något, men ändå ingen hund som &quot;klättrar på
                     väggarna&quot;.<br>De anpassar sig bra och är lätta att ha med sig. <br>
                     Puli passar till alla aktiviteter så som vallning, spårning, lydnad och agility. <br> <br>
