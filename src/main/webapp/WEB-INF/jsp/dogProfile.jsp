@@ -45,7 +45,7 @@
                     <p>${dog.dateOfBirth}</p>
                 </div>
 
-                <!-- OWNER -->
+                <!-- OWNER --><%--
                 <c:if test="${dog.owner != null}">
                     <div class="row">
                         <h4 class="profileTitle">Ägare</h4>
@@ -53,7 +53,7 @@
                     <div class="row">
                         <p>${dog.owner}</p>
                     </div>
-                </c:if>
+                </c:if>--%>
 
                 <!-- DESCRIPTION -->
                 <c:if test="${dog.description != null}">

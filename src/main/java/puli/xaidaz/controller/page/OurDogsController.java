@@ -65,10 +65,14 @@ public class OurDogsController {
         dog.setModifiedAt(LocalDateTime.now());
         dog = dogRepository.save(dog);
 
-        String fileName = fileService.saveFile(profilePicture, dog.getName() + dog.getId().toString());
-        dog.setProfilePicture(fileName);
-        dogRepository.save(dog);
+        if (profilePicture != null) {
+            String fileName = fileService.saveFile(profilePicture, dog.getName() + dog.getId().toString());
+            dog.setProfilePicture(fileName);
 
+        } else {
+            dog.setProfilePicture("/images/dogs/bild_saknas.png");
+        }
+        dogRepository.save(dog);
         return "redirect:/hundar";
     }
 }

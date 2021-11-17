@@ -6,7 +6,7 @@
 
 <body>
 
-<h2 style="text-align: center;margin-bottom: 30px;">Våra hundar</h2>
+<h2 style="text-align: center;margin-bottom: 30px;font-size:3rem;">Våra hundar</h2>
 
 <div class="container">
 

@@ -1,5 +1,6 @@
 <%@page pageEncoding="UTF-8" %>
 <footer class="footer">
+    Gjord av: DoubleSkat@gmail.com
     <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
     <br>
@@ -18,6 +19,5 @@
                 <a href="${pageContext.request.contextPath}/login">Logga in som administratör</a>
             </div>
         </c:otherwise>
-
     </c:choose>
 </footer>

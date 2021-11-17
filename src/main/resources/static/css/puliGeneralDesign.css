@@ -105,14 +105,19 @@ a:hover, .subnav:hover .subnavbtn {
     max-height: 500px;
 }
 
+.readMoreBtn {
+    color: #e98074; !important;
+    border-color: #e98074; !important;
+}
+
 a.dogLinkBtn {
     font-family: monospace, Monaco;
     font-size: 20px;
     color: black;
     width: 200px;
     margin-top: 8px;
-    background-color: #EAE7DC;
-    border-color: #EAE7DC;
+    background-color: #e9ecef;
+    border-color: #e9ecef;
     transition: box-shadow .3s;
 
 }
@@ -120,10 +125,13 @@ a.dogLinkBtn {
 a.dogLinkBtn:hover, a.dogLinkBtn:focus {
     color: black;
     text-decoration: none;
-    background-color: #EAE7DC;
-    border-color: #EAE7DC;
+    background-color: #e9ecef;
+    border-color: #e9ecef;
     box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 1);
+}
 
+a.dogLinkBtn:active, a.dogLinkBtn:visited {
+    background-color: #e98074;
 }
 .profileTitle {
     font-family: Monaco, monospace;
@@ -136,6 +144,16 @@ a.dogLinkBtn:hover, a.dogLinkBtn:focus {
     font-size: 30px !important;
     background-color: transparent !important;
     color: black !important;
+}
+
+.bg-cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height:600px;
 }
 
 .editableBox {
