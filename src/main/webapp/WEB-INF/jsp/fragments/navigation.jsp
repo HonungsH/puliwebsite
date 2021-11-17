@@ -6,9 +6,7 @@
 
     <div><a class="${pageURI.endsWith('/hundar') ? 'active' : ''}" href="${pageContext.request.contextPath}/hundar">Våra Hundar</a></div>
 
-    <c:if test="${isAdmin}">
-        <div><a class="${pageURI.endsWith('/puppies') ? 'active' : ''}" href="${pageContext.request.contextPath}/puppies">Avelsplaner och valpkullar</a></div>
-    </c:if>
+    <div><a class="${pageURI.endsWith('/news') ? 'active' : ''}" href="${pageContext.request.contextPath}/news">Nyheter</a></div>
 
     <div class="subnav">
         <button class="subnavbtn">Bildgalleri<i class="fa fa-caret-down"></i></button>
@@ -21,7 +19,7 @@
 
     <div><a class="${pageURI.endsWith('/aboutPuli') ? 'active' : ''}" href="${pageContext.request.contextPath}/aboutPuli">Om Puli</a></div>
 
-    <div><a class="${pageURI.endsWith('/about') ? 'active' : ''}" href="${pageContext.request.contextPath}/about">Om Xaida'z Kennel</a></div>
+<%--    <div><a class="${pageURI.endsWith('/about') ? 'active' : ''}" href="${pageContext.request.contextPath}/about">Om Xaida'z Kennel</a></div>--%>
 
     <div><a class="${pageURI.endsWith('/contact') ? 'active' : ''}" href="${pageContext.request.contextPath}/contact">Kontakt</a></div>
 
