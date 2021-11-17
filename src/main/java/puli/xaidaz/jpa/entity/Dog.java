@@ -1,6 +1,7 @@
 package puli.xaidaz.jpa.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
 public class Dog {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
     @Column(name = "NAME")
@@ -19,7 +20,7 @@ public class Dog {
     @Column(name = "COLOUR")
     private String colour;
     @Column(name = "DATE_OF_BIRTH")
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
     @Column(name = "MODIFIED_AT")
@@ -58,11 +59,11 @@ public class Dog {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

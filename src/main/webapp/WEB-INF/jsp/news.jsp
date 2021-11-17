@@ -3,6 +3,6 @@
 <%@ include file = "fragments/navigation.jsp" %>
 
 <body>
-puppies
+news
 </body>
 </html>

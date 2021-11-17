@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/puppies")
-public class PuppiesController {
+@RequestMapping(value = "/news")
+public class NewsController {
 
     @GetMapping
     public String renderPageLayout() {
-        return "puppies";
+        return "news";
     }
 }

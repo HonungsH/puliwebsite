@@ -22,7 +22,7 @@
 
             <div class="row" style="margin-top: 15%">
                 <div class="col-sm-auto">
-                    <a href="https://www.facebook.com/carina.karlssonxaidazpuli">
+                    <a href="https://www.facebook.com/carina.karlssonxaidazpuli" target="_blank">
                         <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
                     </a>
                 </div>
