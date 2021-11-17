@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="jumbotron bg-cover"
+        <div class="bg-cover"
              style="background-image: linear-gradient(to bottom, rgba(50,50,50,0.3) 0%,rgba(50,50,50,0.3) 100%), url(images/dogs/jump_puli.jpg)">
             <div class="container">
                 <%--<h1 class="" style="text-align:right; position: relative;font-size: 4rem;left: 500px; color:white;">Xaida'z Puli</h1>--%>
@@ -18,19 +18,17 @@
 </div>
 <div class="row">
     <div class="col">
-        <div class="jumbotron bg-cover">
-            <div class="container">
-                <h1 class="display-4" style="">Välkommen!</h1>
+        <div class="bg-cover" style="background: #e9ecef">
+            <div class="container" style="text-align: center">
+                <h1 class="display-4 mt-2" style="text-transform: uppercase;">Välkommen!</h1>
                 <p class="lead">Vår kennel har uppfödning av den ungerska rasen <strong>Puli</strong> i närheten av
                     Trelleborg, Skåne</p>
-                <hr class="my-4">
-                <p style="font-size: 1.1rem">Vår kennel vill ha sunda och friska hundar med bra temperament.<br>De ska vara rastypiska och bör ha
+                <hr style="background: #e98074; width: 500px" class="my-4">
+                <p style="font-size: 1.1rem;">Vår kennel vill ha sunda och friska hundar med bra temperament.<br>De ska vara rastypiska och bör ha
                     kvar sitt arv som vakt och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
-                    HD-röntgade med godkänt resultat och ska vara ögonlysta.<br>Vi kollar även avelshundar för DM.<br><br>En
-                    Puli är väldigt lättlärd och älskar att få göra något, men ändå ingen hund som &quot;klättrar på
-                    väggarna&quot;.<br>De anpassar sig bra och är lätta att ha med sig. <br>
-                    Puli passar till alla aktiviteter så som vallning, spårning, lydnad och agility. <br> <br>
+                    HD-röntgade med godkänt resultat och ska vara ögonlysta.<br> <br>
                     <strong>Puli är en fantastisk hund som blir din bästa vän!</strong><br> <br>
+                <hr style="background: #e98074;  width: 500px" class="my-4">
                     Välkommen att höra av dig till oss vid frågor. </p>
                 <a class="btn btn-primary btn-lg readMoreBtn" href="#" role="button">Läs mer om oss</a>
             </div>
