@@ -2,6 +2,7 @@ package puli.xaidaz.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -12,7 +13,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-public class ResourceConfig implements WebMvcConfigurer {
+public class WebConfig implements WebMvcConfigurer {
 
     @Value("${environment}")
     private String environment;
@@ -45,5 +46,10 @@ public class ResourceConfig implements WebMvcConfigurer {
         }
         vr.setSuffix(".jsp");
         registry.viewResolver(vr);
+    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**");
     }
 }
