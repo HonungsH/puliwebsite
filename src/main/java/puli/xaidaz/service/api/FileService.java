@@ -8,5 +8,7 @@ public interface FileService {
 
     String saveFile(MultipartFile file, String subPath) throws IOException;
 
+    boolean deleteFile(String path);
+
     byte[] getFile(String filename);
 }

@@ -34,6 +34,11 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
+    public boolean deleteFile(String path) {
+        return new File(path).delete();
+    }
+
+    @Override
     public byte[] getFile(String filename) {
         return new byte[0];
     }

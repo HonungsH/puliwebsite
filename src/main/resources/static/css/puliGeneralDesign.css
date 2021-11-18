@@ -122,10 +122,18 @@ a.dogLinkBtn {
 
 }
 
-a.dogLinkBtn:hover, a.dogLinkBtn:focus {
+a.dogLinkBtn:hover {
     color: black;
     text-decoration: none;
     background-color: #e9ecef;
+    border-color: #e9ecef;
+    box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 1);
+}
+
+a.dogLinkBtn:focus {
+    color: black;
+    text-decoration: none;
+    background-color: #e9ecef !important;
     border-color: #e9ecef;
     box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 1);
 }
@@ -181,4 +189,8 @@ a.dogLinkBtn:active {
 .required::after {
     content: ' *';
     color: red;
+}
+
+.alert {
+    color:red;
 }

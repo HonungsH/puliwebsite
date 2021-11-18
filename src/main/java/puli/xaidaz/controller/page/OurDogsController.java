@@ -1,9 +1,9 @@
 package puli.xaidaz.controller.page;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import puli.xaidaz.jpa.entity.Dog;
@@ -12,11 +12,10 @@ import puli.xaidaz.service.api.FileService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.File;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/hundar")
@@ -45,34 +44,54 @@ public class OurDogsController {
     }
 
     @RequestMapping(path = "/nyHund")
-    public String addDog() {
+    public String addDog(Model model) {
+        model.addAttribute("profilePictureLabel", "Ingen fil vald");
         return "newDog";
     }
 
     @RequestMapping(path = "/redigeraHund", method = RequestMethod.POST)
     public String editDog(@RequestParam("dogId") long dogId, Model model) {
-        Optional<Dog> dog = dogRepository.findById(dogId);
+        Dog dog = dogRepository.findById(dogId).get();
 
-        model.addAttribute("dog", dog.get());
+        model.addAttribute("dog", dog);
+        model.addAttribute("profilePictureLabel", new File(dog.getProfilePicture()).getName());
         return "newDog";
     }
 
     @RequestMapping(value = "/sparaHund", method = RequestMethod.POST)
-    public String saveDog(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("dog") Dog dog) throws IOException {
-        if (dog.getId() == null) {
-            dog.setCreatedAt(LocalDateTime.now());
+    public String saveDog(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("dog") Dog dog, BindingResult bindingResult) throws IOException {
+        if (bindingResult.hasErrors()) {
+            return "newDog";
         }
-        dog.setModifiedAt(LocalDateTime.now());
-        dog = dogRepository.save(dog);
 
-        if (profilePicture != null) {
+        if (dog.getId() == null) { // new dog
+            dog.setCreatedAt(LocalDateTime.now());
+            dog.setModifiedAt(LocalDateTime.now());
+            setNewProfilePicture(profilePicture, dog);
+        } else { // Existing dog
+            Dog previousDog = dogRepository.findById(dog.getId()).get();
+
+            if (profilePicture.getOriginalFilename() != null || (!previousDog.getProfilePicture().endsWith(profilePicture.getOriginalFilename()))) {
+                fileService.deleteFile(previousDog.getProfilePicture());
+                setNewProfilePicture(profilePicture, dog);
+            }
+        }
+
+        dog.setModifiedAt(LocalDateTime.now());
+        dogRepository.save(dog);
+        return "redirect:/hundar";
+    }
+
+    private void setNewProfilePicture(MultipartFile profilePicture, Dog dog) throws IOException {
+        if (dog.getId() == null) {
+            dogRepository.save(dog);
+        }
+
+        if (!profilePicture.getOriginalFilename().isEmpty()) {
             String fileName = fileService.saveFile(profilePicture, dog.getName() + dog.getId().toString());
             dog.setProfilePicture(fileName);
-
         } else {
             dog.setProfilePicture("/images/dogs/bild_saknas.png");
         }
-        dogRepository.save(dog);
-        return "redirect:/hundar";
     }
 }

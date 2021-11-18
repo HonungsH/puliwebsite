@@ -1,6 +1,9 @@
 package puli.xaidaz.jpa.entity;
 
+import javax.validation.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,12 +16,16 @@ public class Dog {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
+    @NotBlank(message = "Namn är obligatoriskt")
     @Column(name = "NAME")
     private String name;
+    @NotBlank(message = "Uppfödarnamn är obligatoriskt")
     @Column(name = "BREEDING_NAME")
     private String breedingName;
+    @NotBlank(message = "Färg är obligatoriskt")
     @Column(name = "COLOUR")
     private String colour;
+    @NotNull(message = "Födelsedatum är obligatoriskt")
     @Column(name = "DATE_OF_BIRTH")
     private LocalDate dateOfBirth;
     @Column(name = "CREATED_AT")

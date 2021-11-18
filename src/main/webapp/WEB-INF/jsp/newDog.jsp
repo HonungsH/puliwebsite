@@ -2,6 +2,7 @@
 <%@page pageEncoding="UTF-8" %>
 <%@ include file="fragments/header.jsp" %>
 <%@ include file="fragments/navigation.jsp" %>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/newDog.js"></script>
 
 <body>
 <h2 style="text-align: center;margin-bottom: 30px;">Lägg till hund</h2>
@@ -9,21 +10,25 @@
     <p style="color:red">* = obligatorisk</p>
 <%--@elvariable id="dog" type="puli.xaidaz.jpa.entity.Dog"--%>
 <form:form method="POST" action="/hundar/sparaHund" modelAttribute="dog" enctype="multipart/form-data">
-    <input type="hidden" name="dogId" value="${dog.id}">
+    <input type="hidden" name="id" value="${dog.id}">
     <div class="form-group">
         <label class="required" for="dogName">Hundens tilltalsnamn:</label>
+        <form:errors class="errorMessage alert" path="name"/>
         <input type="text" name="name" class="form-control" id="dogName" placeholder="" value="${dog.name}">
     </div>
     <div class="form-group">
         <label class="required" for="breedingName">Hundens uppfödarnamn:</label>
+        <form:errors class="errorMessage alert" path="breedingName"/>
         <input type="text" name="breedingName" class="form-control" id="breedingName" value="${dog.breedingName}" placeholder="">
     </div>
     <div class="form-group">
         <label class="required" for="colour">Hundens färg:</label>
+        <form:errors class="errorMessage alert" path="colour"/>
         <input type="text" name="colour" class="form-control" id="colour" value="${dog.colour}" placeholder="">
     </div>
     <div class="form-group">
         <label for="birthYear" class="required">Hundens födelsedatum:</label>
+        <form:errors class="errorMessage alert" path="dateOfBirth"/>
         <input type="date" name="dateOfBirth" class="form-control" id="birthYear" value="${dog.dateOfBirth}">
     </div>
     <div class="form-group">
@@ -44,15 +49,27 @@
         <textarea class="form-control" name="breedingHistory" aria-describedby="breedingHistoryHelp" id="breedingHistory" rows="3">${dog.breedingHistory}</textarea>
         <small id="breedingHistoryHelp" class="form-text text-muted">Skriv något intressant om Hundens avelshistorik!</small>
     </div>
-    <div class="form-group">
-        <label class="form-label newLineLabel" for="profilePic" aria-describedby="pictureHelp">Ladda upp Profilbild</label>
-        <small id="pictureHelp" class="form-text text-muted">Profilbilden visas på "Våra Hundar"-sidan</small>
-        <input type="file" class="" value="${dog.profilePicture}" name="profilePictureFile" id="profilePic" />
+    <div class="container">
+        <div class="row form-group">
+            <div class="col-sm">
+                <label class="form-label newLineLabel" for="profilePic" aria-describedby="pictureHelp">Ladda upp Profilbild</label>
+                <small id="pictureHelp" class="form-text text-muted">Profilbilden visas på "Våra Hundar"-sidan</small>
+
+                <input type="file" name="profilePictureFile" id="profilePic" onchange="loadFile(event)" style="display:none;" value="${dog.profilePicture}"/>
+                <div>
+                    <button id="choseFileButton" type="button" style="margin-top: 20px">Bläddra filer</button>
+                    <label id="choseFileLabel" for="choseFileButton">${profilePictureLabel}</label>
+                </div>
+            </div>
+            <div class="col-9">
+                <img id="filePreview" height="125px" width="125px" style="<c:if test="${dog.profilePicture} == null">display: none;</c:if>" src="${dog.profilePicture}"/>
+            </div>
+        </div>
+
     </div>
 
     <button style="margin-bottom: 10px; margin-top:10px;" type="submit" class="btn btn-primary">Spara Hund</button>
 </form:form>
 </div>
 </body>
-
 </html>
