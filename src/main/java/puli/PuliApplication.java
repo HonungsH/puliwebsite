@@ -28,7 +28,7 @@ public class PuliApplication extends SpringBootServletInitializer {
         SpringApplication.run(PuliApplication.class, args);
     }
 
-    //Uncomment this to reset db.
+    //Uncomment this to reset db..
 //    @Bean
 //    public FlywayMigrationStrategy clean() {
 //        return flyway -> {
