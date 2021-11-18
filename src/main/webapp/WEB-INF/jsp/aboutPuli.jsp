@@ -13,11 +13,9 @@
         <div class="col-6">
             <div class="row mt-3">
                 <div class="col">
-                    <h4>
-                        Generellt
-                    </h4>
+
                     <div>
-                        Puli är en vallhund ursprungligen från Ungern. Hunden passar perfekt till träning av lydnad
+                        Puli är en vallhund ursprungligen från Ungern. Hunden passar perfekt till träning av lydnad, vallning
                         eller agility, och precis lika bra som sällskapshund.
                         <br>
                         Puli är en lojal vän som gärna följer med dig på äventyr.
@@ -70,6 +68,10 @@
                     </h4>
                     <div>
                         Puli är en självständig, snabb, pigg, klok, orädd, glad och lättlärd hund.
+                        <br><br>En
+                        Puli är väldigt lättlärd och älskar att få göra något, men ändå ingen hund som &quot;klättrar på
+                        väggarna&quot;.
+                        De anpassar sig bra och är lätta att ha med sig.
                     </div>
                     <hr class="my-4">
                 </div>
@@ -82,7 +84,6 @@
                     <div>
                         Rasen kan passa dig som är pälsallergiker då den inte fäller.
                     </div>
-                    <hr class="my-4">
                 </div>
             </div>
 
@@ -97,7 +98,6 @@
             <img class="img-responsive" id="bild2" style="height: 1000px" src="<c:url value="/images/dogs/4_dogs.jpg"/>"/>
         </div>
         <div class="col-6">
-
         </div>
     </div>
 </div>

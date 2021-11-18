@@ -16,11 +16,11 @@ Harry bor nu hos Britt med familj i Vintrie', now(), now(), '/images/dogs/harry.
 
 insert into PuliDb.Dog (name, breeding_name, colour, date_of_birth, description, created_at, modified_at, profile_picture, owner, pedigree, link_to_skk)
 values ('Teqla', 'Xaida''z Ha Pi Taisza-Tequila', 'Vit', '2021-03-30', 'Teqla är efter Harry och Zava, en busig liten tjej. ', now(), now(),
-'/images/dogs/teqla.jpg', 'Carina Karlsson', null, 'https://hundar.skk.se/hunddata/Hund.aspx?hundid=3519388');
+'/images/dogs/teqla2.jpg', 'Carina Karlsson', null, 'https://hundar.skk.se/hunddata/Hund.aspx?hundid=3519388');
 
 insert into PuliDb.Dog (name, breeding_name, colour, date_of_birth, description, created_at, modified_at, profile_picture, owner, pedigree, link_to_skk, breeding_history)
 values ('Zava', 'Xaida''z Hi-Le Piazava-Pisti', 'Svart', '2019-03-03', 'Zava är bäst', now(), now(),
-'/images/dogs/Dog-Schipperke-An_incredible_little_Schipperke_sitting,_showing_off_it''s_thick_soft_dark_coat.jpg',
+'/images/dogs/zava.jpg',
 'Carina Karlsson', null, 'https://hundar.skk.se/hunddata/Hund.aspx?hundid=3360248', null);
 
 insert into PuliDb.Dog (name, breeding_name, colour, date_of_birth, description, created_at, modified_at, profile_picture, owner, pedigree, link_to_skk, breeding_history)
