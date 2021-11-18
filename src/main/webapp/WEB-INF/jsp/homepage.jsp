@@ -3,8 +3,6 @@
 <%@ include file="fragments/navigation.jsp" %>
 
 <body>
-
-kuk
 <div class="row">
     <div class="col-md-12">
         <div class="bg-cover"
