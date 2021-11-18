@@ -31,7 +31,7 @@ public class PuliApplication extends SpringBootServletInitializer {
     //Uncomment this to reset db.
 //    @Bean
 //    public FlywayMigrationStrategy clean() {
-//        return flyway -> {
+//        return flyway -> { e
 //            flyway.clean();
 //            flyway.migrate();
 //        };
