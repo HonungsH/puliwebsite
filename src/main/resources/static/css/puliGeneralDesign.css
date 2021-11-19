@@ -106,8 +106,10 @@ a:hover, .subnav:hover .subnavbtn {
 }
 
 .readMoreBtn {
-    color: #e98074; !important;
-    border-color: #e98074; !important;
+    color: #e98074;
+!important;
+    border-color: #e98074;
+!important;
 }
 
 a.dogLinkBtn {
@@ -141,6 +143,7 @@ a.dogLinkBtn:focus {
 a.dogLinkBtn:active {
     background-color: #e98074;
 }
+
 .profileTitle {
     font-family: Monaco, monospace;
     color: #E85A4F;
@@ -192,7 +195,7 @@ a.dogLinkBtn:active {
 }
 
 .alert {
-    color:red;
+    color: red;
 }
 
 
@@ -241,8 +244,14 @@ a.dogLinkBtn:active {
 .section-title p {
     font-style: normal;
     color: #666;
-    font-size:20px;
+    font-size: 20px;
     font-family: "Volkhov", serif;
+}
+
+.broedtekst-frontpage {
+    font-family: "Volkhov", serif;
+    font-size: 20px;
+    color: #666;
 }
 
 .section-subtitle {
@@ -307,7 +316,7 @@ a.dogLinkBtn:active {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #3e3c42;
+    background: #3c374a;
     opacity: 0.8;
 }
 
@@ -340,4 +349,22 @@ a.dogLinkBtn:active {
     font-size: 22px;
     line-height: 27px;
     font-weight: 300;
+}
+
+.btn-main {
+    background: #655E7A;
+    color: #fff;
+    display: inline-block;
+    letter-spacing: 1px;
+    padding: 14px 35px;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+}
+.btn-main:hover {
+    background: #353240;
+    color: #fff;
 }
