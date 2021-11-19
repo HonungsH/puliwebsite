@@ -16,7 +16,7 @@ public class AboutPuliController {
 
     @GetMapping
     public String renderPageLayout(Model model) {
-        textService.setTextMapToModel(model, "omPuli");
+        textService.setTextMapToModel(model, "aboutPuli");
         return "aboutPuli";
     }
 }
