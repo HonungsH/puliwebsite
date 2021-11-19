@@ -3,24 +3,10 @@
     <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
     <div><a class="${pageURI.endsWith('/') ? 'active' : ''}" href="${pageContext.request.contextPath}/">Hem</a></div>
-
-    <div><a class="${pageURI.endsWith('/news') ? 'active' : ''}" href="${pageContext.request.contextPath}/news">Nyheter</a></div>
-
+    <div><a class="${pageURI.endsWith('/nyheter') ? 'active' : ''}" href="${pageContext.request.contextPath}/nyheter">Nyheter</a></div>
     <div><a class="${pageURI.endsWith('/hundar') ? 'active' : ''}" href="${pageContext.request.contextPath}/hundar">Våra Hundar</a></div>
-
-    <div class="subnav">
-        <button class="subnavbtn">Bildgalleri<i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-            <a href="#company">Tävlingar/Aktiviteter</a>
-            <a href="#team">Hundar från kenneln</a>
-            <a href="#careers">Året som gått</a>
-        </div>
-    </div>
-
-    <div><a class="${pageURI.endsWith('/aboutPuli') ? 'active' : ''}" href="${pageContext.request.contextPath}/aboutPuli">Om Puli</a></div>
-
-<%--    <div><a class="${pageURI.endsWith('/about') ? 'active' : ''}" href="${pageContext.request.contextPath}/about">Om Xaida'z Kennel</a></div>--%>
-
-    <div><a class="${pageURI.endsWith('/contact') ? 'active' : ''}" href="${pageContext.request.contextPath}/contact">Kontakt</a></div>
+    <div><a class="${pageURI.endsWith('/bilder') ? 'active' : ''}" href="${pageContext.request.contextPath}/bilder">Bildgalleri</a></div>
+    <div><a class="${pageURI.endsWith('/omPuli') ? 'active' : ''}" href="${pageContext.request.contextPath}/omPuli">Om Puli</a></div>
+    <div><a class="${pageURI.endsWith('/kontakt') ? 'active' : ''}" href="${pageContext.request.contextPath}/kontakt">Kontakt</a></div>
 
 </div>

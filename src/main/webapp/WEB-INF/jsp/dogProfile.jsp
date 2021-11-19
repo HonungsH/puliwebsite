@@ -7,11 +7,7 @@
 <body>
 <div class="container">
     <form:form action="redigeraHund" method="POST" enctype="multipart/form-data">
-        <c:if test="${true}">
-            <button type="submit" class="btn btn-secondary editDogButton">Redigera Hund
-                <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">mode_edit</i>
-            </button>
-        </c:if>
+
         <input type="hidden" name="dogId" value="${dog.id}">
 
         <h2 style="font-size: 3rem; text-align: left;margin-bottom: 40px;">${dog.name}</h2>
@@ -82,6 +78,13 @@
                     </div>
                     <div class="row">
                         <p><a target="_blank" href="${dog.linkToSkk}">Tryck här</a></p>
+                    </div>
+                </c:if>
+                <c:if test="${true}">
+                    <div class="row">
+                        <button type="submit" class="btn btn-secondary editDogButton">Redigera Hund
+                            <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">mode_edit</i>
+                        </button>
                     </div>
                 </c:if>
             </div>

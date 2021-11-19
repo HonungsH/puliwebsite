@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/news")
+@RequestMapping(value = "/nyheter")
 public class NewsController {
 
     @GetMapping

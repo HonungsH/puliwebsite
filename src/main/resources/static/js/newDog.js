@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
     $('#choseFileButton').on('click', function(){
         $('#profilePic').trigger('click');
@@ -9,6 +9,20 @@ $(document).ready(function(){
         input.css('background-color', 'red').animate({backgroundColor: 'white' }, { duration: 2000 });
     });
 
+    $('#deleteDogButton').on('click', function() {
+        var asd = $('#dogName')[0].value;
+
+        if (confirm('Är du säker på att du vill ta bort ' +$('#dogName')[0].value)) {
+            $.ajax({
+              url: "/hundar/taBort",
+              type: "POST",
+              data: { id: $('#id')[0].value},
+              success: function (result) {
+                window.location='/hundar';
+              }
+            });
+        }
+    });
 });
 
 var loadFile = function(event) {

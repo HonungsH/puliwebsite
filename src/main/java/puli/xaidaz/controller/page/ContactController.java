@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import puli.xaidaz.service.api.TextService;
 
 @Controller
-@RequestMapping(value = "/contact")
+@RequestMapping(value = "/kontakt")
 public class ContactController {
 
     @Autowired
