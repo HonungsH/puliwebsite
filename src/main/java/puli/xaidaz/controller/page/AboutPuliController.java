@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import puli.xaidaz.service.api.TextService;
 
 @Controller
-@RequestMapping(value = "/aboutPuli")
+@RequestMapping(value = "/omPuli")
 public class AboutPuliController {
 
     @Autowired
@@ -16,7 +16,7 @@ public class AboutPuliController {
 
     @GetMapping
     public String renderPageLayout(Model model) {
-        textService.setTextMapToModel(model, "aboutPuli");
+        textService.setTextMapToModel(model, "omPuli");
         return "aboutPuli";
     }
 }
