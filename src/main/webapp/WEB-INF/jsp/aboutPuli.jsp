@@ -69,7 +69,7 @@
                     <div>
                         Puli är en självständig, snabb, pigg, klok, orädd, glad och lättlärd hund.
                         <br><br>En
-                        Puli är väldigt lättlärd och älskar att få göra något, men ändå ingen hund som &quot;klättrar på
+                        Puli älskar att få göra något, men är ändå ingen hund som &quot;klättrar på
                         väggarna&quot;.
                         De anpassar sig bra och är lätta att ha med sig.
                     </div>

@@ -11,9 +11,10 @@
 <div class="container">
 
     <c:if test="${true}">
-        <div class="row justify-content-end">
+        <div class="row">
             <div class="col-1">
-                <a href="${pageContext.request.contextPath}/hundar/nyHund" class="btn btn-secondary editDogButton">Lägg till Hund
+                <a href="${pageContext.request.contextPath}/hundar/nyHund" class="btn btn-secondary editDogButton">Lägg
+                    till Hund
                     <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">add_circle_outline</i>
                 </a>
             </div>
@@ -25,12 +26,12 @@
             <c:param name="hundNamn" value="${dog.name}"/>
         </c:url>
 
-        <j:if test="${i.index % 3 == 0}">
-            <j:set var="makeNewRowIndex" value="${i.index + 2}"/>
+        <j:if test="${i.index % 4 == 0}">
+            <j:set var="makeNewRowIndex" value="${i.index + 3}"/>
             <div class="row mt-5">
         </j:if>
-        <div class="col" style="margin-bottom: 30px;">
-            <div class="profilePicDiv" style="margin-left: auto;margin-right: auto;display: block;text-align: center">
+        <div class="col-xs" style="margin-bottom: 30px;">
+            <div class="profilePicDiv mx-2" style="display: block;text-align: center">
                 <img style="height: 350px; width: auto;" class="img-fluid" id="${dog.name}"
                      src="<c:url value="${dog.profilePicture}"/>"/>
             </div>
