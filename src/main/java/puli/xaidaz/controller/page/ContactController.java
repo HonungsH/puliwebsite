@@ -16,7 +16,7 @@ public class ContactController {
 
     @GetMapping
     public String renderPageLayout(Model model) {
-        textService.setTextMapToModel(model, "contact");
+        textService.setTextMapToModel(model, "kontakt");
         return "contact";
     }
 }
