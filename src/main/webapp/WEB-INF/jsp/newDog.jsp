@@ -10,7 +10,7 @@
     <p style="color:red">* = obligatorisk</p>
 <%--@elvariable id="dog" type="puli.xaidaz.jpa.entity.Dog"--%>
 <form:form method="POST" action="/hundar/sparaHund" modelAttribute="dog" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="${dog.id}">
+    <input type="hidden" name="id" id="id" value="${dog.id}">
     <div class="form-group">
         <label class="required" for="dogName">Hundens tilltalsnamn:</label>
         <form:errors class="errorMessage alert" path="name"/>
@@ -57,7 +57,7 @@
 
                 <input type="file" name="profilePictureFile" id="profilePic" onchange="loadFile(event)" style="display:none;" value="${dog.profilePicture}"/>
                 <div>
-                    <button id="choseFileButton" type="button" style="margin-top: 20px">Bläddra filer</button>
+                    <button id="choseFileButton" type="button" class="btn btn-primary" >Bläddra filer</button>
                     <label id="choseFileLabel" for="choseFileButton">${profilePictureLabel}</label>
                 </div>
             </div>
@@ -65,10 +65,15 @@
                 <img id="filePreview" height="125px" width="125px" style="<c:if test="${dog.profilePicture} == null">display: none;</c:if>" src="${dog.profilePicture}"/>
             </div>
         </div>
+        <div class="row form-group justify-content-end">
+            <div class="col-auto" >
+                <button style="margin-bottom: 10px; margin-top:10px;" type="submit" class="btn btn-primary">Spara Hund</button>
+                <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-primary" id="deleteDogButton">Ta bort hund</button>
+            </div>
+        </div>
 
     </div>
 
-    <button style="margin-bottom: 10px; margin-top:10px;" type="submit" class="btn btn-primary">Spara Hund</button>
 </form:form>
 </div>
 </body>

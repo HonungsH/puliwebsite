@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/hundar")
@@ -80,6 +81,16 @@ public class OurDogsController {
         dog.setModifiedAt(LocalDateTime.now());
         dogRepository.save(dog);
         return "redirect:/hundar";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/taBort", method = RequestMethod.POST)
+    public String deleteDog(@RequestParam("id") long id) {
+        dogRepository.findById(id).ifPresent( d -> {
+            fileService.deleteFile(d.getProfilePicture());
+            dogRepository.delete(d);
+        });
+        return "OK";
     }
 
     private void setNewProfilePicture(MultipartFile profilePicture, Dog dog) throws IOException {
