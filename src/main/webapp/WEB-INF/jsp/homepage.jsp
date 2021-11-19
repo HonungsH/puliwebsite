@@ -37,7 +37,6 @@
                     <p class="animated fadeInUp">Vår kennel har uppfödning av den ungerska rasen <strong>Puli</strong> i
                         närheten av
                         Trelleborg, Skåne </br> </p>
-                    <%-- <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank" class="btn btn-main animated fadeInUp" >Free Bootstrap Templates</a>--%>
                 </div>
             </div>
         </div>
@@ -48,7 +47,7 @@
 <section class="about section">
     <div class="container">
         <div class="row">
-            <div class="col-md-7 col-sm-12">
+            <div class="col-md-7">
                 <div class="block">
                     <div class="section-title">
                         <h2>Om oss</h2>
@@ -63,7 +62,7 @@
                     <a href="${pageContext.request.contextPath}/kontakt" class="btn-main animated fadeInUp" >Kontakta oss</a>
                 </div>
             </div><!-- .col-md-7 close -->
-            <div class="col-md-5 col-sm-12">
+            <div class="col-md-5">
                 <div class="block">
                     <img src="/images/dogs/2_dogs_field.jpg" alt="Img">
                 </div>
