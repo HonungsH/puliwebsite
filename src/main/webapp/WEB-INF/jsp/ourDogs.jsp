@@ -32,7 +32,7 @@
         </j:if>
         <div class="col-xs" style="margin-bottom: 30px;">
             <div class="profilePicDiv mx-2" style="display: block;text-align: center">
-                <img style="height: 350px; width: auto;" class="img-fluid" id="${dog.name}"
+                <img style="text-align: center" class="img-responsive" id="${dog.name}"
                      src="<c:url value="${dog.profilePicture}"/>"/>
             </div>
             <div style="text-align: center">

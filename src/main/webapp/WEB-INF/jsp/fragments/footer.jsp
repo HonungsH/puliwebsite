@@ -1,6 +1,6 @@
 <%@page pageEncoding="UTF-8" %>
 <footer class="footer">
-    Gjord av: DoubleSkat@gmail.com
+    <p style="color: black;">Gjord av: DoubleSkat@gmail.com</p>
     <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
     <br>
