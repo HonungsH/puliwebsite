@@ -155,13 +155,13 @@ a.dogLinkBtn:active {
 }
 
 .bg-cover {
-    background-position: center;
+
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    height:600px;
+    background-attachment: fixed;
+    background-position: 10% 0%;
+    padding: 200px 0;
+    position: relative;
 }
 
 .editableBox {
@@ -193,4 +193,151 @@ a.dogLinkBtn:active {
 
 .alert {
     color:red;
+}
+
+
+.about .block h2 {
+    padding-top: 35px;
+    margin: 0;
+}
+
+.about .block p {
+    padding-top: 20px;
+    line-height: 28px;
+}
+
+.about .block img {
+    width: 100%;
+}
+
+.about .about-img {
+    overflow: hidden;
+}
+
+.about .about-img:hover img {
+    -webkit-transform: scale3D(1.1, 1.1, 1);
+    transform: scale3D(1.1, 1.1, 1);
+}
+
+.about .about-img img {
+    opacity: .6;
+    transition: all 0.5s ease-out;
+}
+
+.about .section-title {
+    margin-bottom: 0px;
+}
+
+.section-title {
+    margin-bottom: 70px;
+}
+
+.section-title h2 {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.section-title p {
+    font-style: normal;
+    color: #666;
+    font-size:20px;
+    font-family: "Volkhov", serif;
+}
+
+.section-subtitle {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    padding: 100px 0;
+}
+
+.page-title .block {
+    text-align: center;
+}
+
+.page-title .block h1 {
+    color: #fff;
+    font-weight: 200;
+    letter-spacing: 6px;
+    margin-top: 0;
+    text-transform: capitalize;
+}
+
+.page-title .block p {
+    color: #fff;
+}
+
+.heading {
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.heading h2 {
+    color: #000;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+.heading p {
+    font-size: 18px;
+    line-height: 40px;
+    color: #292929;
+    font-weight: 300;
+}
+
+.page-wrapper {
+    padding: 70px 0;
+}
+
+.overly, .page-title, .slider {
+    position: relative;
+}
+
+.overly:before, .page-title:before, .slider:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #3e3c42;
+    opacity: 0.8;
+}
+
+
+.slider {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 10% 0%;
+    padding: 250px 0 280px 0;
+    position: relative;
+}
+
+.slider .block {
+    color: #E3E3E4;
+    text-align: center;
+}
+
+.slider .block h1 {
+    font-weight: 100;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 10px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.slider .block p {
+    margin-bottom: 30px;
+    color: #b9b9b9;
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 300;
 }

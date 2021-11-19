@@ -3,18 +3,9 @@
 <%@ include file="fragments/navigation.jsp" %>
 
 <body>
-<div class="row">
-    <div class="col-md-12">
-        <div class="bg-cover"
-             style="background-image: linear-gradient(to bottom, rgba(50,50,50,0.3) 0%,rgba(50,50,50,0.3) 100%), url(images/dogs/jump_puli.jpg)">
-            <div class="container">
-                <%--<h1 class="" style="text-align:right; position: relative;font-size: 4rem;left: 500px; color:white;">Xaida'z Puli</h1>--%>
-            </div>
-            <!-- /.container   -->
-        </div>
-    </div>
-</div>
-<div class="row">
+
+
+<%--<div class="row">
     <div class="col">
         <div class="bg-cover" style="background: #e9ecef">
             <div class="container" style="text-align: center">
@@ -32,29 +23,54 @@
             </div>
             <!-- /.container   -->
         </div>
-    </div>
-
-
-</div>
-
-<%--    <div class="col-6">
-        <h2>Darken</h2>
-        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(images/dogs/jump_puli.jpg)">
-            <div class="container">
-                <h1 class="display-4">Hello, world!</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-            </div>
-            <!-- /.container   -->
-        </div>
-
     </div>--%>
 
 
-<%--<div class="container">
-    <img id="" style="" src="${pageContext.request.contextPath}/images/landing.png" alt="">
-</div>--%>
+<!-- Slider Start -->
+<section class="slider"
+         style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.1) 100%), url(images/dogs/jump_puli.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h1 class="animated fadeInUp">Välkommen!<br></h1>
+                    <p class="animated fadeInUp">Vår kennel har uppfödning av den ungerska rasen <strong>Puli</strong> i
+                        närheten av
+                        Trelleborg, Skåne </br> </p>
+                    <%-- <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank" class="btn btn-main animated fadeInUp" >Free Bootstrap Templates</a>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Wrapper Start -->
+<section class="about section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-12">
+                <div class="block">
+                    <div class="section-title">
+                        <h2>Om oss</h2>
+                        <p>Vår kennel vill ha sunda och friska hundar med bra temperament.<br>De ska vara rastypiska och
+                            bör ha
+                            kvar sitt arv som vakt och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
+                            HD-röntgade med godkänt resultat och att de ska vara ögonlysta.<br> <br>
+                    </div>
+                    <p>Puli är en fantastisk hund som blir din bästa vän!
+                    <hr style="background: #1d192c;  width: auto" class="my-4">
+                    Välkommen att höra av dig till oss vid frågor. </p>
+                    <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank" class="btn btn-main animated fadeInUp" >Kontakta oss</a>
+                </div>
+            </div><!-- .col-md-7 close -->
+            <div class="col-md-5 col-sm-12">
+                <div class="block">
+                    <img src="/images/dogs/2_dogs_field.jpg" alt="Img">
+                </div>
+            </div><!-- .col-md-5 close -->
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
