@@ -57,10 +57,10 @@
                             kvar sitt arv som vakt och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
                             HD-röntgade med godkänt resultat och att de ska vara ögonlysta.<br> <br>
                     </div>
-                    <p>Puli är en fantastisk hund som blir din bästa vän!
+                    <p class="broedtekst-frontpage">Puli är en fantastisk hund som blir din bästa vän!</p>
                     <hr style="background: #1d192c;  width: auto" class="my-4">
-                    Välkommen att höra av dig till oss vid frågor. </p>
-                    <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank" class="btn btn-main animated fadeInUp" >Kontakta oss</a>
+                    <p class="">Välkommen att höra av dig till oss vid frågor. </p>
+                    <a href="${pageContext.request.contextPath}/kontakt" target="_blank" class="btn-main animated fadeInUp" >Kontakta oss</a>
                 </div>
             </div><!-- .col-md-7 close -->
             <div class="col-md-5 col-sm-12">
