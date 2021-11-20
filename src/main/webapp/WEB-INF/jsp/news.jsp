@@ -36,6 +36,7 @@
                         <div class="col-md-${hasProfilePic ? '8' : '12'}">
                             <div class="card-body">
                                 <h5 class="card-title nyhetTitel">${news.title}</h5>
+                                <hr class="">
                                 <p class="card-text" style="white-space: pre-wrap;">${news.text}</p>
 
                                 <p class="card-text">
@@ -43,9 +44,9 @@
                                     <small class="text-muted">Uppdaterad ${news.modifiedAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</small>
                                 </p>
                             </div>
-                            <div class="card-footer mt-auto">
+                            <div class="mt-auto">
                                 <c:if test="${true}">
-                                    <button type="submit" class="btn btn-secondary editNewsButton">Redigera Nyhet
+                                    <button type="submit" class="mr-0 btn btn-secondary editNewsButton">Redigera Nyhet
                                         <i class="material-icons-round" style="font-size:20px">mode_edit</i>
                                     </button>
                                 </c:if>
