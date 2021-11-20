@@ -31,8 +31,10 @@ public class Dog {
     @NotNull(message = "Födelsedatum är obligatoriskt")
     @Column(name = "DATE_OF_BIRTH")
     private LocalDate dateOfBirth;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "MODIFIED_AT")
     private LocalDateTime modifiedAt;
     @Column(name = "PROFILE_PICTURE")

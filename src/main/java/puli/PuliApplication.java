@@ -1,6 +1,5 @@
 package puli;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -36,10 +35,5 @@ public class PuliApplication extends SpringBootServletInitializer {
             flyway.clean();
             flyway.migrate();
         };
-    }
-
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
     }
 }

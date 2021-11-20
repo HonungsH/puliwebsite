@@ -12,6 +12,7 @@
 <form:form method="POST" action="/hundar/sparaHund" modelAttribute="dog" enctype="multipart/form-data">
     <input type="hidden" name="id" id="id" value="${dog.id}">
     <input type="hidden" name="createdAt" id="createdAt" value="${dog.createdAt}">
+    <input type="hidden" name="modifiedAt" id="modifiedAt" value="${dog.modifiedAt}">
 
     <div class="form-group">
         <label class="required" for="dogName">Hundens tilltalsnamn:</label>
@@ -32,10 +33,6 @@
         <label for="birthYear" class="required">Hundens födelsedatum:</label>
         <form:errors class="errorMessage alert" path="dateOfBirth"/>
         <input type="date" name="dateOfBirth" class="form-control" id="birthYear" value="${dog.dateOfBirth}">
-    </div>
-    <div class="form-group">
-        <label class="" for="dogOwner">Ägare:</label>
-        <input type="text" name="owner" class="form-control" id="dogOwner" value="${dog.owner}" placeholder="">
     </div>
     <div class="form-group">
         <label for="dogDescription">Presentation av Hunden</label>
