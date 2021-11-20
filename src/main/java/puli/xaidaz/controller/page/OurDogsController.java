@@ -1,6 +1,6 @@
 package puli.xaidaz.controller.page;
 
-import org.modelmapper.ModelMapper;
+import jdk.internal.joptsimple.internal.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,6 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/hundar")
@@ -71,7 +70,7 @@ public class OurDogsController {
         } else { // Existing dog
             Dog previousDog = dogRepository.findById(dog.getId()).get();
 
-            if (profilePicture.getOriginalFilename() != null || (!previousDog.getProfilePicture().endsWith(profilePicture.getOriginalFilename()))) {
+            if (!Strings.isNullOrEmpty(profilePicture.getOriginalFilename()) || (!previousDog.getProfilePicture().endsWith(profilePicture.getOriginalFilename()))) {
                 fileService.deleteFile(previousDog.getProfilePicture());
                 setNewProfilePicture(profilePicture, dog);
             }
