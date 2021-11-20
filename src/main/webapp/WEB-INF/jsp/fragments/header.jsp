@@ -32,6 +32,7 @@
 
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/textEditing.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/dog.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/application.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
     <div>

@@ -7,7 +7,6 @@
 <body>
 <div class="container">
     <form:form action="redigeraHund" method="POST" enctype="multipart/form-data">
-
         <input type="hidden" name="dogId" value="${dog.id}">
 
         <h2 style="font-size: 3rem; text-align: left;margin-bottom: 40px;">${dog.name}</h2>

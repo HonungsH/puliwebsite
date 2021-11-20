@@ -120,14 +120,11 @@ a.dogLinkBtn:active {
     color: black !important;
 }
 
-.bg-cover {
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: 10% 0%;
-    padding: 200px 0;
-    position: relative;
+.editNewsButton {
+    white-space: nowrap;
+    font-size: 20px !important;
+    background-color: transparent !important;
+    color: black !important;
 }
 
 .editableBox {
@@ -330,6 +327,25 @@ a.dogLinkBtn:active {
 .btn-main:hover {
     background: #353240;
     color: #fff;
+}
+
+.nyhetTitel {
+    font-weight: 100;
+    font-size: 30px;
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.character-counter, .character-counter-text {
+    display: none;
+}
+
+span.character-counter-text, span.character-counter-title, .antalTeckenKvarText {
+    margin-top: 5px;
+    color: #747474;
+    font-size: small;
+    display: inline-block;
 }
 
 .hello {

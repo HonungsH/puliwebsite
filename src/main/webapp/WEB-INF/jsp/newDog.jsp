@@ -70,12 +70,12 @@
         <div class="row form-group justify-content-end">
             <div class="col-auto" >
                 <button style="margin-bottom: 10px; margin-top:10px;" type="submit" class="btn btn-primary">Spara Hund</button>
-                <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-primary" id="deleteDogButton">Ta bort hund</button>
+                <c:if test="${dog.id != null}">
+                    <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-primary" id="deleteDogButton">Ta bort hund</button>
+                </c:if>
             </div>
         </div>
-
     </div>
-
 </form:form>
 </div>
 </body>
