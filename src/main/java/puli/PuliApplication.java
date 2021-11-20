@@ -1,5 +1,6 @@
 package puli;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -29,11 +30,16 @@ public class PuliApplication extends SpringBootServletInitializer {
     }
 
     //Uncomment this to reset db..
-/*    @Bean
+    @Bean
     public FlywayMigrationStrategy clean() {
         return flyway -> {
             flyway.clean();
             flyway.migrate();
         };
-    }*/
+    }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 }

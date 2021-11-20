@@ -85,6 +85,7 @@ dependencies {
     // https://mvnrepository.com/artifact/commons-io/commons-io
     implementation group: 'commons-io', name: 'commons-io', version: '2.6'
 
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.1.1'
 }
 
 dependencyManagement {
