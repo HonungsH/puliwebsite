@@ -8,21 +8,21 @@ import java.time.LocalDateTime;
 public class Picture {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
     @Column(name = "MODIFIED_AT")
     private LocalDateTime modifiedAt;
-    @Column(name = "DESCIPTION")
-    private String description;
-    @Column(name = "image_link")
-    private byte[] data;
+    @Column(name = "TITLE")
+    private String title;
+    @Column(name = "FILEPATH")
+    private String filePath;
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="DOG_ID")
-    private Dog dog;
+    @JoinColumn(name="ALBUM_ID")
+    private Album album;
 
     public Picture() {
     }
@@ -53,28 +53,28 @@ public class Picture {
         this.modifiedAt = modifiedAt;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTitle() {
+        return title;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTitle(String image) {
+        this.title = image;
     }
 
-    public byte[] getData() {
-        return data;
+    public Album getAlbum() {
+        return album;
     }
 
-    public void setData(byte[] data) {
-        this.data = data;
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 
-    public Dog getDog() {
-        return dog;
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setDog(Dog dog) {
-        this.dog = dog;
+    public void setFilePath(String path) {
+        this.filePath = path;
     }
 
     // Getters and setters end

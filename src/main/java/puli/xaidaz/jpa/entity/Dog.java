@@ -45,9 +45,6 @@ public class Dog {
     @Column(name = "BREEDING_HISTORY")
     private String breedingHistory;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy = "dog")
-    private List<Picture> pictures;
-
     // Getters and setters start
 
     public void setId(Long id) {
@@ -104,14 +101,6 @@ public class Dog {
 
     public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
-    }
-
-    public List<Picture> getPictures() {
-        return pictures;
-    }
-
-    public void setPictures(List<Picture> pictures) {
-        this.pictures = pictures;
     }
 
     public String getOwner() {

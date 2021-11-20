@@ -11,6 +11,8 @@
 <%--@elvariable id="dog" type="puli.xaidaz.jpa.entity.Dog"--%>
 <form:form method="POST" action="/hundar/sparaHund" modelAttribute="dog" enctype="multipart/form-data">
     <input type="hidden" name="id" id="id" value="${dog.id}">
+    <input type="hidden" name="createdAt" id="createdAt" value="${dog.createdAt}">
+
     <div class="form-group">
         <label class="required" for="dogName">Hundens tilltalsnamn:</label>
         <form:errors class="errorMessage alert" path="name"/>
