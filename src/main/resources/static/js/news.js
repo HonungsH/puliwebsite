@@ -5,9 +5,7 @@ $(document).ready(function() {
     });
 
     $('#deleteNewsButton').on('click', function() {
-        console.log('got here');
-        var asd = $('#id');
-        console.log(asd);
+        var id = $('#id');
         if (confirm('Är du säker på att du vill ta bort denna nyhet?')) {
             $.ajax({
                 url: "/nyheter/taBort",

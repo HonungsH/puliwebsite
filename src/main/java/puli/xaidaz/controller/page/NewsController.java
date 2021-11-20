@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import puli.xaidaz.commands.NewsCommand;
 import puli.xaidaz.helpers.DateHelper;
 import puli.xaidaz.jpa.entity.News;
 import puli.xaidaz.jpa.repository.NewsRepository;
@@ -15,6 +16,7 @@ import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -30,11 +32,9 @@ public class NewsController {
     @GetMapping
     public String renderPageLayout(Model model) {
         List<News> allNews = newsRepository.findAll();
-
         allNews.sort(Comparator.comparing(News::getCreatedAt).reversed());
-
-        model.addAttribute("listOfNews", allNews);
-
+        List<NewsCommand> newsCommands = mapNewsToCommand(allNews);
+        model.addAttribute("listOfNews", newsCommands);
         return "news";
     }
 
@@ -67,10 +67,11 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/sparaNyhet", method = RequestMethod.POST)
-    public String saveNews(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("News") News news, BindingResult bindingResult) throws IOException {
+    public String saveNews(@RequestParam("profilePictureFile") MultipartFile profilePicture, @ModelAttribute("newsCommand") NewsCommand newsCommand, BindingResult bindingResult) throws IOException {
         if (bindingResult.hasErrors()) {
             return "news";
         }
+        News news = newsRepository.findById(newsCommand.id).get();
 
         if (news.getId() == null) { // new dog
             news.setCreatedAt(LocalDateTime.now());
@@ -99,5 +100,15 @@ public class NewsController {
             String fileName = fileService.saveFile(profilePicture, news.getTitle() + news.getId().toString());
             news.setProfilePicture(fileName);
         }
+    }
+
+    private List<NewsCommand> mapNewsToCommand(List<News> allNews) {
+        List<NewsCommand> newsCommands = new ArrayList<>();
+
+        for (News news : allNews) {
+            newsCommands.add(new NewsCommand(news));
+        }
+
+        return newsCommands;
     }
 }

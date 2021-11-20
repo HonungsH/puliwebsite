@@ -330,9 +330,8 @@ a.dogLinkBtn:active {
 }
 
 .nyhetTitel {
-    font-weight: 100;
     font-size: 30px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     padding-bottom: 15px;
     text-transform: uppercase;
 }
