@@ -73,8 +73,6 @@ public class NewsController {
         if (!profilePicture.getOriginalFilename().isEmpty()) {
             String fileName = fileService.saveFile(profilePicture, news.getTitle() + news.getId().toString());
             news.setProfilePicture(fileName);
-        } else {
-            news.setProfilePicture("/images/dogs/bild_saknas.png");
         }
     }
 }

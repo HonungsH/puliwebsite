@@ -334,7 +334,7 @@ a.dogLinkBtn:active {
     display: none;
 }
 
-span.character-counter-text {
+span.character-counter-text, span.character-counter-title, .antalTeckenKvarText {
     margin-top: 5px;
     color: #747474;
     font-size: small;

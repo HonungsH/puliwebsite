@@ -19,14 +19,17 @@
 
 
 <c:forEach var="news" items="${listOfNews}" varStatus="i">
+    <c:set var="hasProfilePic" value="${news.profilePicture != null}"/>
     <div class="row">
         <div class="card mb-3" style="">
             <div class="row g-0">
+                <c:if test="${hasProfilePic}">
                 <div class="col-md-4">
                     <img src="<c:url value="${news.profilePicture}"/>" class="img-fluid rounded-start"
                          style="margin:20px;" alt="...">
                 </div>
-                <div class="col-md-8">
+                </c:if>
+                <div class="col-md-${hasProfilePic ? '8' : '12'}">
                     <div class="card-body">
                         <h5 class="card-title nyhetTitel">${news.title}</h5>
                         <p class="card-text">${news.text}</p>
