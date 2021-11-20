@@ -1,5 +1,7 @@
 package puli.xaidaz.jpa.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.validation.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -25,6 +27,7 @@ public class Dog {
     @NotBlank(message = "Färg är obligatoriskt")
     @Column(name = "COLOUR")
     private String colour;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @NotNull(message = "Födelsedatum är obligatoriskt")
     @Column(name = "DATE_OF_BIRTH")
     private LocalDate dateOfBirth;
@@ -36,10 +39,6 @@ public class Dog {
     private String profilePicture;
     @Column(name = "DESCRIPTION")
     private String description;
-    @Column(name = "OWNER")
-    private String owner;
-    @Column(name = "PEDIGREE")
-    private String pedigree;
     @Column(name = "LINK_TO_SKK")
     private String linkToSkk;
     @Column(name = "BREEDING_HISTORY")
@@ -101,22 +100,6 @@ public class Dog {
 
     public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public String getPedigree() {
-        return pedigree;
-    }
-
-    public void setPedigree(String pedigree) {
-        this.pedigree = pedigree;
     }
 
     public String getLinkToSkk() {
