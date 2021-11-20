@@ -1,5 +1,6 @@
 package puli.xaidaz.controller.page;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,12 +11,12 @@ import puli.xaidaz.jpa.entity.Dog;
 import puli.xaidaz.jpa.repository.DogRepository;
 import puli.xaidaz.service.api.FileService;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/hundar")
@@ -25,12 +26,11 @@ public class OurDogsController {
     @Autowired FileService fileService;
 
     @GetMapping
-    public String renderPageLayout(HttpServletRequest request, Model model) {
+    public String renderPageLayout(Model model) {
 
         List<Dog> allDogs = dogRepository.findAll();
 
         model.addAttribute("listOfDoges", allDogs);
-
         return "ourDogs";
     }
 

@@ -28,7 +28,7 @@ public class Album {
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @OneToMany(fetch=FetchType.LAZY)
+    @OneToMany(fetch=FetchType.LAZY, mappedBy = "album")
     private List<Picture> pictures;
 
     public Album() {
