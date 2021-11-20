@@ -9,7 +9,7 @@
     <p style="color:red">* = obligatorisk</p>
     <%--@elvariable id="news" type="puli.xaidaz.jpa.entity.News"--%>
     <form:form method="POST" action="/nyheter/sparaNyhet" modelAttribute="news" enctype="multipart/form-data">
-        <input type="hidden" name="newsId" id="id" value="${news.id}">
+        <input type="hidden" name="id" id="id" value="${news.id}">
         <input type="hidden" name="createdAt" value="${news.createdAt}">
         <input type="hidden" name="modifiedAt" value="${news.modifiedAt}">
         <div class="form-group">
