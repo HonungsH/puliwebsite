@@ -6,12 +6,11 @@
 <h2 style="text-align: center;margin-bottom: 30px;">Lägg till en nyhet</h2>
 <div class="container">
     <p style="color:red">* = obligatorisk</p>
-    <%--@elvariable id="dog" type="puli.xaidaz.jpa.entity.Dog"--%>
+    <%--@elvariable id="news" type="puli.xaidaz.jpa.entity.News"--%>
     <form:form method="POST" action="/nyheter/sparaNyhet" modelAttribute="news" enctype="multipart/form-data">
-        <input type="hidden" name="id" id="id" value="${dog.id}">
+        <input type="hidden" name="id" id="id" value="${news.id}">
         <div class="form-group">
             <label class="required" for="newsTitle">Nyhetens titel:</label>
-            <form:errors class="errorMessage alert" path="name"/>
             <input type="text" name="title" class="form-control" id="newsTitle" placeholder="" value="${news.title}">
         </div>
         <div class="form-group">
@@ -41,7 +40,9 @@
             <div class="row form-group justify-content-end">
                 <div class="col-auto" >
                     <button style="margin-bottom: 10px; margin-top:10px;" type="submit" class="btn btn-primary">Spara Nyhet</button>
-                    <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-primary" id="deleteDogButton">Ta bort hund</button>
+                    <j:if test="${news.id != null}">
+                    <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-primary" id="deleteDogButton">Ta bort nyhet</button>
+                    </j:if>
                 </div>
             </div>
         </div>
