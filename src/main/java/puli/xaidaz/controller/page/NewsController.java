@@ -56,7 +56,7 @@ public class NewsController {
     @ResponseBody
     @RequestMapping(value = "/taBort", method = RequestMethod.POST)
     public String deleteNews(@RequestParam("id") long id) {
-        newsRepository.findById(id).ifPresent( d -> {
+        newsRepository.findById(id).ifPresent(d -> {
             if (d.getProfilePicture() != null) {
                 fileService.deleteFile(d.getProfilePicture());
             }
@@ -71,15 +71,16 @@ public class NewsController {
             return "news";
         }
 
-        if (news.getId() == null) { // new dog
+        if (news.getId() == null) { // new News
             news.setCreatedAt(LocalDateTime.now());
             news.setModifiedAt(LocalDateTime.now());
             setNewProfilePicture(profilePicture, news);
-        } else { // Existing dog
-            News previousDog = newsRepository.findById(news.getId()).get();
+        } else { // Existing News
+            News exisitingNews = newsRepository.findById(news.getId()).get();
 
-            if (profilePicture.getOriginalFilename() != null || (!previousDog.getProfilePicture().endsWith(profilePicture.getOriginalFilename()))) {
-                fileService.deleteFile(previousDog.getProfilePicture());
+            String fileName = profilePicture.getOriginalFilename();
+            if (fileName != null && !fileName.isEmpty() && (!exisitingNews.getProfilePicture().endsWith(fileName))) {
+                fileService.deleteFile(exisitingNews.getProfilePicture());
                 setNewProfilePicture(profilePicture, news);
             }
         }

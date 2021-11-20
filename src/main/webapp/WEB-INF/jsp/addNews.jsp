@@ -12,6 +12,7 @@
         <input type="hidden" name="id" id="id" value="${news.id}">
         <input type="hidden" name="createdAt" value="${news.createdAt}">
         <input type="hidden" name="modifiedAt" value="${news.modifiedAt}">
+        <input type="hidden" name="profilePicture" value="${news.profilePicture}">
         <div class="form-group">
             <label class="required" for="newsTitle">Nyhetens titel:</label>
             <input type="text" maxlength="120" name="title" class="form-control" id="newsTitle" placeholder=""

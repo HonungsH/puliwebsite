@@ -1,5 +1,7 @@
 package puli.xaidaz.jpa.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -17,8 +19,10 @@ public class News {
     private String text;
     @Column(name = "PROFILE_PICTURE")
     private String profilePicture;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "MODIFIED_AT")
     private LocalDateTime modifiedAt;
 
