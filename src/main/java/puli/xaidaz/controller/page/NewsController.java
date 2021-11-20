@@ -35,11 +35,6 @@ public class NewsController {
 
         model.addAttribute("listOfNews", allNews);
 
-        for (News news : allNews) {
-            model.addAttribute("createdAt", DateHelper.dateTimeToString(news.getCreatedAt()));
-            model.addAttribute("modifiedAt", DateHelper.dateTimeToString(news.getCreatedAt()));
-        }
-
         return "news";
     }
 
@@ -57,6 +52,18 @@ public class NewsController {
             model.addAttribute("profilePictureLabel", new File(news.getProfilePicture()).getName());
         }
         return "addNews";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/taBort", method = RequestMethod.POST)
+    public String deleteNews(@RequestParam("id") long id) {
+        newsRepository.findById(id).ifPresent( d -> {
+            if (d.getProfilePicture() != null) {
+                fileService.deleteFile(d.getProfilePicture());
+            }
+            newsRepository.delete(d);
+        });
+        return "OK";
     }
 
     @RequestMapping(value = "/sparaNyhet", method = RequestMethod.POST)

@@ -120,6 +120,13 @@ a.dogLinkBtn:active {
     color: black !important;
 }
 
+.editNewsButton {
+    white-space: nowrap;
+    font-size: 20px !important;
+    background-color: transparent !important;
+    color: black !important;
+}
+
 .editableBox {
     position: relative;
 }
@@ -325,7 +332,7 @@ a.dogLinkBtn:active {
 .nyhetTitel {
     font-weight: 100;
     font-size: 30px;
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     padding-bottom: 15px;
     text-transform: uppercase;
 }

@@ -9,6 +9,9 @@
     <p style="color:red">* = obligatorisk</p>
     <%--@elvariable id="news" type="puli.xaidaz.jpa.entity.News"--%>
     <form:form method="POST" action="/nyheter/sparaNyhet" modelAttribute="news" enctype="multipart/form-data">
+        <input type="hidden" name="newsId" id="id" value="${news.id}">
+        <input type="hidden" name="createdAt" value="${news.createdAt}">
+        <input type="hidden" name="modifiedAt" value="${news.modifiedAt}">
         <div class="form-group">
             <label class="required" for="newsTitle">Nyhetens titel:</label>
             <input type="text" maxlength="120" name="title" class="form-control" id="newsTitle" placeholder=""
@@ -18,7 +21,7 @@
         </div>
         <div class="form-group">
             <label class="required" for="newsText">Nyhetens innehåll:</label>
-            <textarea maxlength="1500" class="form-control" name="text" aria-describedby="textHelp" id="newsText"
+            <textarea maxlength="1500" style="white-space: pre-wrap;" class="form-control" name="text" aria-describedby="textHelp" id="newsText"
                       rows="3">${news.text}</textarea>
             <small id="textHelp" class="form-text text-muted"></small>
             <span class="antalTeckenKvarText ml-1">Antal tecken kvar:</span>
@@ -52,8 +55,8 @@
                         Nyhet
                     </button>
                     <c:if test="${news.id != null}">
-                        <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-primary"
-                                id="deleteDogButton">Ta bort nyhet
+                        <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-secondary"
+                                id="deleteNewsButton">Ta bort nyhet
                         </button>
                     </c:if>
                 </div>

@@ -3,6 +3,27 @@ $(document).ready(function() {
     $('#choseFileButton').on('click', function(){
         $('#profilePic').trigger('click');
     });
+
+    $('#deleteNewsButton').on('click', function() {
+        console.log('got here');
+        var asd = $('#id');
+        console.log(asd);
+        if (confirm('Är du säker på att du vill ta bort denna nyhet?')) {
+            $.ajax({
+                url: "/nyheter/taBort",
+                type: "POST",
+                data: { id: $('#id')[0].value},
+                success: function (result) {
+                    window.location='/nyheter';
+                }
+            });
+        }
+    });
+
+    $('.alert').each(function (i, object) {
+        var input = $(this).siblings("input");
+        input.css('background-color', 'red').animate({backgroundColor: 'white' }, { duration: 2000 });
+    });
 });
 
 var loadFile = function(event) {

@@ -1,11 +1,11 @@
 package puli.xaidaz.helpers;
 
-import lombok.experimental.Helper;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-@Helper
+@Component
 public class DateHelper {
 
     public static String dateTimeToString(LocalDateTime localDateTime){
