@@ -25,7 +25,7 @@
             <input type="hidden" name="id" id="id" value="${news.id}">
             <c:set var="hasProfilePic" value="${news.profilePicture != null}"/>
             <div class="row">
-                <div class="card mb-3 w-100" style="">
+                <div class="card customCard mb-3 w-100" style="">
                     <div class="row g-0">
                         <c:if test="${hasProfilePic}">
                             <div class="col-md-4">
@@ -34,23 +34,21 @@
                             </div>
                         </c:if>
                         <div class="col-md-${hasProfilePic ? '8' : '12'}">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column h-100">
                                 <h5 class="card-title nyhetTitel">${news.title}</h5>
-                                <hr class="">
                                 <p class="card-text" style="white-space: pre-wrap;">${news.text}</p>
 
                                 <p class="card-text">
                                     <small class="text-muted">Skapad ${news.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))},</small>
                                     <small class="text-muted">Uppdaterad ${news.modifiedAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</small>
                                 </p>
-                            </div>
-                            <div class="mt-auto">
                                 <c:if test="${true}">
-                                    <button type="submit" class="m-1 btn btn-secondary editNewsButton" style="float: right;">Redigera Nyhet
+                                    <button type="submit" class="mt-auto m-1 btn btn-secondary editNewsButton" style="">Redigera Nyhet
                                         <i class="material-icons-round" style="font-size:20px">mode_edit</i>
                                     </button>
                                 </c:if>
                             </div>
+
 
                         </div>
                     </div>

@@ -1,6 +1,5 @@
 package puli.xaidaz.controller.page;
 
-import jdk.internal.joptsimple.internal.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,7 +69,7 @@ public class OurDogsController {
         } else { // Existing dog
             Dog previousDog = dogRepository.findById(dog.getId()).get();
 
-            if (!Strings.isNullOrEmpty(profilePicture.getOriginalFilename()) || (!previousDog.getProfilePicture().endsWith(profilePicture.getOriginalFilename()))) {
+            if (!true || (!previousDog.getProfilePicture().endsWith(profilePicture.getOriginalFilename()))) {
                 fileService.deleteFile(previousDog.getProfilePicture());
                 setNewProfilePicture(profilePicture, dog);
             }
