@@ -1,6 +1,7 @@
 <%@page pageEncoding="UTF-8" %>
 <%@ include file="fragments/header.jsp" %>
 <%@ include file="fragments/navigation.jsp" %>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/news.js"></script>
 
 <body>
 <h2 style="text-align: center;margin-bottom: 30px;">Lägg till en nyhet</h2>
@@ -8,7 +9,6 @@
     <p style="color:red">* = obligatorisk</p>
     <%--@elvariable id="news" type="puli.xaidaz.jpa.entity.News"--%>
     <form:form method="POST" action="/nyheter/sparaNyhet" modelAttribute="news" enctype="multipart/form-data">
-        <input type="hidden" name="id" id="id" value="${news.id}">
         <div class="form-group">
             <label class="required" for="newsTitle">Nyhetens titel:</label>
             <input type="text" maxlength="120" name="title" class="form-control" id="newsTitle" placeholder=""
@@ -42,8 +42,8 @@
                 </div>
                 <div class="col-9">
                     <img id="filePreview" height="125px" width="125px"
-                         style="<c:if test="${dog.profilePicture} == null">display: none;</c:if>"
-                         src="${dog.profilePicture}"/>
+                         style="<c:if test="${news.profilePicture} == null">display: none;</c:if>"
+                         src="${news.profilePicture}"/>
                 </div>
             </div>
             <div class="row form-group justify-content-end">
@@ -61,6 +61,5 @@
         </div>
     </form:form>
 </div>
-
 </body>
 </html>

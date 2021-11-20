@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import javax.servlet.annotation.MultipartConfig;
 
 @SpringBootApplication
-@ComponentScan(basePackages =  {"puli.xaidaz"})
+@ComponentScan(basePackages = {"puli.xaidaz"})
 @EntityScan("puli.xaidaz.jpa.entity")
 @EnableJpaRepositories("puli.xaidaz.jpa.repository")
 @MultipartConfig

@@ -6,11 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import puli.xaidaz.helpers.DateHelper;
 import puli.xaidaz.jpa.entity.News;
 import puli.xaidaz.jpa.repository.NewsRepository;
 import puli.xaidaz.service.api.FileService;
 
 import javax.validation.Valid;
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Comparator;
@@ -32,12 +34,28 @@ public class NewsController {
         allNews.sort(Comparator.comparing(News::getCreatedAt).reversed());
 
         model.addAttribute("listOfNews", allNews);
+
+        for (News news : allNews) {
+            model.addAttribute("createdAt", DateHelper.dateTimeToString(news.getCreatedAt()));
+            model.addAttribute("modifiedAt", DateHelper.dateTimeToString(news.getCreatedAt()));
+        }
+
         return "news";
     }
 
-
     @RequestMapping(path = "/nyNyhet")
     public String addNews() {
+        return "addNews";
+    }
+
+    @RequestMapping(path = "/redigeraNyhet", method = RequestMethod.POST)
+    public String editNews(@RequestParam("newsId") long newsId, Model model) {
+        News news = newsRepository.findById(newsId).get();
+
+        model.addAttribute("news", news);
+        if (news.getProfilePicture() != null) {
+            model.addAttribute("profilePictureLabel", new File(news.getProfilePicture()).getName());
+        }
         return "addNews";
     }
 
