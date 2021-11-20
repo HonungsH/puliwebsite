@@ -1,6 +1,7 @@
 package puli.xaidaz.controller.page;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,13 @@ import puli.xaidaz.jpa.entity.Picture;
 import puli.xaidaz.jpa.repository.AlbumRepository;
 import puli.xaidaz.jpa.repository.PictureRepository;
 import puli.xaidaz.service.api.FileService;
+import reactor.util.function.Tuple2;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/bilder")
@@ -31,7 +35,16 @@ public class PicturesController {
     PictureRepository pictureRepository;
 
     @GetMapping
-    public String renderPageLayout() {
+    public String renderPageLayout(Model model) {
+        List<Album> albumList = albumRepository.findAll();
+        if (albumList.isEmpty())
+            return "pictures";
+
+        List<Pair<String, String>> albumTitleAndPicture = new ArrayList<>();
+        for (Album album : albumList) {
+            albumTitleAndPicture.add(Pair.of(album.getTitle(), album.getPictures().get(0).getFilePath()));
+        }
+        model.addAttribute("albumTitleAndPicture", albumTitleAndPicture);
         return "pictures";
     }
 
