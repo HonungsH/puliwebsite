@@ -86,6 +86,7 @@ public class NewsController {
         }
 
         news.setModifiedAt(LocalDateTime.now());
+        news.setProfilePicture(news.getProfilePicture().equals("") ? null : news.getProfilePicture());
         newsRepository.save(news);
         return "redirect:/nyheter";
     }

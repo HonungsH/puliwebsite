@@ -8,15 +8,15 @@
     <form name='f' action="login" method='POST'>
         <table>
             <tr>
-                <td>User:</td>
-                <td><input type='text' name='username' value=''></td>
+                <td class="pt-4 pr-2">Användarnamn:</td>
+                <td class="pt-4"><input type='text' name='username' value=''></td>
             </tr>
             <tr>
-                <td>Password:</td>
-                <td><input type='password' name='password' /></td>
+                <td class="pt-4">Lösenord:</td>
+                <td class="pt-4"><input type='password' name='password' /></td>
             </tr>
             <tr>
-                <td><input name="submit" type="submit" value="submit" /></td>
+                <td class="pt-4"><input style="height: 50px; width: 100px" name="submit" type="submit" value="Logga in" /></td>
             </tr>
         </table>
     </form>

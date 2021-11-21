@@ -40,7 +40,7 @@
                     <input type="file" name="profilePictureFile" id="profilePic" onchange="loadFile(event)"
                            style="display:none;" value="${news.profilePicture}"/>
                     <div>
-                        <button id="choseFileButton" type="button" class="btn btn-primary mt-2">Bläddra filer</button>
+                        <button id="choseFileButton" type="button" class="uploadBtn btn btn-dark mt-2">Bläddra filer</button>
                         <label id="choseFileLabel" for="choseFileButton">${profilePictureLabel}</label>
                     </div>
                 </div>
@@ -52,11 +52,11 @@
             </div>
             <div class="row form-group justify-content-end">
                 <div class="col-auto">
-                    <button style="margin-bottom: 10px; margin-top:10px;" type="submit" class="btn btn-primary">Spara
+                    <button style="margin-bottom: 10px; margin-top:10px;" type="submit" class="mr-3 btn btn-primary btn-lg">Spara
                         Nyhet
                     </button>
                     <c:if test="${news.id != null}">
-                        <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-secondary"
+                        <button style="margin-bottom: 10px; margin-top:10px;" type="button" class="btn btn-danger"
                                 id="deleteNewsButton">Ta bort nyhet
                         </button>
                     </c:if>

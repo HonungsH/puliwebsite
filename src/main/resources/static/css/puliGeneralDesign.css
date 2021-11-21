@@ -39,10 +39,20 @@ a:hover {
     color: black;
 }
 
-/* Add a background color on hover */
-a:hover {
-    background-color: #e98074;
-    color: black;
+.uploadBtn {
+
+}
+
+.saveBtn {
+
+}
+
+.deleteBtn {
+    background: darkred;
+    color: #fff;
+    display: inline-block;
+    letter-spacing: 1px;
+    padding: 14px 35px;
 }
 
 /* Footer */
@@ -276,7 +286,7 @@ a.dogLinkBtn:active {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #3c374a;
+    background: #3e3c42;
     opacity: 0.8;
 }
 
