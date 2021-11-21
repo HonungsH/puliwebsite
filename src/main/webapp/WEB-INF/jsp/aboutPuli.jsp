@@ -31,7 +31,7 @@
                     <div>
                         Rasen är mellanstor. Mankhöjd för hanar är 39–45 cm och för tikar 36–42 cm. Vikt för hanar är
                         13–15 kg och för tikar 10–13 kg. Den har en tjock, filtad och vågig snörpäls. Färgerna är svart,
-                        fawn (fakó) med svart mask, grå och pärlvit.
+                        fakó med svart mask, grå och pärlvit.
                     </div>
                     <hr class="my-4">
                 </div>
