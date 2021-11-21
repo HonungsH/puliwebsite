@@ -50,7 +50,7 @@
                 </c:if>
 
                 <!-- BREEDING HISTORY -->
-                <c:if test="${dog.breedingHistory != null}">
+                <c:if test="${dog.breedingHistory != null && !dog.breedingHistory.isEmpty()}">
                     <div class="row">
                         <h4 class="profileTitle">Valpkullar</h4>
                     </div>
@@ -60,7 +60,7 @@
                 </c:if>
 
                 <!-- LINK SKK -->
-                <c:if test="${dog.linkToSkk != null}">
+                <c:if test="${dog.linkToSkk != null && !dog.linkToSkk.isEmpty()}">
                     <div class="row">
                         <h4 class="profileTitle">Hundinformation SKK</h4>
                     </div>
