@@ -57,13 +57,11 @@ a:hover {
 
 /* Footer */
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     color: white;
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .h4-contact {
