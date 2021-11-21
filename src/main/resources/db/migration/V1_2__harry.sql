@@ -24,5 +24,8 @@ values ('Zava', 'Xaida''z Hi-Le Piazava-Pisti', 'Svart', '2019-03-03', 'Zava är
 insert into PuliDb.Dog (name, breeding_name, colour, date_of_birth, description, created_at, modified_at, profile_picture, link_to_skk, breeding_history)
 values ('Micko', 'Xaida''z Mackó-Meduza', 'Vit', '2016-06-01', 'Micko', now(), now(),
 '/images/dogs/micko_1.jpg', 'https://hundar.skk.se/hunddata/Hund.aspx?hundid=3153077', 'Micko har flera avkommor.');
+insert into PuliDb.Dog (name, breeding_name, colour, date_of_birth, description, created_at, modified_at, profile_picture, link_to_skk, breeding_history)
+values ('Krizti', 'Xaida''z Kriztall', 'Fáco', '2014-10-10', 'Fin', now(), now(),
+'/images/dogs/krizti.jpg', null, null);
 
 
