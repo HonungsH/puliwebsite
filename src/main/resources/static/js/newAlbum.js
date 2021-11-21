@@ -73,7 +73,7 @@ var dropzone = new Dropzone('#demo-upload', {
     parallelUploads: 1,
     thumbnailHeight: 120,
     thumbnailWidth: 120,
-    maxFilesize: 3,
+    maxFilesize: 5,
     filesizeBase: 1000,
     addRemoveLinks: true,
     dictDefaultMessage: "Dra filer hit",
