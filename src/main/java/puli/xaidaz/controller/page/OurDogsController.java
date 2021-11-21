@@ -26,9 +26,7 @@ public class OurDogsController {
 
     @GetMapping
     public String renderPageLayout(Model model) {
-
         List<Dog> allDogs = dogRepository.findAll();
-
         model.addAttribute("listOfDoges", allDogs);
         return "ourDogs";
     }
@@ -70,7 +68,8 @@ public class OurDogsController {
         } else { // Existing dog
             Dog previousDog = dogRepository.findById(dog.getId()).get();
 
-            if (!Strings.isNullOrEmpty(profilePicture.getOriginalFilename()) || (!previousDog.getProfilePicture().endsWith(profilePicture.getOriginalFilename()))) {
+            String originalFileName = profilePicture.getOriginalFilename();
+            if (originalFileName != null && !originalFileName.isEmpty() && (!previousDog.getProfilePicture().endsWith(originalFileName))) {
                 fileService.deleteFile(previousDog.getProfilePicture());
                 setNewProfilePicture(profilePicture, dog);
             }

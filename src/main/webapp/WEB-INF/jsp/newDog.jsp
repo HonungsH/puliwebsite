@@ -13,6 +13,7 @@
     <input type="hidden" name="id" id="id" value="${dog.id}">
     <input type="hidden" name="createdAt" id="createdAt" value="${dog.createdAt}">
     <input type="hidden" name="modifiedAt" id="modifiedAt" value="${dog.modifiedAt}">
+    <input type="hidden" name="profilePicture" id="profilePicture" value="${dog.profilePicture}">
 
     <div class="form-group">
         <label class="required" for="dogName">Hundens tilltalsnamn:</label>

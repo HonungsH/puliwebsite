@@ -5,7 +5,7 @@
 
 <body>
 
-<div class="container">
+<div class="container ">
     <div class="row">
         <c:if test="${true}">
             <div class="row">
@@ -17,6 +17,40 @@
             </div>
         </c:if>
     </div>
+
+
+    <c:forEach var="item" items="${albumTitleAndPicture}" varStatus="i">
+        <c:if test="${i.index % 2 == 0}">
+            <c:set var="makeNewRowIndex" value="${i.index + 1}"/>
+            <div class="row">
+        </c:if>
+
+        <%--            <div class="gallery-item">--%>
+        <%--                <div class="content"><img src="https://source.unsplash.com/random/?tech,care" alt=""></div>--%>
+        <%--            </div>--%>
+        <%--            <div class="gallery-item">--%>
+        <%--                <div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>--%>
+        <%--            </div>--%>
+        <div class="card col-md-6">
+            <div class="row align-content-md-center">
+                <div class="col-md-12">
+                    <img src="<c:url value="${item.getSecond()}"/>" class="img-fluid rounded-start"
+                         style="margin:20px;" alt="...">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="card-body albumTitle" >
+                            ${item.getFirst()}
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <c:if test="${i.index == makeNewRowIndex || i.index == listOfDoges.size() - 1}">
+            </div>
+        </c:if>
+    </c:forEach>
 
 
 </div>

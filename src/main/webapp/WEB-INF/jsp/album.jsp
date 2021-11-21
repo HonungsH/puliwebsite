@@ -1,87 +1,33 @@
-<%@page pageEncoding="UTF-8" %>
+<<%@page pageEncoding="UTF-8" %>
 <%@ include file = "fragments/header.jsp" %>
 <%@ include file = "fragments/navigation.jsp" %>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/album.js"></script>
 
 <body>
 
-<div class="row">
-    <div class="gallery" id="gallery">
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,care" alt=""></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>${albumTitle}</h1>
         </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h5>${description}</h5>
         </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,substance" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,choose" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,past" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,lamp" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,yet" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,eight" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,crew" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,event" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,instrument" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,practical" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,pass" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,bigger" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,number" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,feature" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,line" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,railroad" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,pride" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,too" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,bottle" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,base" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,cell" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,bag" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://source.unsplash.com/random/?tech,card" alt=""></div>
+    </div>
+    <div class="row">
+        <div class="gallery" id="gallery">
+            <c:forEach var="item" items="${titleAndPicture}" varStatus="i">
+                <div class="gallery-item">
+                    <div class="content"><img src="${item.getSecond()}" alt=""></div>
+                    <input type="hidden" name="title" value="${item.getFirst()}"/>
+                </div>
+            </c:forEach>
         </div>
     </div>
 </div>
+
 </body>
 </html>
+>

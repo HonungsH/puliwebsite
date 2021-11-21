@@ -5,6 +5,7 @@ import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,6 @@ import puli.xaidaz.jpa.entity.Picture;
 import puli.xaidaz.jpa.repository.AlbumRepository;
 import puli.xaidaz.jpa.repository.PictureRepository;
 import puli.xaidaz.service.api.FileService;
-import reactor.util.function.Tuple2;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +56,7 @@ public class PicturesController {
 
     @RequestMapping(path = "/sparaBild", method = RequestMethod.POST)
     public String savePicture(@RequestParam("file") MultipartFile file, @RequestParam("albumTitle") String albumTitle) throws IOException {
-        Album album = albumRepository.findByName(albumTitle);
+        Album album = albumRepository.findByTitle(albumTitle);
         if (album == null) {
             album = new Album();
             album.setTitle(albumTitle);
@@ -80,7 +80,7 @@ public class PicturesController {
     @ResponseBody
     @RequestMapping(path = "/sparaAlbum", method = RequestMethod.POST)
     public String saveAlbum(@RequestParam("albumTitle") String albumTitle, @RequestParam("description") String description) {
-        Album album = albumRepository.findByName(albumTitle);
+        Album album = albumRepository.findByTitle(albumTitle);
         if (album == null) {
             album = new Album();
             album.setTitle(albumTitle);
@@ -95,8 +95,24 @@ public class PicturesController {
     @ResponseBody
     @RequestMapping(path = "/taBort", method = RequestMethod.POST)
     public String deletePicture(@RequestParam("title") String title, @RequestParam("albumTitle") String albumTitle) {
-        Picture picture = pictureRepository.findByTitleAndAlbum(title, albumTitle);
+        Picture picture = pictureRepository.findByTitleAndAlbumTitle(title, albumTitle);
         pictureRepository.delete(picture);
         return "OK";
+    }
+
+    @RequestMapping(path = "/album/{albumTitle}", method = RequestMethod.GET)
+    public String showAlbum(@PathVariable("albumTitle") String albumTitle, Model model) {
+        Album album = albumRepository.findByTitle(albumTitle);
+        model.addAttribute("albumTitle", albumTitle);
+        model.addAttribute("description", album.getDescription());
+
+        List<Picture> picutures = pictureRepository.findByAlbumTitle(albumTitle);
+        List<Pair<String, String>> titleAndPicture = new ArrayList<>();
+        for (Picture picture : picutures) {
+            titleAndPicture.add(Pair.of(picture.getTitle(), picture.getFilePath()));
+        }
+        model.addAttribute("titleAndPicture", titleAndPicture);
+
+        return "album";
     }
 }

@@ -14,6 +14,6 @@ import java.util.List;
 @Transactional
 public interface AlbumRepository extends JpaRepository<Album, Long> {
 
-    @Query("SELECT album FROM Album album WHERE album.title=(:name)")
-    Album findByName(@Param("name") String name);
+    @Query("SELECT album FROM Album album WHERE album.title=(:title)")
+    Album findByTitle(@Param("title") String title);
 }
