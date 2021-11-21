@@ -39,17 +39,6 @@
                 <div class="row">
                     <p>${dog.dateOfBirth}</p>
                 </div>
-
-                <!-- OWNER --><%--
-                <c:if test="${dog.owner != null}">
-                    <div class="row">
-                        <h4 class="profileTitle">Ägare</h4>
-                    </div>
-                    <div class="row">
-                        <p>${dog.owner}</p>
-                    </div>
-                </c:if>--%>
-
                 <!-- DESCRIPTION -->
                 <c:if test="${dog.description != null}">
                     <div class="row">
@@ -76,7 +65,7 @@
                         <h4 class="profileTitle">Hundinformation SKK</h4>
                     </div>
                     <div class="row">
-                        <p><a target="_blank" href="${dog.linkToSkk}">Tryck här</a></p>
+                        <p><a target="_blank" href="${dog.linkToSkk}">Tryck här för att komma till Hundens profil på SKK</a></p>
                     </div>
                 </c:if>
                 <c:if test="${true}">

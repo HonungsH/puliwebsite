@@ -23,7 +23,7 @@
 
 
             <input type="hidden" name="id" id="id" value="${news.id}">
-            <c:set var="hasProfilePic" value="${news.profilePicture != null}"/>
+            <c:set var="hasProfilePic" value="${news.profilePicture != null && !news.profilePicture.isEmpty()}"/>
             <div class="row">
                 <div class="card customCard mb-3 w-100" style="">
                     <div class="row g-0">
