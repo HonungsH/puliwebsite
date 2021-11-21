@@ -1,3 +1,4 @@
+<%@page pageEncoding="UTF-8" %>
 <div class="modal fade" id="newAlbumModal" tabindex="-1" role="dialog" aria-labelledby="newAlbumModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
