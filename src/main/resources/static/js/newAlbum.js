@@ -7,7 +7,7 @@ window.onload = function () {
 $(document).ready(function(){
 
     $('#newAlbumSubmitButton').on('click', function() {// TODO felhantering
-        var title = $('#albumTitleInput').val();
+        const title = $('#albumTitleInput').val();
         $('#albumTitleHidden').val(title);
         $('#albumTitle').html(title);
         $('#newAlbumModal').modal('hide');
