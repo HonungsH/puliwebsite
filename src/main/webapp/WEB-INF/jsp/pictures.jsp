@@ -19,18 +19,18 @@
     </div>
 
 
-    <c:forEach var="item" items="${albumTitleAndPicture}" varStatus="i">
+<%--    <c:forEach var="item" items="${albumTitleAndPicture}" varStatus="i">
         <c:if test="${i.index % 2 == 0}">
             <c:set var="makeNewRowIndex" value="${i.index + 1}"/>
             <div class="row">
         </c:if>
 
-        <%--            <div class="gallery-item">--%>
-        <%--                <div class="content"><img src="https://source.unsplash.com/random/?tech,care" alt=""></div>--%>
-        <%--            </div>--%>
-        <%--            <div class="gallery-item">--%>
-        <%--                <div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>--%>
-        <%--            </div>--%>
+        &lt;%&ndash;            <div class="gallery-item">&ndash;%&gt;
+        &lt;%&ndash;                <div class="content"><img src="https://source.unsplash.com/random/?tech,care" alt=""></div>&ndash;%&gt;
+        &lt;%&ndash;            </div>&ndash;%&gt;
+        &lt;%&ndash;            <div class="gallery-item">&ndash;%&gt;
+        &lt;%&ndash;                <div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>&ndash;%&gt;
+        &lt;%&ndash;            </div>&ndash;%&gt;
         <div class="card col-md-6">
             <div class="row align-content-md-center">
                 <div class="col-md-12">
@@ -50,7 +50,54 @@
         <c:if test="${i.index == makeNewRowIndex || i.index == albumTitleAndPicture.size() - 1}">
             </div>
         </c:if>
+    </c:forEach>--%>
+
+
+    <c:forEach var="album" items="${albumTitleAndPicture}" varStatus="i">
+        <c:if test="${i.index % 3 == 0}">
+            <c:set var="makeNewRowIndex" value="${i.index + 2}"/>
+            <div class="row">
+        </c:if>
+
+        <div class="col-md-4">
+            <div class="card w-100 mt-5" style="">
+                <img class="card-img-top" src="<c:url value="${album.getSecond()}"/>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-text albumTitle">${album.getFirst()}</h5>
+                </div>
+            </div>
+        </div>
+
+
+<%--        <div class="card customCard mb-3 w-100" style="">
+            <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="<c:url value="${album.getSecond()}"/>" class="img-fluid rounded-start"
+                             style="margin:20px;" alt="...">
+                    </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title nyhetTitel">${album.getFirst()}</h5>
+
+                        <p class="card-text">
+                            <small class="text-muted">Skapad:</small>
+                        </p>
+                        <c:if test="${true}">
+                            <button type="submit" class="mt-auto m-1 btn btn-secondary editNewsButton" style="">Redigera Album
+                                <i class="material-icons-round" style="font-size:20px">mode_edit</i>
+                            </button>
+                        </c:if>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>--%>
+        <c:if test="${i.index == makeNewRowIndex || i.index == albumTitleAndPicture.size() - 1}">
+            </div>
+        </c:if>
     </c:forEach>
+
 
 
 </div>

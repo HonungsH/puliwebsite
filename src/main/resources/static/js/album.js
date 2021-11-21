@@ -16,7 +16,7 @@ $(document).ready(function(){
     };
 
     gallery.querySelectorAll('img').forEach(function (item) {
-        item.classList.add('byebye');
+        //item.classList.add('byebye');
         if (item.complete) {
             console.log(item.src);
         } else {

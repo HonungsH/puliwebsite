@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="dz-message uploadPicturesDiv" data-dz-message><span class="uploadPicturesMessage">Dra filer hit</span></div>
+        <div class="dz-message uploadPicturesDiv" data-dz-message><span class="uploadPicturesMessage">Tryck eller dra filer hit</span></div>
 
         <div class="row">
             <span class="dz-preview"></span>
