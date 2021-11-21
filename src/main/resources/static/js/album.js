@@ -37,5 +37,21 @@ $(document).ready(function(){
            item.classList.toggle('full');
         });
     });
+
+
+    $('#deleteAlbumButton').on('click', function() {// TODO felhantering
+        if (confirm('Är du säker på att du vill ta bort detta album?')) {
+            $.ajax({
+                url: "/bilder/taBortAlbum",
+                type: "POST",
+                data: {
+                    albumTitle: $('#albumTitleHidden').val()
+                },
+                success: function() {
+                    location.href = "/bilder";
+                }
+            });
+        }
+    });
 });
 

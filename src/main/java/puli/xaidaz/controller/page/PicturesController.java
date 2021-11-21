@@ -104,6 +104,8 @@ public class PicturesController {
     @ResponseBody
     @RequestMapping(path = "/taBortAlbum", method = RequestMethod.POST)
     public String deleteAlbum(@RequestParam("albumTitle") String albumTitle) {
+        Album album = albumRepository.findByTitle(albumTitle);
+        pictureRepository.deleteByAlbumId(album.getId());
         albumRepository.deleteByTitle(albumTitle);
         return "OK";
     }
@@ -120,6 +122,7 @@ public class PicturesController {
             titleAndPicture.add(Pair.of(picture.getTitle(), picture.getFilePath()));
         }
         model.addAttribute("titleAndPicture", titleAndPicture);
+        model.addAttribute("albumTitle", albumTitle);
 
         return "album";
     }

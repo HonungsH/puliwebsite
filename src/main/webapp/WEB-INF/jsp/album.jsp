@@ -6,6 +6,13 @@
 <body>
 
 <div class="container">
+    <input type="hidden" id="albumTitleHidden" name="title" value="${albumTitle}"/>
+    <c:if test="${isAdmin}">
+        <div class="row">
+            <button type="submit" id="deleteAlbumButton" class="btn btn-danger">Ta bort Album
+            </button>
+        </div>
+    </c:if>
     <div class="row">
         <div class="col-md-12 text-center">
             <h1>${albumTitle}</h1>

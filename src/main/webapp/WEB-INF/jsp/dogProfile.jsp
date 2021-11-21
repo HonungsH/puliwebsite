@@ -68,7 +68,7 @@
                         <p><a target="_blank" href="${dog.linkToSkk}">Tryck här för att komma till Hundens profil på SKK</a></p>
                     </div>
                 </c:if>
-                <c:if test="${true}">
+                <c:if test="${isAdmin}">
                     <div class="row">
                         <button type="submit" class="btn btn-secondary editDogButton">Redigera Hund
                             <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">mode_edit</i>

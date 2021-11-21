@@ -10,7 +10,7 @@
 
 <div class="container">
 
-    <c:if test="${true}">
+    <c:if test="${isAdmin}">
         <div class="row">
             <div class="col-1">
                 <a href="${pageContext.request.contextPath}/hundar/nyHund" class="btn btn-secondary editDogButton">Lägg

@@ -5,7 +5,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/news.js"></script>
 <body>
 <div class="container">
-    <c:if test="${true}">
+    <c:if test="${isAdmin}">
             <div class="row">
                 <div class="col-1">
                     <a href="${pageContext.request.contextPath}/nyheter/nyNyhet"
@@ -42,7 +42,7 @@
                                     <small class="text-muted">Skapad ${news.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))},</small>
                                     <small class="text-muted">Uppdaterad ${news.modifiedAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</small>
                                 </p>
-                                <c:if test="${true}">
+                                <c:if test="${isAdmin}">
                                     <button type="submit" class="mt-auto m-1 btn btn-secondary editNewsButton" style="">Redigera Nyhet
                                         <i class="material-icons-round" style="font-size:20px">mode_edit</i>
                                     </button>
