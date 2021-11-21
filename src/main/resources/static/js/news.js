@@ -5,12 +5,11 @@ $(document).ready(function() {
     });
 
     $('#deleteNewsButton').on('click', function() {
-        var id = $('#id');
         if (confirm('Är du säker på att du vill ta bort denna nyhet?')) {
             $.ajax({
                 url: "/nyheter/taBort",
                 type: "POST",
-                data: { id: $('#id')[0].value},
+                data: { id: $('#id').val()},
                 success: function (result) {
                     window.location='/nyheter';
                 }

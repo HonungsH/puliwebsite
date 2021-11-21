@@ -10,13 +10,11 @@ $(document).ready(function() {
     });
 
     $('#deleteDogButton').on('click', function() {
-        var asd = $('#dogName')[0].value;
-
-        if (confirm('Är du säker på att du vill ta bort ' +$('#dogName')[0].value)) {
+        if (confirm('Är du säker på att du vill ta bort ' +$('#dogName').val())) {
             $.ajax({
               url: "/hundar/taBort",
               type: "POST",
-              data: { id: $('#id')[0].value},
+              data: { id: $('#id').val()},
               success: function (result) {
                 window.location='/hundar';
               }
