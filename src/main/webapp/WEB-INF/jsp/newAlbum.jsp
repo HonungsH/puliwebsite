@@ -24,6 +24,7 @@
             <div class="row form-group justify-content-end">
                 <div class="col-auto" >
                     <button id="saveAlbumButton" style="margin-bottom: 10px; margin-top:25px;" type="button" class="btn btn-primary">Spara album</button>
+                    <button id="cancelAlbumButton" style="margin-bottom: 10px; margin-top:25px;" type="button" class="btn btn-primary">Avbryt</button>
                 </div>
             </div>
         </div>

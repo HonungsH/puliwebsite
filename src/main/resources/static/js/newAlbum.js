@@ -28,22 +28,43 @@ $(document).ready(function(){
                 description: $('#description').val(),
             },
             success: function(result){
+                $(window).unbind('beforeunload');
                 location.href = "/bilder";
             }
         });
     });
 
+    $('#cancelAlbumButton').on('click', function() {// TODO felhantering
+        if (confirm('Är du säker på att du vill avbryta?')) {
+            $.ajax({
+                url: "/bilder/taBortAlbum",
+                type: "POST",
+                data: {
+                    albumTitle: $('#albumTitleHidden').val()
+                },
+                success: function() {
+                    location.href = "/bilder";
+                }
+            });
+        }
+    });
 
-    // $("div#dropzone_profile_photo").dropzone({
-    //     url: "/test",
-    //     init: function() {
-    //         this.on("sending", function(file, xhr, formData) {
-    //             formData.append("data", "loremipsum");
-    //             console.log(formData)
-    //         });
-    //     }
-    // });
+    window.addEventListener("beforeunload", function (e) {
+        if (confirm('Är du säker på att du vill lämna sidan? \nAlbumet har inte sparats.'))  {
+            $.ajax({
+                url: "/bilder/taBortAlbum",
+                type: "POST",
+                data: {
+                    albumTitle: $('#albumTitleHidden').val()
+                },
+                success: function() {
+                    return true;
+                }
+            });
+        }
+        return false;
 
+    });
 });
 
 Dropzone.autoDiscover = false;
@@ -62,7 +83,7 @@ var dropzone = new Dropzone('#demo-upload', {
 dropzone.on("removedfile", function (file) {
     if (file.name) {
         $.ajax({
-            url: "/bilder/taBort",
+            url: "/bilder/taBortBild",
             type: "POST",
             data: {
                 title: file.name,
