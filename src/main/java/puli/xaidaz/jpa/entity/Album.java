@@ -1,5 +1,6 @@
 package puli.xaidaz.jpa.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,7 +29,7 @@ public class Album {
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy = "album")
+    @OneToMany(fetch=FetchType.LAZY, mappedBy = "album", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Picture> pictures;
 
     public Album() {

@@ -93,10 +93,17 @@ public class PicturesController {
     }
 
     @ResponseBody
-    @RequestMapping(path = "/taBort", method = RequestMethod.POST)
+    @RequestMapping(path = "/taBortBild", method = RequestMethod.POST)
     public String deletePicture(@RequestParam("title") String title, @RequestParam("albumTitle") String albumTitle) {
         Picture picture = pictureRepository.findByTitleAndAlbumTitle(title, albumTitle);
         pictureRepository.delete(picture);
+        return "OK";
+    }
+
+    @ResponseBody
+    @RequestMapping(path = "/taBortAlbum", method = RequestMethod.POST)
+    public String deleteAlbum(@RequestParam("albumTitle") String albumTitle) {
+        albumRepository.deleteByTitle(albumTitle);
         return "OK";
     }
 
