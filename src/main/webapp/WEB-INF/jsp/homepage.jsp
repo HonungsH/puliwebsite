@@ -53,7 +53,7 @@
                         <h2>Om oss</h2>
                         <p>Vår kennel vill ha sunda och friska hundar med bra temperament.<br>De ska vara rastypiska och
                             bör ha
-                            kvar sitt arv som vakt och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
+                            kvar sitt arv som vakt- och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
                             HD-röntgade med godkänt resultat och att de ska vara ögonlysta.<br> <br>
                     </div>
                     <p class="broedtekst-frontpage">Puli är en fantastisk hund som blir din bästa vän!</p>
