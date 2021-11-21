@@ -12,6 +12,9 @@ Harry bor nu hos Britt med familj i Vintrie', now(), now(), '/images/dogs/harry.
 'https://hundar.skk.se/hunddata/Hund.aspx?hundid=2558863',
 'Harry har 3 kullar');
 
+insert into PuliDb.Dog (name, breeding_name, colour, date_of_birth, description, created_at, modified_at, profile_picture, link_to_skk, breeding_history)
+values ('Micko', 'Xaida''z Mackó-Meduza', 'Vit', '2016-06-01', 'Micko', now(), now(),
+'/images/dogs/micko_1.jpg', 'https://hundar.skk.se/hunddata/Hund.aspx?hundid=3153077', 'Micko har flera avkommor.');
 
 insert into PuliDb.Dog (name, breeding_name, colour, date_of_birth, description, created_at, modified_at, profile_picture, link_to_skk)
 values ('Teqla', 'Xaida''z Ha Pi Taisza-Tequila', 'Vit', '2021-03-30', 'Teqla är efter Harry och Zava, en busig liten tjej. ', now(), now(),
@@ -22,7 +25,4 @@ values ('Zava', 'Xaida''z Hi-Le Piazava-Pisti', 'Svart', '2019-03-03', 'Zava är
 '/images/dogs/zava.jpg',
 'https://hundar.skk.se/hunddata/Hund.aspx?hundid=3360248', null);
 
-insert into PuliDb.Dog (name, breeding_name, colour, date_of_birth, description, created_at, modified_at, profile_picture, link_to_skk, breeding_history)
-values ('Micko', 'Xaida''z Mackó-Meduza', 'Vit', '2016-06-01', 'Micko', now(), now(),
-'/images/dogs/micko_1.jpg', 'https://hundar.skk.se/hunddata/Hund.aspx?hundid=3153077', 'Micko har flera avkommor.');
 

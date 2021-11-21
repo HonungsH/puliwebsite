@@ -347,6 +347,10 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
     display: inline-block;
 }
 
+.customCard {
+    border:3px solid rgba(0,0,0,.125) !important;
+}
+
 .hello {
     opacity: 1 !important;
 }

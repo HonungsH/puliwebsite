@@ -30,9 +30,9 @@
             <j:set var="makeNewRowIndex" value="${i.index + 2}"/>
             <div class="row mt-5">
         </j:if>
-        <div class="col-xs" style="margin-bottom: 30px;">
-            <div class="profilePicDiv mx-2" style="display: block;text-align: center">
-                <img style="height: 350px; width: auto;" class="img-fluid" id="${dog.name}"
+        <div class="col col-md-4 col-xs-12 col-sm-6" style="">
+            <div class="profilePicDiv" style="display: block;text-align: center">
+                <img style="height: auto; width: 100%;" class="img-responsive" id="${dog.name}"
                      src="<c:url value="${dog.profilePicture}"/>"/>
             </div>
             <div style="text-align: center">
