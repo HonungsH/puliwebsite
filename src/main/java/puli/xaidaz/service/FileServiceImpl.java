@@ -16,10 +16,12 @@ import java.nio.file.Paths;
 public class FileServiceImpl implements FileService {
 
     private final Path root = Paths.get("uploads");
+    private final Path albums= Paths.get("uploads/albums");
 
     @PostConstruct
     public void init() throws IOException {
         createDirectoryIfNotExists(root);
+        createDirectoryIfNotExists(albums);
     }
 
     @Override
