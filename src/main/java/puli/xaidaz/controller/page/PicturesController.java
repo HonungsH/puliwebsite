@@ -42,7 +42,8 @@ public class PicturesController {
 
         List<Pair<String, String>> albumTitleAndPicture = new ArrayList<>();
         for (Album album : albumList) {
-            albumTitleAndPicture.add(Pair.of(album.getTitle(), album.getPictures().get(0).getFilePath()));
+            String previewFilePath = album.getPictures().isEmpty()? "/images/dogs/bild_saknas.png" : album.getPictures().get(0).getFilePath();
+            albumTitleAndPicture.add(Pair.of(album.getTitle(), previewFilePath));
         }
         model.addAttribute("albumTitleAndPicture", albumTitleAndPicture);
         return "pictures";
