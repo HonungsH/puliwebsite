@@ -8,7 +8,6 @@
 <body>
 <h2 id="albumTitle" style="text-align: center;margin-bottom: 30px;">Nytt Album</h2>
 <div class="container mainContainer" id="dropzone">
-    <p style="color:red">* = obligatorisk</p>
     <%--@elvariable id="album" type="puli.xaidaz.jpa.entity.Album"--%>
 
     <form:form class="dropzone needsclick" id="demo-upload" method="POST" action="${pageContext.request.contextPath}/bilder/sparaBild" modelAttribute="album">
@@ -24,10 +23,12 @@
             <div class="row form-group justify-content-end">
                 <div class="col-auto" >
                     <button id="saveAlbumButton" style="margin-bottom: 10px; margin-top:25px;" type="button" class="btn btn-primary">Spara album</button>
-                    <button id="cancelAlbumButton" style="margin-bottom: 10px; margin-top:25px;" type="button" class="btn btn-primary">Avbryt</button>
+                    <button id="cancelAlbumButton" style="margin-bottom: 10px; margin-top:25px;" type="button" class="btn btn-danger">Avbryt</button>
                 </div>
             </div>
         </div>
+
+        <div class="dz-message uploadPicturesDiv" data-dz-message><span class="uploadPicturesMessage">Dra filer hit</span></div>
 
         <div class="row">
             <span class="dz-preview"></span>
