@@ -34,7 +34,7 @@
         <div class="card col-md-6">
             <div class="row align-content-md-center">
                 <div class="col-md-12">
-                    <img src="<c:url value="${item.getSecond()}"/>" class="img-fluid rounded-start"
+                    <img src="<c:url value="${item.getSecond()}"/>" class="img-responsive rounded-start"
                          style="margin:20px;" alt="...">
                 </div>
 
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <c:if test="${i.index == makeNewRowIndex || i.index == listOfDoges.size() - 1}">
+        <c:if test="${i.index == makeNewRowIndex || i.index == albumTitleAndPicture.size() - 1}">
             </div>
         </c:if>
     </c:forEach>
