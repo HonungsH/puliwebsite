@@ -1,5 +1,6 @@
 package puli.xaidaz.service;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import puli.xaidaz.service.api.FileService;
@@ -20,6 +21,7 @@ public class FileServiceImpl implements FileService {
 
     @PostConstruct
     public void init() throws IOException {
+//        clearFolders(); Only include this line to delete entire upload folder!!!!
         createDirectoryIfNotExists(root);
         createDirectoryIfNotExists(albums);
     }
@@ -54,6 +56,14 @@ public class FileServiceImpl implements FileService {
             Files.createDirectory(path);
         } catch (FileAlreadyExistsException e) {
             System.out.println("Uploads folder already exists. Do nothing.");
+        }
+    }
+
+    private void clearFolders() throws IOException {
+        try {
+            FileUtils.cleanDirectory(root.toFile());
+        }  catch (IllegalArgumentException e) {
+            System.out.println("Uploads folder didnt exists. Do nothing.");
         }
     }
 }

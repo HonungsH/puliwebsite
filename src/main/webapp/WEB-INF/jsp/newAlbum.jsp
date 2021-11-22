@@ -34,23 +34,13 @@
             <span class="dz-preview"></span>
         </div>
 
-
-
-
-
-        <%--        <div class="row" id="dropzone">--%>
-
-        <%--            <form class="col-12 dropzone needsclick" id="demo-upload">--%>
-
-        <%--            </form>--%>
-        <%--        </div>--%>
     </form:form>
-
 
 
 </div>
 
 </body>
+<%@ include file="fragments/footer.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/newAlbum.js"></script>
 </html>
 

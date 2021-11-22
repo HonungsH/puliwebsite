@@ -46,7 +46,7 @@
 <!-- Wrapper Start -->
 <section class="about section">
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 2rem">
             <div class="col-md-7">
                 <div class="block">
                     <div class="section-title">
@@ -72,4 +72,5 @@
 </section>
 
 </body>
+<%@ include file="fragments/footer.jsp" %>
 </html>

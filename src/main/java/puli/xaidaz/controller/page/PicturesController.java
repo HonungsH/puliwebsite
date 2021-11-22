@@ -38,7 +38,7 @@ public class PicturesController {
     public String renderPageLayout(Model model) {
         List<Album> albumList = albumRepository.findAll();
         if (albumList.isEmpty())
-            return "pictures";
+            return "albums";
 
         List<Pair<String, String>> albumTitleAndPicture = new ArrayList<>();
         for (Album album : albumList) {
@@ -46,7 +46,7 @@ public class PicturesController {
             albumTitleAndPicture.add(Pair.of(album.getTitle(), previewFilePath));
         }
         model.addAttribute("albumTitleAndPicture", albumTitleAndPicture);
-        return "pictures";
+        return "albums";
     }
 
     @RequestMapping(path = "/nyttAlbum")
@@ -105,7 +105,10 @@ public class PicturesController {
     @RequestMapping(path = "/taBortAlbum", method = RequestMethod.POST)
     public String deleteAlbum(@RequestParam("albumTitle") String albumTitle) {
         Album album = albumRepository.findByTitle(albumTitle);
-        pictureRepository.deleteByAlbumId(album.getId());
+        if (album != null) {
+            pictureRepository.deleteByAlbumId(album.getId());
+        }
+
         albumRepository.deleteByTitle(albumTitle);
         return "OK";
     }
@@ -124,6 +127,6 @@ public class PicturesController {
         model.addAttribute("titleAndPicture", titleAndPicture);
         model.addAttribute("albumTitle", albumTitle);
 
-        return "album";
+        return "pictures";
     }
 }
