@@ -42,5 +42,5 @@
 </div>
 </body>
 
-<%@ include file = "fragments/footer.jsp" %>
+<%@ include file = "fragments/loginFooter.jsp" %>
 </html>

@@ -72,4 +72,5 @@
 </section>
 
 </body>
+<%@ include file="fragments/footer.jsp" %>
 </html>
