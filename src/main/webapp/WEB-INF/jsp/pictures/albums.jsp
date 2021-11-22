@@ -5,7 +5,10 @@
 
 <body>
 <h2 style="text-align: center;margin-bottom: 30px;font-size:3rem;">Album</h2>
-<p style="text-align: center;font-size: 20px;">Tryck på ett album för att visa bilderna</p>
+<p style="text-align: center;font-size: 20px;">
+    <c:if test="${albumTitleAndPicture == null}">Det finns inte några album att visa</c:if>
+    <c:if test="${albumTitleAndPicture != null}">Tryck på ett album för att visa bilderna</c:if>
+</p>
 <div class="container ">
     <div class="row">
         <c:if test="${isAdmin}">
