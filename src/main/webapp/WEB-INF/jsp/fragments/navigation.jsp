@@ -1,5 +1,5 @@
 <%@page pageEncoding="UTF-8" %>
-<div class="topnav" style="display:flex;justify-content: center;">
+<div class="topnav" style="display:flex;justify-content: center; margin-top: 5rem">
     <sec:authorize var="isAdmin" access="hasRole('ADMIN')"/>
 
     <div><a class="${pageURI.endsWith('/') ? 'active' : ''}" href="${pageContext.request.contextPath}/">Hem</a></div>
