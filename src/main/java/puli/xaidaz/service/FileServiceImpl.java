@@ -21,7 +21,7 @@ public class FileServiceImpl implements FileService {
 
     @PostConstruct
     public void init() throws IOException {
-        clearFolders();
+//        clearFolders(); Only include this line to delete entire upload folder!!!!
         createDirectoryIfNotExists(root);
         createDirectoryIfNotExists(albums);
     }
