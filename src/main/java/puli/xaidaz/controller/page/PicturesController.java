@@ -105,7 +105,10 @@ public class PicturesController {
     @RequestMapping(path = "/taBortAlbum", method = RequestMethod.POST)
     public String deleteAlbum(@RequestParam("albumTitle") String albumTitle) {
         Album album = albumRepository.findByTitle(albumTitle);
-        pictureRepository.deleteByAlbumId(album.getId());
+        if (album != null) {
+            pictureRepository.deleteByAlbumId(album.getId());
+        }
+
         albumRepository.deleteByTitle(albumTitle);
         return "OK";
     }
