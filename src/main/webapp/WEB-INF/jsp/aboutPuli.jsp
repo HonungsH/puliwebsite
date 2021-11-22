@@ -4,16 +4,15 @@
 <%@ include file="fragments/navigation.jsp" %>
 
 <body>
-
+<h2 style="text-align: center;margin-bottom: 30px;font-size:3rem;">Om Puli</h2>
 <div class="container">
-    <div class="row col-6">
-        <h2 style="font-size: 3rem">Om Puli</h2>
-    </div>
     <div class="row">
         <div class="col-6">
             <div class="row mt-3">
                 <div class="col">
-
+                    <h4>
+                        Allmänt
+                    </h4>
                     <div>
                         Puli är en vallhund ursprungligen från Ungern. Hunden passar perfekt till träning av lydnad, vallning
                         eller agility, och precis lika bra som sällskapshund.
@@ -47,7 +46,18 @@
                         snörena inte blir för stora. Fullpälsad
                         blir den vid 4 till 6 års ålder.
                     </div>
-                    <hr class="my-4">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <img class="img-responsive" id="bild2" style="max-width: 100%; margin-top: 50px;" src="<c:url value="/images/dogs/4_dogs.jpg"/>"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-6 col-sm-3 col-xs-3">
+            <div class="row mt-3">
+                <div class="col">
+                    <img id="bild1" style="margin-bottom: 50px;margin-top: 45px; max-width: 100%" src="<c:url value="/images/dogs/agility_dog.jpg"/>"/>
                 </div>
             </div>
             <div class="row mt-3">
@@ -86,20 +96,9 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-        <div class="col-6 col-md-6 col-sm-3 col-xs-3">
-            <img id="bild1" style="" src="<c:url value="/images/dogs/agility_dog.jpg"/>"/>
-
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-6">
-            <img class="img-responsive" id="bild2" style="height: 1000px" src="<c:url value="/images/dogs/4_dogs.jpg"/>"/>
-        </div>
-        <div class="col-6">
         </div>
     </div>
 </div>
 </body>
+<%@ include file="fragments/footer.jsp" %>
 </html>
