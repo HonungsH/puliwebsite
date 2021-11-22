@@ -40,7 +40,7 @@
 </div>
 
 </body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/dropzone.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/newAlbum.js"></script>
 </html>
 
 

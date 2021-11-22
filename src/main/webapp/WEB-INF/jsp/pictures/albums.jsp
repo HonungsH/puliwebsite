@@ -1,6 +1,7 @@
 <%@page pageEncoding="UTF-8" %>
 <%@ include file="../fragments/header.jsp" %>
 <%@ include file="../fragments/navigation.jsp" %>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/pictures.js"></script>
 
 <body>
 <h2 style="text-align: center;margin-bottom: 30px;font-size:3rem;">Album</h2>
