@@ -46,5 +46,5 @@
 
 </div>
 </body>
-<%@ include file="src/main/webapp/WEB-INF/jsp/fragments/footer.jsp" %>
+<%@ include file="fragments/footer.jsp" %>
 </html>
