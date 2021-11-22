@@ -88,7 +88,7 @@
             </div>
 
         </div>
-        <div class="col-6">
+        <div class="col-6 col-md-6 col-sm-3 col-xs-3">
             <img id="bild1" style="" src="<c:url value="/images/dogs/agility_dog.jpg"/>"/>
 
         </div>
