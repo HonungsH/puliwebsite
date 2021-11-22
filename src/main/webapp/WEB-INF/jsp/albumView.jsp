@@ -1,6 +1,6 @@
 <<%@page pageEncoding="UTF-8" %>
-<%@ include file = "../fragments/header.jsp" %>
-<%@ include file = "../fragments/navigation.jsp" %>
+<%@ include file = "fragments/header.jsp" %>
+<%@ include file = "fragments/navigation.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/album.js"></script>
 
 <body>
@@ -36,6 +36,6 @@
 </div>
 
 </body>
-<%@ include file="../fragments/footer.jsp" %>
+<%@ include file="src/main/webapp/WEB-INF/jsp/fragments/footer.jsp" %>
 
 </html>
