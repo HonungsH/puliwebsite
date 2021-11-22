@@ -6,7 +6,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm-6">
             <h4 class="h4-contact">Namn</h4>
             <jsp:include page="fragments/editableTextField.jsp" >
                 <jsp:param name="textKey" value="name" />
@@ -34,9 +34,8 @@
             </div>
 
         </div>
-        <div class="col-sm">
-            <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2763.4397403220305!2d13.15705560109049!3d55.452151993096514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDI3JzA3LjgiTiAxM8KwMDknMzAuMSJF!5e1!3m2!1ssv!2sse!4v1620661819035!5m2!1ssv!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>            </div>
+        <div class="col-sm-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2763.4397403220305!2d13.15705560109049!3d55.452151993096514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDI3JzA3LjgiTiAxM8KwMDknMzAuMSJF!5e1!3m2!1ssv!2sse!4v1620661819035!5m2!1ssv!2sse" style="border: 0;width: 100%; height: 400px" allowfullscreen=""></iframe>
         </div>
     </div>
 </div>
