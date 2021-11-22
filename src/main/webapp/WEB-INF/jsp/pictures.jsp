@@ -13,12 +13,12 @@
             </button>
         </div>
     </c:if>
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px">
         <div class="col-md-12 text-center">
             <h1>${albumTitle}</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px">
         <div class="col-md-12 text-center">
             <h5>${description}</h5>
         </div>

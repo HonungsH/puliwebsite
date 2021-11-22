@@ -124,6 +124,6 @@ public class PicturesController {
         model.addAttribute("titleAndPicture", titleAndPicture);
         model.addAttribute("albumTitle", albumTitle);
 
-        return "albumView";
+        return "pictures";
     }
 }
