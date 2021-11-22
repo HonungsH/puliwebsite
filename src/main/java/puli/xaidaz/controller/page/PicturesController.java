@@ -38,7 +38,7 @@ public class PicturesController {
     public String renderPageLayout(Model model) {
         List<Album> albumList = albumRepository.findAll();
         if (albumList.isEmpty())
-            return "pictures";
+            return "pictures/albums";
 
         List<Pair<String, String>> albumTitleAndPicture = new ArrayList<>();
         for (Album album : albumList) {
@@ -46,13 +46,13 @@ public class PicturesController {
             albumTitleAndPicture.add(Pair.of(album.getTitle(), previewFilePath));
         }
         model.addAttribute("albumTitleAndPicture", albumTitleAndPicture);
-        return "pictures";
+        return "pictures/albums";
     }
 
     @RequestMapping(path = "/nyttAlbum")
     public String nyAlbum(Model model) {
         model.addAttribute("profilePictureLabel", "Ingen fil vald");
-        return "newAlbum";
+        return "pictures/newAlbum";
     }
 
     @RequestMapping(path = "/sparaBild", method = RequestMethod.POST)
@@ -75,7 +75,7 @@ public class PicturesController {
         picture.setFilePath(filePath);
         pictureRepository.save(picture);
 
-        return "newAlbum";
+        return "pictures/newAlbum";
     }
 
     @ResponseBody
@@ -124,6 +124,6 @@ public class PicturesController {
         model.addAttribute("titleAndPicture", titleAndPicture);
         model.addAttribute("albumTitle", albumTitle);
 
-        return "album";
+        return "pictures/albumView";
     }
 }

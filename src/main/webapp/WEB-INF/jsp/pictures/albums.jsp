@@ -1,7 +1,6 @@
 <%@page pageEncoding="UTF-8" %>
-<%@ include file="fragments/header.jsp" %>
-<%@ include file="fragments/navigation.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/pictures.js"></script>
+<%@ include file="../fragments/header.jsp" %>
+<%@ include file="../fragments/navigation.jsp" %>
 
 <body>
 <h2 style="text-align: center;margin-bottom: 30px;font-size:3rem;">Album</h2>
@@ -28,7 +27,7 @@
         </c:if>
 
         <div class="col-md-4">
-            <div class="card w-100 mt-5" style="">
+            <div class="card w-100 mt-5 albumCard" style="">
                 <img class="card-img-top" style="cursor: pointer;" src="<c:url value="${album.getSecond()}"/>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-text albumTitle">${album.getFirst()}</h5>

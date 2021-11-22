@@ -1,8 +1,8 @@
 <%@ taglib prefix="j" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page pageEncoding="UTF-8" %>
-<%@ include file="fragments/header.jsp" %>
-<%@ include file="fragments/navigation.jsp" %>
-<%@ include file="fragments/newAlbumModal.jsp" %>
+<%@ include file="../fragments/header.jsp" %>
+<%@ include file="../fragments/navigation.jsp" %>
+<%@ include file="../fragments/newAlbumModal.jsp" %>
 
 
 <body>
@@ -34,24 +34,13 @@
             <span class="dz-preview"></span>
         </div>
 
-
-
-
-
-        <%--        <div class="row" id="dropzone">--%>
-
-        <%--            <form class="col-12 dropzone needsclick" id="demo-upload">--%>
-
-        <%--            </form>--%>
-        <%--        </div>--%>
     </form:form>
-
 
 
 </div>
 
 </body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/newAlbum.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/dropzone.js"></script>
 </html>
 
 
