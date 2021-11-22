@@ -22,7 +22,7 @@ window.onload = function() {
                 var gitem = item.parentElement.parentElement;
                 console.log(Math.ceil((getHeight(gitem) + gap) / (altura + gap)));
                 gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-        }, 50);
+        }, 200);
     });
 
     window.addEventListener('resize', resizeAll);
