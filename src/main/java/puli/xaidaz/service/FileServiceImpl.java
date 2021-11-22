@@ -21,7 +21,7 @@ public class FileServiceImpl implements FileService {
 
     @PostConstruct
     public void init() throws IOException {
-        clearFolder();
+        clearFolders();
         createDirectoryIfNotExists(root);
         createDirectoryIfNotExists(albums);
     }
@@ -59,7 +59,7 @@ public class FileServiceImpl implements FileService {
         }
     }
 
-    private void clearFolder() throws IOException {
+    private void clearFolders() throws IOException {
         try {
             FileUtils.cleanDirectory(root.toFile());
         } catch (IOException e) {
