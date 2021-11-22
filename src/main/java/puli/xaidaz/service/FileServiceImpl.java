@@ -62,10 +62,8 @@ public class FileServiceImpl implements FileService {
     private void clearFolders() throws IOException {
         try {
             FileUtils.cleanDirectory(root.toFile());
-        } catch (IOException e) {
-            System.out.println("Failed cleaning uploads folder!");
-            throw e;
+        }  catch (IllegalArgumentException e) {
+            System.out.println("Uploads folder didnt exists. Do nothing.");
         }
-        System.out.println("Done cleaning uploads folder");
     }
 }
