@@ -21,7 +21,7 @@ public class PersistanceConfiguration {
     private static final String DB_PASSWORD = "skat";
     private static final String DB_URL_LOCAL = "jdbc:mysql://localhost:3306/PuliDb";
     private static final String DB_URL_ENV = "jdbc:mysql://puli-mysql:3306/PuliDb";
-    private static final String DB_URL_ATTRIBUTES = "?useSSL=false&allowPublicKeyRetrieval=true";
+    private static final String DB_URL_ATTRIBUTES = "?useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=true";
 
     private static final String[] ENTITYMANAGER_PACKAGES_TO_SCAN = {"puli.xaidaz.jpa.entity"};
 
