@@ -25,3 +25,8 @@ services:
       - DATABASE_PASSWORD=skat
       - DATABASE_NAME=PuliDb
       - DATABASE_PORT=3306
+    volumes:
+      - uploads-data:/var/puli_uploads
+
+volumes:
+  uploads-data:

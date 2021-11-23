@@ -20,11 +20,13 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Value("${environment}")
     private String environment;
+    @Value("${uploadResourceRootPath}")
+    private String uploadResourceRootPath;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/uploads/**")
-                .addResourceLocations("file:uploads/")
+                .addResourceLocations("file:" +uploadResourceRootPath)
                 .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS));
 
         registry.addResourceHandler("/js/**")
