@@ -18,8 +18,9 @@ $(document).ready(function() {
     });
 
     $('.alert').each(function (i, object) {
-        var input = $(this).siblings("input");
-        input.css('background-color', 'red').animate({backgroundColor: 'white' }, { duration: 2000 });
+        var inputs = $(this).siblings("input");
+        var textAreas = $(this).siblings("textArea");
+        $.merge(inputs, textAreas).css('background-color', 'red').animate({backgroundColor: 'white' }, { duration: 2000 });
     });
 });
 
