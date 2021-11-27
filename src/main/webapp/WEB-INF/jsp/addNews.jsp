@@ -15,6 +15,7 @@
         <input type="hidden" name="profilePicture" value="${news.profilePicture}">
         <div class="form-group">
             <label class="required" for="newsTitle">Nyhetens titel:</label>
+            <form:errors class="errorMessage alert" path="title"/>
             <input type="text" maxlength="120" name="title" class="form-control" id="newsTitle" placeholder=""
                    value="${news.title}">
             <span class="antalTeckenKvarText ml-1">Antal tecken kvar:</span>
@@ -22,6 +23,7 @@
         </div>
         <div class="form-group">
             <label class="required" for="newsText">Nyhetens innehåll:</label>
+            <form:errors class="errorMessage alert" path="text"/>
             <textarea maxlength="1500" style="white-space: pre-wrap;" class="form-control" name="text" aria-describedby="textHelp" id="newsText"
                       rows="3">${news.text}</textarea>
             <small id="textHelp" class="form-text text-muted"></small>

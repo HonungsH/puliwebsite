@@ -66,9 +66,9 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/sparaNyhet", method = RequestMethod.POST)
-    public String saveNews(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("News") News news, BindingResult bindingResult) throws IOException {
+    public String saveNews(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("news") News news, BindingResult bindingResult) throws IOException {
         if (bindingResult.hasErrors()) {
-            return "news";
+            return "addNews";
         }
 
         if (news.getId() == null) { // new News

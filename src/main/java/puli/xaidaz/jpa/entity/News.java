@@ -3,6 +3,7 @@ package puli.xaidaz.jpa.entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Entity
@@ -14,8 +15,10 @@ public class News {
     @Column(name = "ID")
     private Long id;
     @Column(name = "TITLE")
+    @NotBlank(message = "Titel är obligatoriskt")
     private String title;
     @Column(name = "TEXT")
+    @NotBlank(message = "Innehåll är obligatoriskt")
     private String text;
     @Column(name = "PROFILE_PICTURE")
     private String profilePicture;
