@@ -81,6 +81,10 @@ public class PicturesController {
     @ResponseBody
     @RequestMapping(path = "/sparaAlbum", method = RequestMethod.POST)
     public String saveAlbum(@RequestParam("albumTitle") String albumTitle, @RequestParam("description") String description) {
+        if (!pictureRepository.existsByAlbumTitle(albumTitle)) {
+            return "NO_PICTURES";
+        }
+
         Album album = albumRepository.findByTitle(albumTitle);
         if (album == null) {
             album = new Album();

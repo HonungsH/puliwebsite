@@ -19,6 +19,7 @@
             <textarea class="form-control" name="description" id="description" rows="3">${album.description}</textarea>
         </div>
 
+
         <div class="row">
             <div class="row form-group justify-content-end">
                 <div class="col-auto" >
@@ -26,6 +27,10 @@
                     <button id="cancelAlbumButton" style="margin-bottom: 10px; margin-top:25px;" type="button" class="btn btn-danger">Avbryt</button>
                 </div>
             </div>
+        </div>
+
+        <div class="row">
+                <p id="noAlbumWarning" style="color:red; display: none">Kan inte spara ett album utan några bilder.</p>
         </div>
 
         <div class="dz-message uploadPicturesDiv" data-dz-message><span class="uploadPicturesMessage">Tryck eller dra filer hit</span></div>

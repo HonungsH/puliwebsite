@@ -28,8 +28,12 @@ $(document).ready(function(){
                 description: $('#description').val(),
             },
             success: function(result){
-                $(window).unbind('beforeunload');
-                location.href = "/bilder";
+                if (result === "NO_PICTURES") {
+                    $('#noAlbumWarning').show();
+                } else {
+                    $(window).unbind('beforeunload');
+                    location.href = "/bilder";
+                }
             }
         });
     });

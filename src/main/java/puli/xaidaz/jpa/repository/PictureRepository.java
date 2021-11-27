@@ -22,6 +22,9 @@ public interface PictureRepository extends JpaRepository<Picture, Long> {
     @Query("SELECT picture FROM Picture picture JOIN FETCH picture.album album WHERE album.title = (:albumTitle)")
     List<Picture> findByAlbumTitle(@Param("albumTitle") String albumTitle);
 
+    @Query("SELECT CASE WHEN count(picture) > 0 THEN true ELSE false end FROM Picture picture JOIN picture.album album WHERE album.title = (:albumTitle)")
+    boolean existsByAlbumTitle(@Param("albumTitle") String albumTitle);
+
     @Modifying
     @Query("DELETE FROM Picture picture WHERE picture.album.id = (:id)")
     void deleteByAlbumId(@Param("id") Long id);
