@@ -30,11 +30,6 @@
                         <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
                     </a>
                 </div>
-<%--                <div class="col-sm-auto">--%>
-<%--                    <a href="mailto:xaidazpuli@gmail.com">--%>
-<%--                        <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/email-icon.png" alt="sad">--%>
-<%--                    </a>--%>
-<%--                </div>--%>
             </div>
 
         </div>
