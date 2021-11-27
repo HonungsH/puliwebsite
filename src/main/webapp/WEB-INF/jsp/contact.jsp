@@ -19,6 +19,10 @@
             <jsp:include page="fragments/editableTextField.jsp" >
                 <jsp:param name="textKey" value="address" />
             </jsp:include>
+            <h4 class="h4-contact">Email</h4>
+            <jsp:include page="fragments/editableTextField.jsp" >
+                <jsp:param name="textKey" value="email" />
+            </jsp:include>
 
             <div class="row" style="margin-top: 15%">
                 <div class="col-sm-auto">
@@ -26,11 +30,11 @@
                         <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
                     </a>
                 </div>
-                <div class="col-sm-auto">
-                    <a href="mailto:xaidazpuli@gmail.com">
-                        <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/email-icon.png" alt="sad">
-                    </a>
-                </div>
+<%--                <div class="col-sm-auto">--%>
+<%--                    <a href="mailto:xaidazpuli@gmail.com">--%>
+<%--                        <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/email-icon.png" alt="sad">--%>
+<%--                    </a>--%>
+<%--                </div>--%>
             </div>
 
         </div>

@@ -1,0 +1,1 @@
+INSERT INTO PuliDb.Text (TEXT_GROUP, TEXT_KEY, TEXT) VALUES ('contact', 'email', 'xaidazpuli@gmail.com');
