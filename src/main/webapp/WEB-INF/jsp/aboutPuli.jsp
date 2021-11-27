@@ -13,11 +13,11 @@
                     <h4>
                         Allmänt
                     </h4>
+                    <jsp:include page="fragments/editableTextField.jsp" >
+                        <jsp:param name="textKey" value="general" />
+                    </jsp:include>
                     <div>
-                        Puli är en vallhund ursprungligen från Ungern. Hunden passar perfekt till träning av lydnad, vallning
-                        eller agility, och precis lika bra som sällskapshund.
-                        <br>
-                        Puli är en lojal vän som gärna följer med dig på äventyr.
+
                     </div>
                     <hr class="my-4">
                 </div>
@@ -27,10 +27,11 @@
                     <h4>
                         Storlek och utseende
                     </h4>
+                    <jsp:include page="fragments/editableTextField.jsp" >
+                        <jsp:param name="textKey" value="sizeAndLook" />
+                    </jsp:include>
                     <div>
-                        Rasen är mellanstor. Mankhöjd för hanar är 39–45 cm och för tikar 36–42 cm. Vikt för hanar är
-                        13–15 kg och för tikar 10–13 kg. Den har en tjock, filtad och vågig snörpäls. Färgerna är svart,
-                        fakó med svart mask, grå och pärlvit.
+
                     </div>
                     <hr class="my-4">
                 </div>
@@ -40,12 +41,9 @@
                     <h4>
                         Pälsvård
                     </h4>
-                    <div>
-                        Puli fäller inte och man behöver varken borsta eller kamma den. Vid cirka 10 månaders ålder
-                        börjar snören och band bildas av pälsen. Då kan man behöva hjälpa till och dela på pälsen så att
-                        snörena inte blir för stora. Fullpälsad
-                        blir den vid 4 till 6 års ålder.
-                    </div>
+                    <jsp:include page="fragments/editableTextField.jsp" >
+                        <jsp:param name="textKey" value="fur" />
+                    </jsp:include>
                 </div>
             </div>
             <div class="row mt-3">
@@ -65,9 +63,9 @@
                     <h4>
                         Hälsa
                     </h4>
-                    <div>
-                        Puli är en mycket frisk och sund hundras med få sjukdomsfall.
-                    </div>
+                    <jsp:include page="fragments/editableTextField.jsp" >
+                        <jsp:param name="textKey" value="health" />
+                    </jsp:include>
                     <hr class="my-4">
                 </div>
             </div>
@@ -76,13 +74,9 @@
                     <h4>
                         Mentalitet
                     </h4>
-                    <div>
-                        Puli är en självständig, snabb, pigg, klok, orädd, glad och lättlärd hund.
-                        <br><br>En
-                        Puli älskar att få göra något, men är ändå ingen hund som &quot;klättrar på
-                        väggarna&quot;.
-                        De anpassar sig bra och är lätta att ha med sig.
-                    </div>
+                    <jsp:include page="fragments/editableTextField.jsp" >
+                        <jsp:param name="textKey" value="mentality" />
+                    </jsp:include>
                     <hr class="my-4">
                 </div>
             </div>
@@ -91,9 +85,9 @@
                     <h4>
                         Övrigt
                     </h4>
-                    <div>
-                        Rasen kan passa dig som är pälsallergiker då den inte fäller.
-                    </div>
+                    <jsp:include page="fragments/editableTextField.jsp" >
+                        <jsp:param name="textKey" value="other" />
+                    </jsp:include>
                 </div>
             </div>
         </div>

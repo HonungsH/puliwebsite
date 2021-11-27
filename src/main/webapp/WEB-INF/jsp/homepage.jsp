@@ -51,20 +51,19 @@
                 <div class="block">
                     <div class="section-title">
                         <h2>Om oss</h2>
-                        <p>Vår kennel vill ha sunda och friska hundar med bra temperament.<br>De ska vara rastypiska och
-                            bör ha
-                            kvar sitt arv som vakt- och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
-                            HD-röntgade med godkänt resultat och att de ska vara ögonlysta.<br> <br>
+                        <jsp:include page="fragments/editableTextField.jsp" >
+                            <jsp:param name="textKey" value="aboutUs" />
+                        </jsp:include>
                     </div>
                     <p class="broedtekst-frontpage">Puli är en fantastisk hund som blir din bästa vän!</p>
                     <hr style="background: #1d192c;  width: auto" class="my-4">
-                    <p class="">Välkommen att höra av dig till oss vid frågor. </p>
+                    <p class="broedtekst-frontpage">Välkommen att höra av dig till oss vid frågor. </p>
                     <a href="${pageContext.request.contextPath}/kontakt" class="btn-main animated fadeInUp">Kontakta oss</a>
                 </div>
             </div><!-- .col-md-7 close -->
             <div class="col-md-5">
                 <div class="block">
-                    <img src="/images/dogs/2_dogs_field.jpg" alt="Img">
+                    <img src="/images/dogs/2_dogs_field.jpg" style="width: 100%" alt="Img">
                 </div>
             </div><!-- .col-md-5 close -->
         </div>
