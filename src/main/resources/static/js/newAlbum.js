@@ -78,10 +78,30 @@ var dropzone = new Dropzone('#demo-upload', {
     thumbnailHeight: 120,
     thumbnailWidth: 120,
     maxFilesize: 5,
+    maxFiles: 100,
     filesizeBase: 1000,
     addRemoveLinks: true,
-    dictDefaultMessage: "Dra filer hit",
-    dictRemoveFile: "Ta bort"
+    dictDefaultMessage: "",
+    dictRemoveFile: "Ta bort bild",
+    init: function () {
+        var pictures = $('.existingPicture');
+        var picutureLength =  pictures.length;
+        if (picutureLength > 0) {
+            var myDropzone = this;
+            pictures.each( function()  {
+                var fullPath = this.value;
+                var parts = fullPath.split(/[/\\]+/);
+                var fileName = parts[parts.length - 1];
+                var mockFile = { name: fileName, size: 12345 };
+                myDropzone.displayExistingFile(mockFile, fullPath);
+
+            });
+            myDropzone.options.maxFiles = myDropzone.options.maxFiles - picutureLength;
+        }
+    },
+    removedfile: function(file) {
+        file.previewElement.remove();
+    }
 });
 
 dropzone.on("removedfile", function (file) {

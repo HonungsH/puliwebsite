@@ -8,9 +8,11 @@
 <div class="container">
     <input type="hidden" id="albumTitleHidden" name="title" value="${albumTitle}"/>
     <c:if test="${isAdmin}">
-        <div class="row">
-            <button type="submit" id="deleteAlbumButton" class="btn btn-danger">Ta bort Album
-            </button>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <a href="${pageContext.request.contextPath}/bilder/redigeraAlbum?albumTitle=${albumTitle}" class="btn btn-primary">Redigera Album</a>
+                <button type="submit" id="deleteAlbumButton" class="btn btn-danger">Ta bort album</button>
+            </div>
         </div>
     </c:if>
     <div class="row" style="margin-bottom: 20px">

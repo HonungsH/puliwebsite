@@ -419,12 +419,8 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
     }
 }
 
-.dropzone {
-    border: none !important;
-}
-
 .dropzone.dz-started .dz-message {
-    opacity: 1; /* Don't let it disappear */
+    opacity: 1; /* Don't let it disappear TODO TOLA WHY*/
 }
 
 .modal-open .container-fluid, .modal-open  .container {

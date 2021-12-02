@@ -97,6 +97,17 @@ public class PicturesController {
         return "OK";
     }
 
+    @RequestMapping(path = "/redigeraAlbum", method = RequestMethod.GET)
+    public String editAlbum(Model model, @RequestParam("albumTitle") String albumTitle) {
+        Album album = albumRepository.findByTitle(albumTitle);
+        model.addAttribute("albumTitleHidden", albumTitle);
+        model.addAttribute("album", album);
+
+        List<Pair<String, String>> titleAndPicturePair = getTitleAndPicturePairs(albumTitle);
+        model.addAttribute("titleAndPicturePair", titleAndPicturePair);
+        return "newAlbum";
+    }
+
     @ResponseBody
     @RequestMapping(path = "/taBortBild", method = RequestMethod.POST)
     public String deletePicture(@RequestParam("title") String title, @RequestParam("albumTitle") String albumTitle) {
@@ -123,14 +134,18 @@ public class PicturesController {
         model.addAttribute("albumTitle", albumTitle);
         model.addAttribute("description", album.getDescription());
 
+        model.addAttribute("titleAndPicture", getTitleAndPicturePairs(albumTitle));
+        model.addAttribute("albumTitle", albumTitle);
+
+        return "pictures";
+    }
+
+    private List<Pair<String, String>> getTitleAndPicturePairs(String albumTitle) {
         List<Picture> picutures = pictureRepository.findByAlbumTitle(albumTitle);
         List<Pair<String, String>> titleAndPicture = new ArrayList<>();
         for (Picture picture : picutures) {
             titleAndPicture.add(Pair.of(picture.getTitle(), picture.getFilePath()));
         }
-        model.addAttribute("titleAndPicture", titleAndPicture);
-        model.addAttribute("albumTitle", albumTitle);
-
-        return "pictures";
+        return titleAndPicture;
     }
 }
