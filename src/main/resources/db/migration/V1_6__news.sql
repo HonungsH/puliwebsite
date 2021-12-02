@@ -10,3 +10,4 @@ INSERT INTO PuliDb.News (TITLE, TEXT, CREATED_AT, MODIFIED_AT, PROFILE_PICTURE) 
 INSERT INTO PuliDb.News (TITLE, TEXT, CREATED_AT, MODIFIED_AT, PROFILE_PICTURE) VALUES ('Alla valpar är nu hemma hos sina nya familjer!', 'Test test test TEXT ?!=!=?!??+ ', '2021-06-20', '2021-06-20', '/images/dogs/3_puppies.jpg');
 INSERT INTO PuliDb.News (TITLE, TEXT, CREATED_AT, MODIFIED_AT, PROFILE_PICTURE) VALUES ('Valpar', 'Fyra valpar efter Doriz och Atilla föddes den 30 juli 2021. Alla svarta.', '2021-07-30', '2021-07-30', '/images/dogs/puppy_atilla_doriz.jpg');
 INSERT INTO PuliDb.News (TITLE, TEXT, CREATED_AT, MODIFIED_AT, PROFILE_PICTURE) VALUES ('Valpar förväntas till nyår', 'En Nyhet utan Bild!', '2021-11-05', '2021-11-06', null);
+INSERT INTO PuliDb.News (TITLE, TEXT, CREATED_AT, MODIFIED_AT, PROFILE_PICTURE) VALUES ('Vi provade på vallning', 'En Nyhet utan Bild!', '2021-11-05', '2021-11-06', null);
