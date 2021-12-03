@@ -1,5 +1,5 @@
 Deploy:
 git pull
 gradlew build -x -text
-docker build -t puli.war .
+docker build --rm -t puli.war .
 docker-compose up
