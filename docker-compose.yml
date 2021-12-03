@@ -17,6 +17,7 @@ services:
     restart: on-failure
     depends_on:
       - puli-mysql
+      - prometheus
     ports:
       - 8081:8081
     environment:
@@ -28,5 +29,19 @@ services:
     volumes:
       - uploads-data:/var/puli_uploads
 
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./rules.yml:/etc/prometheus/rules.yml
+    ports:
+      - "9090:9090"
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    ports:
+      - 9093:9093
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
 volumes:
   uploads-data:

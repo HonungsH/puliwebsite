@@ -1,0 +1,14 @@
+scrape_configs:
+  - job_name: 'puli-main'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['puli-main:8081']
+
+rule_files:
+  - 'rules.yml'
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
