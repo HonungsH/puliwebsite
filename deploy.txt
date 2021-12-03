@@ -1,0 +1,5 @@
+Deploy:
+git pull
+gradlew build -x -text
+docker build -t puli.war .
+docker-compose up
