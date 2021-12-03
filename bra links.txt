@@ -1,0 +1,2 @@
+Hur man installerar cert med certbot
+https://certbot.eff.org/instructions?ws=other&os=ubuntufocal
