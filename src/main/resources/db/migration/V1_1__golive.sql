@@ -59,10 +59,9 @@ INSERT INTO PuliDb.Text (TEXT_GROUP, TEXT_KEY, TEXT) VALUES ('aboutPuli', 'mainT
 INSERT INTO PuliDb.Text (TEXT_GROUP, TEXT_KEY, TEXT) VALUES ('contact', 'email', 'xaidazpuli@gmail.com');
 
 -- Homepage
-INSERT INTO PuliDb.Text (TEXT_GROUP, TEXT_KEY, TEXT) VALUES ('homepage', 'aboutUs', 'Vår kennel vill ha sunda och friska hundar med bra temperament.<br>De ska vara rastypiska och
-                            bör ha
-                            kvar sitt arv som vakt- och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
-                            HD-röntgade med godkänt resultat och att de ska vara ögonlysta.<br> <br>');
+INSERT INTO PuliDb.Text (TEXT_GROUP, TEXT_KEY, TEXT) VALUES ('homepage', 'aboutUs', 'Vår kennel vill ha sunda och friska hundar med bra temperament.
+De ska vara rastypiska och bör ha kvar sitt arv som vakt- och vallhund.
+Vi strävar efter att alla hundar som är i avel är HD-röntgade med godkänt resultat, stickprov ögonlysning, koll DM. gärna BPH testade. .');
 
 -- AboutPuli
 INSERT INTO PuliDb.Text (TEXT_GROUP, TEXT_KEY, TEXT) VALUES ('aboutPuli', 'general', 'Puli är en vallhund ursprungligen från Ungern. Hunden passar perfekt till träning av lydnad, vallning
