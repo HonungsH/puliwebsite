@@ -1,5 +1,5 @@
 Deploy:
 git pull
-gradlew build -x -text
+gradlew build -x test
 docker build --rm -t puli.war .
 docker-compose up
