@@ -20,6 +20,7 @@ services:
       - prometheus
     ports:
       - 443:443
+      - 80:80
     environment:
       - DATABASE_HOST=puli-mysql
       - DATABASE_USER=puli-app-user
