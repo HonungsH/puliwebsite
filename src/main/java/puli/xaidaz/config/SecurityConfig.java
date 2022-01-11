@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
 @Configuration
 @EnableWebSecurity
@@ -35,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessUrl("/").permitAll()
                 .and().csrf().disable();
 
+        httpSecurity.headers().addHeaderWriter(new StaticHeadersWriter("X-Content-Security-Policy","default-src 'self' xaidaz.com *.xaidaz.com"));
     }
 
     @Bean
