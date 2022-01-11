@@ -19,7 +19,7 @@ services:
       - puli-mysql
       - prometheus
     ports:
-      - 8081:8081
+      - 443:443
     environment:
       - DATABASE_HOST=puli-mysql
       - DATABASE_USER=puli-app-user
