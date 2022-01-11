@@ -26,6 +26,7 @@ services:
       - DATABASE_PASSWORD=skat
       - DATABASE_NAME=PuliDb
       - DATABASE_PORT=3306
+      - SPRING_PROFILES_ACTIVE=prod
     volumes:
       - uploads-data:/var/puli_uploads
 
