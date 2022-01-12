@@ -2,7 +2,7 @@ scrape_configs:
   - job_name: 'puli-main'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['puli-main:443']
+      - targets: ['xaidaz.com']
 
 rule_files:
   - 'rules.yml'
