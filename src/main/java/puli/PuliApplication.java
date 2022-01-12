@@ -7,6 +7,7 @@ import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.flyway.FlywayMigrationStrategy;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -46,6 +47,7 @@ public class PuliApplication extends SpringBootServletInitializer {
     }*/
 
     @Bean
+    @ConditionalOnProperty(value="server.port", havingValue = "443")
     public ServletWebServerFactory servletContainer() {
         TomcatServletWebServerFactory tomcat = new  TomcatServletWebServerFactory() {
             @Override
