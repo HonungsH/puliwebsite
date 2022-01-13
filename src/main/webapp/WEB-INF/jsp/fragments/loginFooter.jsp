@@ -24,7 +24,7 @@
             <div class="service-item">
                 <img style="height: 30px" src="${pageContext.request.contextPath}/images/outline_pets.png" alt="">
                 <h4 class="mt-3" style="color: black;">Systeminformation</h4>
-                <p style="color:black;">Gjord av Hanne Heingård och Tobias Landelius. Vill du ha en egen hemsida till din kennel? Kontakta oss på tlandelius@gmail.com. </p>
+                <p style="color:black;">Gjord av Hanne Heingård och Tobias Landelius. Vill du ha en egen hemsida till din kennel? Kontakta oss på hanneheingard@gmail.com. </p>
             </div>
         </div>
     </div>
