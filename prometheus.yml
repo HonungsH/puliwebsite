@@ -3,11 +3,10 @@ scrape_configs:
     metrics_path: '/actuator/prometheus'
     static_configs:
       - targets:
-        - 'prometheus:9090'
-        - '70.34.209.48:443'
-        - '70.34.209.48:80'
-        - 'puli-main:80'
-        - 'puli-main:443'
+        - 'http://70.34.209.48'
+        - 'https://70.34.209.48'
+        - 'https://xaidaz.com'
+        - 'http://xaidaz.com'
 
 rule_files:
   - 'rules.yml'
