@@ -3,10 +3,10 @@ scrape_configs:
     metrics_path: '/actuator/prometheus'
     static_configs:
       - targets:
-        - 'http://70.34.209.48'
-        - 'https://70.34.209.48'
-        - 'https://xaidaz.com'
-        - 'http://xaidaz.com'
+        - http://70.34.209.48
+        - https://70.34.209.48
+        - https://xaidaz.com
+        - http://xaidaz.com
 
 rule_files:
   - 'rules.yml'
