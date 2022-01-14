@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Xaida'z Puli</title>
+    <link rel = "icon" href ="https://st2.depositphotos.com/47577860/49673/v/600/depositphotos_496730384-stock-illustration-puli-dog-pet-icon-outline.jpg" type = "image/x-icon">
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
