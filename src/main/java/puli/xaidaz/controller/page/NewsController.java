@@ -1,6 +1,7 @@
 package puli.xaidaz.controller.page;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -37,11 +38,13 @@ public class NewsController {
         return "news";
     }
 
+    @Secured({"ADMIN"})
     @RequestMapping(path = "/nyNyhet")
     public String addNews() {
         return "addNews";
     }
 
+    @Secured({"ADMIN"})
     @RequestMapping(path = "/redigeraNyhet", method = RequestMethod.POST)
     public String editNews(@RequestParam("id") long id, Model model) {
         News news = newsRepository.findById(id).get();
@@ -53,6 +56,7 @@ public class NewsController {
         return "addNews";
     }
 
+    @Secured({"ADMIN"})
     @ResponseBody
     @RequestMapping(value = "/taBort", method = RequestMethod.POST)
     public String deleteNews(@RequestParam("id") long id) {
@@ -65,6 +69,7 @@ public class NewsController {
         return "OK";
     }
 
+    @Secured({"ADMIN"})
     @RequestMapping(value = "/sparaNyhet", method = RequestMethod.POST)
     public String saveNews(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("news") News news, BindingResult bindingResult) throws IOException {
         if (bindingResult.hasErrors()) {

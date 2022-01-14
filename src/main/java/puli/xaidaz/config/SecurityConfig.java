@@ -16,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
 import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
 @Configuration
@@ -29,7 +30,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .passwordEncoder(encoder())
-                .withUser("admin").password(encoder().encode("admin")).roles("ADMIN");
+                .withUser("Carina").password(encoder().encode("Zabrella")).roles("ADMIN");
+
+        auth.inMemoryAuthentication()
+                .passwordEncoder(encoder())
+                .withUser("admin").password(encoder().encode("tobyskat92")).roles("ADMIN", "TECHNICAL");
     }
 
     @Override
@@ -45,6 +50,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().formLogin().loginPage("/login")
                 .and().logout().logoutSuccessUrl("/").permitAll()
                 .and().csrf().disable();
+
+        // Throw 403 instead of redirecting to login page when trying forbidden endpoint
+        httpSecurity.exceptionHandling().authenticationEntryPoint(new Http403ForbiddenEntryPoint());
 
         if (!environment.equalsIgnoreCase("local")) {
             httpSecurity.headers().addHeaderWriter(new StaticHeadersWriter("X-Content-Security-Policy","default-src 'self' xaidaz.com *.xaidaz.com"));

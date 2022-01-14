@@ -1,6 +1,7 @@
 package puli.xaidaz.controller.page;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -39,12 +40,14 @@ public class OurDogsController {
         return "dogProfile";
     }
 
+    @Secured({"ADMIN"})
     @RequestMapping(path = "/nyHund")
     public String addDog(Model model) {
         model.addAttribute("profilePictureLabel", "Ingen fil vald");
         return "newDog";
     }
 
+    @Secured({"ADMIN"})
     @RequestMapping(path = "/redigeraHund", method = RequestMethod.POST)
     public String editDog(@RequestParam("dogId") long dogId, Model model) {
         Dog dog = dogRepository.findById(dogId).get();
@@ -54,6 +57,7 @@ public class OurDogsController {
         return "newDog";
     }
 
+    @Secured({"ADMIN"})
     @RequestMapping(value = "/sparaHund", method = RequestMethod.POST)
     public String saveDog(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("dog") Dog dog, BindingResult bindingResult) throws IOException {
         if (bindingResult.hasErrors()) {
@@ -79,6 +83,7 @@ public class OurDogsController {
         return "redirect:/hundar";
     }
 
+    @Secured({"ADMIN"})
     @ResponseBody
     @RequestMapping(value = "/taBort", method = RequestMethod.POST)
     public String deleteDog(@RequestParam("id") long id) {

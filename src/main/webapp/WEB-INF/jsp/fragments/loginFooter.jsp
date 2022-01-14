@@ -5,20 +5,7 @@
     <br>
     ------------
 
-    <c:choose>
-        <c:when test="${isAdmin}">
-            <div>Inloggad som admin</div>
-            <div>
-                <a href="${pageContext.request.contextPath}/logout">Logga ut</a>
-            </div>
-        </c:when>
 
-        <c:otherwise>
-            <div>
-                <a href="${pageContext.request.contextPath}/login">Logga in som administratör</a>
-            </div>
-        </c:otherwise>
-    </c:choose>
     <div class="row mt-5">
         <div class="col-sm-12 col-md-12">
             <div class="service-item">
@@ -27,6 +14,20 @@
                 <p style="color:black;">
                     Sidan är skapad av Hanne Heingård och Tobias Landelius.<br>
                     Vill du ha en egen hemsida till din kennel? Kontakta oss på hanneheingard@gmail.com.
+                    <c:choose>
+                    <c:when test="${isAdmin}">
+                    <div>Inloggad som admin</div>
+                    <div>
+                        <a href="${pageContext.request.contextPath}/logout">Logga ut</a>
+                    </div>
+                    </c:when>
+
+                    <c:otherwise>
+                        <div>
+                            <a href="${pageContext.request.contextPath}/login">Logga in som administratör</a>
+                        </div>
+                    </c:otherwise>
+                    </c:choose>
                 </p>
             </div>
         </div>
