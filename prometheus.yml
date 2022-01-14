@@ -4,7 +4,7 @@ scrape_configs:
     scheme: https
     static_configs:
       - targets:
-          ['xaidaz.com:443']
+          ['puli-main:443']
 
 rule_files:
   - 'rules.yml'
