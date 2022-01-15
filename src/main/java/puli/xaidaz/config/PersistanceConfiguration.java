@@ -66,6 +66,7 @@ public class PersistanceConfiguration {
     private Properties jpaHibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
+        properties.setProperty("hibernate.show_sql", "false");
         return properties;
     }
 }
