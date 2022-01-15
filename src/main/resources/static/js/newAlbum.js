@@ -74,6 +74,7 @@ $(document).ready(function(){
 Dropzone.autoDiscover = false;
 
 var dropzone = new Dropzone('#demo-upload', {
+    acceptedFiles: ".jpeg,.jpg,.png,.gif",
     parallelUploads: 1,
     thumbnailHeight: 120,
     thumbnailWidth: 120,
@@ -83,6 +84,7 @@ var dropzone = new Dropzone('#demo-upload', {
     addRemoveLinks: true,
     dictDefaultMessage: "",
     dictRemoveFile: "Ta bort bild",
+    dictInvalidFileType: "Du kan inte ladda upp bilder av den här filtypen.",
     init: function () {
         var pictures = $('.existingPicture');
         var picutureLength =  pictures.length;
