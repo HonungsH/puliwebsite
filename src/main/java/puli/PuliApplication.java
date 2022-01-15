@@ -23,7 +23,7 @@ import javax.servlet.annotation.MultipartConfig;
 @ComponentScan(basePackages = {"puli.xaidaz"})
 @EntityScan("puli.xaidaz.jpa.entity")
 @EnableJpaRepositories("puli.xaidaz.jpa.repository")
-@EnableGlobalMethodSecurity(securedEnabled = true)
+@EnableGlobalMethodSecurity(securedEnabled = true, jsr250Enabled = true)
 @MultipartConfig
 public class PuliApplication extends SpringBootServletInitializer {
 

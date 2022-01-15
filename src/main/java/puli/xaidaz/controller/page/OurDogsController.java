@@ -40,14 +40,14 @@ public class OurDogsController {
         return "dogProfile";
     }
 
-    @Secured({"ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @RequestMapping(path = "/nyHund")
     public String addDog(Model model) {
         model.addAttribute("profilePictureLabel", "Ingen fil vald");
         return "newDog";
     }
 
-    @Secured({"ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @RequestMapping(path = "/redigeraHund", method = RequestMethod.POST)
     public String editDog(@RequestParam("dogId") long dogId, Model model) {
         Dog dog = dogRepository.findById(dogId).get();
@@ -57,7 +57,7 @@ public class OurDogsController {
         return "newDog";
     }
 
-    @Secured({"ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @RequestMapping(value = "/sparaHund", method = RequestMethod.POST)
     public String saveDog(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("dog") Dog dog, BindingResult bindingResult) throws IOException {
         if (bindingResult.hasErrors()) {
@@ -83,7 +83,7 @@ public class OurDogsController {
         return "redirect:/hundar";
     }
 
-    @Secured({"ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @ResponseBody
     @RequestMapping(value = "/taBort", method = RequestMethod.POST)
     public String deleteDog(@RequestParam("id") long id) {

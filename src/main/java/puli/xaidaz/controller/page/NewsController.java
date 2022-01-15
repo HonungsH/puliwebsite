@@ -38,13 +38,13 @@ public class NewsController {
         return "news";
     }
 
-    @Secured({"ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @RequestMapping(path = "/nyNyhet")
     public String addNews() {
         return "addNews";
     }
 
-    @Secured({"ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @RequestMapping(path = "/redigeraNyhet", method = RequestMethod.POST)
     public String editNews(@RequestParam("id") long id, Model model) {
         News news = newsRepository.findById(id).get();
@@ -56,7 +56,7 @@ public class NewsController {
         return "addNews";
     }
 
-    @Secured({"ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @ResponseBody
     @RequestMapping(value = "/taBort", method = RequestMethod.POST)
     public String deleteNews(@RequestParam("id") long id) {
@@ -69,7 +69,7 @@ public class NewsController {
         return "OK";
     }
 
-    @Secured({"ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @RequestMapping(value = "/sparaNyhet", method = RequestMethod.POST)
     public String saveNews(@RequestParam("profilePictureFile") MultipartFile profilePicture, @Valid @ModelAttribute("news") News news, BindingResult bindingResult) throws IOException {
         if (bindingResult.hasErrors()) {
