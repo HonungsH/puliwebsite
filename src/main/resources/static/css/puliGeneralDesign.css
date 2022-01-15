@@ -32,6 +32,12 @@ body {
     color: white;
 }
 
+.adjustableTextArea {
+    white-space: pre-wrap;
+    height: 150px;
+    overflow:hidden;
+    resize: none
+}
 
 /* Add a background color to navigation links on hover */
 a:hover {

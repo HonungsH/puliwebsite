@@ -37,7 +37,7 @@
     </div>
     <div class="form-group">
         <label for="dogDescription">Presentation av Hunden</label>
-        <textarea class="form-control" name="description" aria-describedby="descriptionHelp" id="dogDescription" rows="3">${dog.description}</textarea>
+        <textarea class="form-control adjustableTextArea" name="description" aria-describedby="descriptionHelp" id="dogDescription" rows="3">${dog.description}</textarea>
         <small id="descriptionHelp" class="form-text text-muted">Beskriv Hunden!</small>
     </div>
     <div class="form-group">
@@ -46,7 +46,7 @@
     </div>
     <div class="form-group">
         <label for="breedingHistory">Beskrivning av Hundens avelshistorik/avkommor</label>
-        <textarea class="form-control" name="breedingHistory" aria-describedby="breedingHistoryHelp" id="breedingHistory" rows="3">${dog.breedingHistory}</textarea>
+        <textarea class="form-control adjustableTextArea" name="breedingHistory" aria-describedby="breedingHistoryHelp" id="breedingHistory" rows="3">${dog.breedingHistory}</textarea>
         <small id="breedingHistoryHelp" class="form-text text-muted">Skriv något intressant om Hundens avelshistorik!</small>
     </div>
     <div class="container">

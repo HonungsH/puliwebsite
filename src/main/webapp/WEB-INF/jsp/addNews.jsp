@@ -3,7 +3,7 @@
 <%@ include file="fragments/navigation.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/news.js"></script>
 
-<body>
+<body onload="textAreaAdjust($('#newsText').get(0))">
 <h2 style="text-align: center;margin-bottom: 30px;">Lägg till en nyhet</h2>
 <div class="container">
     <p style="color:red">* = obligatorisk</p>
@@ -24,8 +24,9 @@
         <div class="form-group">
             <label class="required" for="newsText">Nyhetens innehåll:</label>
             <form:errors class="errorMessage alert" path="text"/>
-            <textarea maxlength="1500" style="white-space: pre-wrap;" class="form-control" name="text" aria-describedby="textHelp" id="newsText"
-                      rows="3">${news.text}</textarea>
+            <textarea maxlength="1500" class="form-control adjustableTextArea" name="text"
+                      aria-describedby="textHelp" id="newsText" rows="3">${news.text}
+            </textarea>
             <small id="textHelp" class="form-text text-muted"></small>
             <span class="antalTeckenKvarText ml-1">Antal tecken kvar:</span>
             <span class="character-counter-text ml-1">1500</span>
