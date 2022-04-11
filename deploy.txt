@@ -3,3 +3,17 @@ git pull
 ./gradlew build -x test
 docker build --rm -t puli.war .
 docker-compose up
+
+
+
+Manual cert renew:
+
+sudo certbot certonly --manual --preferred-challenges dns --debug-challenges -d xaidaz.com -d www.xaidaz.com
+openssl pkcs12
+    -export
+    -out keystore_new2.p12
+    -inkey /etc/letsencrypt/live/xaidaz.com/privkey.pem
+    -in /etc/letsencrypt/live/xaidaz.com/cert.pem
+    -certfile /etc/letsencrypt/live/xaidaz.com/chain.pem
+
+xaidazpuli@gmail.com
