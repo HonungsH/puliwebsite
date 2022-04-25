@@ -103,7 +103,7 @@ test {
 flyway {
     url = 'jdbc:mysql://localhost:3306/PuliDb?useSSL=false&allowPublicKeyRetrieval=true'
     user = 'root'
-    password = 'root'
+    password = '&<rncxt]@b4<$rPL'
 }
 
 shadowJar {
