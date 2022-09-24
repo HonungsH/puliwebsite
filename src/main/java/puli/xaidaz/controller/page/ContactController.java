@@ -22,8 +22,8 @@ public class ContactController {
     @GetMapping
     public String renderPageLayout(Model model, @RequestHeader(HttpHeaders.USER_AGENT) String userAgent) {
         textService.setTextMapToModel(model, "contact");
-        model.addAttribute("isAndroid", userAgent.toLowerCase().contains("mozilla"));
-        model.addAttribute("isApple", userAgent.toLowerCase().contains("apple"));
+        model.addAttribute("isAndroid", userAgent.matches("(?i)android"));
+        model.addAttribute("isApple", userAgent.matches("(?i)iphone|ipad|ipod"));
         return "contact";
     }
 }
