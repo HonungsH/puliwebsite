@@ -27,24 +27,27 @@
 
             <div class="row" style="margin-top: 15%">
                 <div class="col-sm-auto">
-                    <c:choose>
-                        <c:when test="${isAndroid}">
-                            <a href="fb://page/562552981" target="_blank">
-                                <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
-                            </a>
-                        </c:when>
-                        <c:when test="${isApple}">
-                            Apple
-                            <a href="fb://profile/562552981" target="_blank">
-                                <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
-                            </a>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="https://www.facebook.com/carina.karlssonxaidazpuli" target="_blank">
-                                <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
-                            </a>
-                        </c:otherwise>
-                    </c:choose>
+<%--                    <c:choose>--%>
+<%--                        <c:when test="${isAndroid}">--%>
+<%--                            <a href="fb://page/562552981" target="_blank">--%>
+<%--                                <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">--%>
+<%--                            </a>--%>
+<%--                        </c:when>--%>
+<%--                        <c:when test="${isApple}">--%>
+<%--                            Apple--%>
+<%--                            <a href="fb://profile/562552981" target="_blank">--%>
+<%--                                <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">--%>
+<%--                            </a>--%>
+<%--                        </c:when>--%>
+<%--                        <c:otherwise>--%>
+<%--                            <a href="https://www.facebook.com/carina.karlssonxaidazpuli" target="_blank">--%>
+<%--                                <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">--%>
+<%--                            </a>--%>
+<%--                        </c:otherwise>--%>
+<%--                    </c:choose>--%>
+                    <a href="https://www.facebook.com/carina.karlssonxaidazpuli" target="_top">
+                        <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
+                    </a>
                 </div>
             </div>
         </div>
