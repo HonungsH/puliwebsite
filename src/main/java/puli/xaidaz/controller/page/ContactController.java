@@ -23,8 +23,8 @@ public class ContactController {
     public String renderPageLayout(Model model, @RequestHeader(HttpHeaders.USER_AGENT) String userAgent) {
         textService.setTextMapToModel(model, "contact");
         model.addAttribute("isAndroid", userAgent.matches(".*(?i)android.*"));
-        model.addAttribute("isApple", userAgent.matches(".*(?i)iphone|ipad|ipod.*"));
-        System.out.println("Contact called with. " +userAgent);
+        model.addAttribute("isApple", userAgent.matches(".*(?i)(iphone|ipad|ipod).*"));
+
         return "contact";
     }
 }

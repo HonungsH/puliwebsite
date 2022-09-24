@@ -29,13 +29,13 @@
                 <div class="col-sm-auto">
                     <c:choose>
                         <c:when test="${isAndroid}">
-                            <a href="fb://page/10159425855387982" target="_blank">
+                            <a href="fb://page/562552981" target="_blank">
                                 <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
                             </a>
                         </c:when>
                         <c:when test="${isApple}">
                             Apple
-                            <a href="fb://profile/10159425855387982" target="_blank">
+                            <a href="fb://profile/562552981" target="_blank">
                                 <img style="width: 70px; height: 70px" src="${pageContext.request.contextPath}/images/facebook_logo.png" alt="sad">
                             </a>
                         </c:when>
