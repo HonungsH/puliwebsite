@@ -24,6 +24,7 @@ public class ContactController {
         textService.setTextMapToModel(model, "contact");
         model.addAttribute("isAndroid", userAgent.matches("(?i)android"));
         model.addAttribute("isApple", userAgent.matches("(?i)iphone|ipad|ipod"));
+        System.out.println("Contact called with. " +userAgent);
         return "contact";
     }
 }
