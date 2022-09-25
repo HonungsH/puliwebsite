@@ -45,7 +45,7 @@
                         <h4 class="profileTitle">Om ${dog.name}</h4>
                     </div>
                     <div class="row">
-                        <p>${dog.description}</p>
+                        <p style="white-space: pre-wrap;">${dog.description}</p>
                     </div>
                 </c:if>
 
