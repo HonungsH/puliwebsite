@@ -37,8 +37,9 @@
     </div>
     <div class="form-group">
         <label for="dogDescription">Presentation av Hunden</label>
-        <textarea class="form-control adjustableTextArea" name="description" aria-describedby="descriptionHelp" id="dogDescription" rows="3">${dog.description}</textarea>
-        <small id="descriptionHelp" class="form-text text-muted">Beskriv Hunden!</small>
+        <textarea maxlength="1500" class="form-control adjustableTextArea" name="description" aria-describedby="descriptionHelp" id="dogDescription" rows="3">${dog.description}</textarea>
+        <span class="antalTeckenKvarText ml-1">Antal tecken kvar:</span>
+        <span class="character-counter-text ml-1">1500</span>
     </div>
     <div class="form-group">
         <label class="" for="skkLink">Länk till Hunden i SKK:</label>
