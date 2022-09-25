@@ -15,9 +15,8 @@ $(document).ready(function(){
 });
 
 function updateCharacterCounter(input) {
-    var counter = input.siblings('.character-counter-text');
     var newText = input.attr('maxlength') - input.val().length;
-    counter.text(newText);
+    input.siblings('.character-counter-text').text(newText);
 }
 
 function bindAdjustableTextAreas() {
