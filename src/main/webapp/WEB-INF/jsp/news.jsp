@@ -38,9 +38,11 @@
                                 <h5 class="card-title nyhetTitel">${news.title}</h5>
                                 <p class="card-text" style="white-space: pre-wrap;">${news.text}</p>
 
-                                <p class="card-text">
-                                    <small class="text-muted">Skapad ${news.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))},</small>
-                                    <small class="text-muted">Uppdaterad ${news.modifiedAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</small>
+                                <p class="card-text mt-auto">
+                                    <span class="text-muted lead">Publicerad ${news.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</span>
+                                    <c:if test="${news.createdAt != news.modifiedAt}">
+                                        <span class="text-muted lead"> (Uppdaterad ${news.modifiedAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))})</span>
+                                    </c:if>
                                 </p>
                                 <c:if test="${isAdmin}">
                                     <button type="submit" class="mt-auto m-1 btn btn-secondary editNewsButton" style="">Redigera Nyhet
