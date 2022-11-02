@@ -1,29 +1,9 @@
 <%@page pageEncoding="UTF-8" %>
 <%@ include file="fragments/header.jsp" %>
 <%@ include file="fragments/navigation.jsp" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 
 <body>
-
-
-<%--<div class="row">
-    <div class="col">
-        <div class="bg-cover" style="background: #e9ecef">
-            <div class="container" style="text-align: center">
-                <h1 class="display-4 mt-2" style="text-transform: uppercase;">Välkommen!</h1>
-                <p class="lead">Vår kennel har uppfödning av den ungerska rasen <strong>Puli</strong> i närheten av
-                    Trelleborg, Skåne</p>
-                <hr style="background: #e98074; width: 500px" class="my-4">
-                <p style="font-size: 1.1rem;">Vår kennel vill ha sunda och friska hundar med bra temperament.<br>De ska vara rastypiska och bör ha
-                    kvar sitt arv som vakt och vallhund.<br>Vi strävar efter att alla hundar som är i avel är
-                    HD-röntgade med godkänt resultat och ska vara ögonlysta.<br> <br>
-                    <strong>Puli är en fantastisk hund som blir din bästa vän!</strong><br> <br>
-                <hr style="background: #e98074;  width: 500px" class="my-4">
-                    Välkommen att höra av dig till oss vid frågor. </p>
-                <a class="btn btn-primary btn-lg readMoreBtn" href="#" role="button">Läs mer om oss</a>
-            </div>
-            <!-- /.container   -->
-        </div>
-    </div>--%>
 
 
 <!-- Slider Start -->
@@ -56,14 +36,34 @@
                         </jsp:include>
                     </div>
                     <p class="broedtekst-frontpage">Puli är en fantastisk hund som blir din bästa vän!</p>
+                    <img src="/images/dogs/2_dogs_field.jpg" style="width: 50%" alt="Img">
                     <hr style="background: #1d192c;  width: auto" class="my-4">
-                    <p class="broedtekst-frontpage">Välkommen att höra av dig till oss vid frågor. </p>
+                    <p class="broedtekst-frontpage">Välkommen att höra av dig till oss.</p>
                     <a href="${pageContext.request.contextPath}/kontakt" class="btn-main animated fadeInUp">Kontakta oss</a>
                 </div>
             </div><!-- .col-md-7 close -->
             <div class="col-md-5">
-                <div class="block">
-                    <img src="/images/dogs/2_dogs_field.jpg" style="width: 100%" alt="Img">
+                <div class="block" style="padding-top: 50px">
+                    <div class="card customCard mb-3 w-100" >
+                        <h3 class="mt-2 ml-3"><a class="text-dark" href="${pageContext.request.contextPath}/nyheter">Senaste nyheter</a></h3>
+                        <c:forEach var="newsDTO" items="${newsDTOList}">
+                            <a class="text-dark" href="${pageContext.request.contextPath}/nyheter">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4">
+                                        <c:set var="hasProfilePic" value="${newsDTO.profilePicture != null && !newsDTO.profilePicture.isEmpty()}"/>
+                                        <c:if test="${hasProfilePic}">
+                                            <img src="<c:url value="${newsDTO.profilePicture}"/>" class="img-fluid rounded-start"
+                                                 style="margin:20px;" alt="...">
+                                        </c:if>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="card-title">${newsDTO.title}</h5>
+                                        <small class="text-muted lead">Publicerad ${newsDTO.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </c:forEach>
+                    </div>
                 </div>
             </div><!-- .col-md-5 close -->
         </div>
