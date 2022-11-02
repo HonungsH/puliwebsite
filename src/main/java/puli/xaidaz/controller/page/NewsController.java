@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,8 +16,16 @@ import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/nyheter")
@@ -30,10 +39,16 @@ public class NewsController {
     @GetMapping
     public String renderPageLayout(Model model) {
         List<News> allNews = newsRepository.findAll();
-
         allNews.sort(Comparator.comparing(News::getCreatedAt).reversed());
 
-        model.addAttribute("listOfNews", allNews);
+        Map<String, List<News>> newsByMonthMap = new LinkedHashMap<>();
+        for (News news : allNews) {
+            String year = String.valueOf(news.getCreatedAt().getYear());
+            String month = news.getCreatedAt().format(DateTimeFormatter.ofPattern("MMMM", new Locale("sv","SE")));
+            newsByMonthMap.computeIfAbsent(StringUtils.capitalize(month)+ " " +year, k -> new ArrayList<>()).add(news);
+        }
+
+        model.addAttribute("newsByMonthMap", newsByMonthMap);
 
         return "news";
     }
