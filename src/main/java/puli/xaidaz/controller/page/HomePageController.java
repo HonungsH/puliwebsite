@@ -31,7 +31,7 @@ public class HomePageController {
 
         List<NewsDTO> newsDTOList = newsRepository.findLatestByCreatedAt(3)
                 .stream()
-                .map(news -> new NewsDTO(news.getTitle(), news.getProfilePicture(), news.getCreatedAt()))
+                .map(news -> new NewsDTO(news.getId(), news.getTitle(), news.getProfilePicture(), news.getCreatedAt()))
                 .collect(Collectors.toList());
 
         model.addAttribute("newsDTOList", newsDTOList);
@@ -42,6 +42,7 @@ public class HomePageController {
     @Data
     @AllArgsConstructor
     public static class NewsDTO {
+        long id;
         String title;
         String profilePicture;
         LocalDateTime createdAt;

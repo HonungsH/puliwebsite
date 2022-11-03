@@ -28,6 +28,7 @@
                 <input type="hidden" name="id" id="id" value="${news.id}">
                 <c:set var="hasProfilePic" value="${news.profilePicture != null && !news.profilePicture.isEmpty()}"/>
                 <div class="row">
+                    <a id="${news.id}"></a>
                     <div class="card customCard mb-3 w-100">
                         <div class="row g-0">
                             <c:if test="${hasProfilePic}">

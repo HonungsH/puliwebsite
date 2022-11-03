@@ -47,10 +47,10 @@
             </div><!-- .col-md-7 close -->
             <div class="col-md-5">
                 <div class="block">
-                    <div class="card customCard mb-3 mt-4 w-100" >
+                    <div class="card customCard mb-3 mt-4 w-100">
                         <h3 class="mt-2 ml-3 mb-4"><a class="text-dark" href="${pageContext.request.contextPath}/nyheter">Senaste nyheter</a></h3>
                         <c:forEach var="newsDTO" items="${newsDTOList}">
-                            <a class="text-dark" href="${pageContext.request.contextPath}/nyheter">
+                            <a class="text-dark" href="${pageContext.request.contextPath}/nyheter#${newsDTO.id}">
                                 <div class="row align-items-center px-4">
                                     <div class="col-md-5">
                                         <c:set var="hasProfilePic" value="${newsDTO.profilePicture != null && !newsDTO.profilePicture.isEmpty()}"/>
