@@ -42,21 +42,21 @@
                         <jsp:param name="textKey" value="aboutUs" />
                     </jsp:include>
                     <p class="broedtekst-frontpage">Puli är en fantastisk hund som blir din bästa vän!</p>
-                    <img src="/images/dogs/2_dogs_field.jpg" style="width: 50%" alt="Img">
+                    <img src="${pageContext.request.contextPath}/images/dogs/2_dogs_field.jpg" style="width: 50%" alt="Img">
                 </div>
             </div><!-- .col-md-7 close -->
             <div class="col-md-5">
                 <div class="block">
                     <div class="card customCard mb-3 mt-4 w-100" >
-                        <h3 class="mt-2 ml-3"><a class="text-dark" href="${pageContext.request.contextPath}/nyheter">Senaste nyheter</a></h3>
+                        <h3 class="mt-2 ml-3 mb-4"><a class="text-dark" href="${pageContext.request.contextPath}/nyheter">Senaste nyheter</a></h3>
                         <c:forEach var="newsDTO" items="${newsDTOList}">
                             <a class="text-dark" href="${pageContext.request.contextPath}/nyheter">
-                                <div class="row align-items-center">
+                                <div class="row align-items-center px-4">
                                     <div class="col-md-5">
                                         <c:set var="hasProfilePic" value="${newsDTO.profilePicture != null && !newsDTO.profilePicture.isEmpty()}"/>
                                         <c:if test="${hasProfilePic}">
-                                            <img src="<c:url value="${newsDTO.profilePicture}"/>" class="img-fluid rounded-start"
-                                                 style="margin:20px; max-height: 125px" alt="...">
+                                            <img src="<c:url value="${newsDTO.profilePicture}"/>" class="img-fluid rounded-start ml-2 mb-3"
+                                                 style="max-height: 125px" alt="...">
                                         </c:if>
                                     </div>
                                     <div class="col-md-7">
