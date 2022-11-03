@@ -31,34 +31,37 @@
                 <div class="block">
                     <div class="section-title">
                         <h2>Om oss</h2>
-                        <jsp:include page="fragments/editableTextField.jsp" >
-                            <jsp:param name="textKey" value="aboutUs" />
-                        </jsp:include>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="block">
+                    <jsp:include page="fragments/editableTextField.jsp" >
+                        <jsp:param name="textKey" value="aboutUs" />
+                    </jsp:include>
                     <p class="broedtekst-frontpage">Puli är en fantastisk hund som blir din bästa vän!</p>
                     <img src="/images/dogs/2_dogs_field.jpg" style="width: 50%" alt="Img">
-                    <hr style="background: #1d192c;  width: auto" class="my-4">
-                    <p class="broedtekst-frontpage">Välkommen att höra av dig till oss.</p>
-                    <a href="${pageContext.request.contextPath}/kontakt" class="btn-main animated fadeInUp">Kontakta oss</a>
                 </div>
             </div><!-- .col-md-7 close -->
             <div class="col-md-5">
-                <div class="block" style="padding-top: 50px">
-                    <div class="card customCard mb-3 w-100" >
+                <div class="block">
+                    <div class="card customCard mb-3 mt-4 w-100" >
                         <h3 class="mt-2 ml-3"><a class="text-dark" href="${pageContext.request.contextPath}/nyheter">Senaste nyheter</a></h3>
                         <c:forEach var="newsDTO" items="${newsDTOList}">
                             <a class="text-dark" href="${pageContext.request.contextPath}/nyheter">
                                 <div class="row align-items-center">
-                                    <div class="col-md-4">
+                                    <div class="col-md-5">
                                         <c:set var="hasProfilePic" value="${newsDTO.profilePicture != null && !newsDTO.profilePicture.isEmpty()}"/>
                                         <c:if test="${hasProfilePic}">
                                             <img src="<c:url value="${newsDTO.profilePicture}"/>" class="img-fluid rounded-start"
                                                  style="margin:20px;" alt="...">
                                         </c:if>
                                     </div>
-                                    <div class="col-md-8">
-                                        <h5 class="card-title">${newsDTO.title}</h5>
-                                        <small class="text-muted lead">Publicerad ${newsDTO.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</small>
+                                    <div class="col-md-7">
+                                        <div class="card-title">${newsDTO.title}</div>
+                                        <div class="text-muted">${newsDTO.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</div>
                                     </div>
                                 </div>
                             </a>
@@ -66,6 +69,11 @@
                     </div>
                 </div>
             </div><!-- .col-md-5 close -->
+            <div class="col-md-12 items-align text-center">
+                <hr style="background: #1d192c;  width: auto" class="my-4">
+                <p class="broedtekst-frontpage">Välkommen att höra av dig till oss.</p>
+                <a href="${pageContext.request.contextPath}/kontakt" class="btn-main animated fadeInUp">Kontakta oss</a>
+            </div>
         </div>
     </div>
 </section>
