@@ -11,7 +11,7 @@
                 <a href="${pageContext.request.contextPath}/nyheter/nyNyhet"
                    class="btn btn-secondary editDogButton">Lägg
                     till Nyhet
-                    <i class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">add_circle_outline</i>
+                    <em class="material-icons-round" style="font-size:30px;position: relative;top: 4px;">add_circle_outline</em>
                 </a>
             </div>
         </div>
@@ -19,7 +19,7 @@
 
     <c:forEach var="keyValuePair" items="${newsByMonthMap}">
 
-        <p>${keyValuePair.key}</p>
+        <p class="lead">${keyValuePair.key}</p>
 
         <c:forEach var="news" items="${keyValuePair.value}">
             <form:form action="nyheter/redigeraNyhet" method="POST">
@@ -43,13 +43,13 @@
 
                                     <p class="card-text mt-auto">
                                         <span class="text-muted lead">Publicerad ${news.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</span>
-                                        <c:if test="${news.createdAt != news.modifiedAt}">
+                                        <c:if test="${news.createdAt.isEqual(news.modifiedAt)}">
                                             <span class="text-muted lead"> (Uppdaterad ${news.modifiedAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))})</span>
                                         </c:if>
                                     </p>
                                     <c:if test="${isAdmin}">
                                         <button type="submit" class="mt-auto m-1 btn btn-secondary editNewsButton" style="">Redigera Nyhet
-                                            <i class="material-icons-round" style="font-size:20px">mode_edit</i>
+                                            <em class="material-icons-round" style="font-size:20px">mode_edit</em>
                                         </button>
                                     </c:if>
                                 </div>
