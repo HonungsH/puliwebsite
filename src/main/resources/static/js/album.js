@@ -31,8 +31,8 @@ window.onload = function() {
         item.addEventListener('click', function () {
             item.classList.toggle('full');
         });
-        item.addEventListener('swiperight', function(item) { handleSwipe(item, 'right'); });
-        item.addEventListener('swipeleft', function(item) { handleSwipe(item, 'left'); });
+        item.addEventListener('swiperight', function() { handleSwipe(item, 'right'); });
+        item.addEventListener('swipeleft', function() { handleSwipe(item, 'left'); });
     });
 
 
@@ -52,15 +52,19 @@ window.onload = function() {
     });
 };
 
-function handleSwipe(item, swipeDirection) {
-    const indexChange = (swipeDirection === 'right')? -1 : 1;
-    const nextGalleryItemId = "galleryitem-" + (parseInt($(this).attr('id').split('-')[1]) + indexChange);
-    let nextGallaryItem = $('#'+nextGalleryItemId);
+function handleSwipe(currentItem, swipeDirection) {
+    const currentIndex = parseInt(currentItem.id.split('-')[1]);
+    if (currentIndex <= 0)
+        return;
+
+    const nextIndex = currentIndex + ((swipeDirection === 'right')? -1 : 1)
+    const nextGalleryItemId = "galleryitem-" + nextIndex;
+    let nextGalleryItem = $('#'+nextGalleryItemId);
 
     if (nextGalleryItemId != null) {
-        item.classList.toggle('full');
-        console.log(nextGalleryItemId);
-        nextGallaryItem.toggleClass('full');
+        currentItem.classList.remove('full');
+        console.log("Changing to image: " +nextGalleryItemId);
+        nextGalleryItem.toggleClass('full');
     }
 }
 
