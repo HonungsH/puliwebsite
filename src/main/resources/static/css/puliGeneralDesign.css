@@ -40,9 +40,13 @@ body {
 }
 
 /* Add a background color to navigation links on hover */
-a:hover {
+topnav a:hover {
     background-color: #ddd;
     color: black;
+}
+
+a:hover {
+    background-color: transparent;  !important;
 }
 
 .uploadBtn {
@@ -383,7 +387,7 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
     transform: translate3d(0, 0, 0);
     animation: 1s ease;
     margin: auto;
-    height: 100vh;
+    width: 50vh;
     object-fit: cover;
 }
 .byebye {

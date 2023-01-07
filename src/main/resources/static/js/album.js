@@ -17,11 +17,11 @@ window.onload = function() {
 
     gallery.querySelectorAll('img').forEach(function (item) {
         setTimeout( function () {
-                var altura = getVal(gallery, 'grid-auto-rows');
-                var gap = getVal(gallery, 'grid-row-gap');
-                var gitem = item.parentElement.parentElement;
-                console.log(Math.ceil((getHeight(gitem) + gap) / (altura + gap)));
-                gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+            var altura = getVal(gallery, 'grid-auto-rows');
+            var gap = getVal(gallery, 'grid-row-gap');
+            var gitem = item.parentElement.parentElement;
+            console.log(Math.ceil((getHeight(gitem) + gap) / (altura + gap)));
+            gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
         }, 200);
     });
 
@@ -31,6 +31,8 @@ window.onload = function() {
         item.addEventListener('click', function () {
             item.classList.toggle('full');
         });
+        item.addEventListener('swiperight', function(item) { handleSwipe(item, 'right'); });
+        item.addEventListener('swipeleft', function(item) { handleSwipe(item, 'left'); });
     });
 
 
@@ -49,4 +51,16 @@ window.onload = function() {
         }
     });
 };
+
+function handleSwipe(item, swipeDirection) {
+    const indexChange = (swipeDirection === 'right')? -1 : 1;
+    const nextGalleryItemId = "galleryitem-" + (parseInt($(this).attr('id').split('-')[1]) + indexChange);
+    let nextGallaryItem = $('#'+nextGalleryItemId);
+
+    if (nextGalleryItemId != null) {
+        item.classList.toggle('full');
+        console.log(nextGalleryItemId);
+        nextGallaryItem.toggleClass('full');
+    }
+}
 

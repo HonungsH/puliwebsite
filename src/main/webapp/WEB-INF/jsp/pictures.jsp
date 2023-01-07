@@ -28,7 +28,7 @@
     <div class="row">
         <div class="gallery" id="gallery">
             <c:forEach var="item" items="${titleAndPicture}" varStatus="i">
-                <div class="gallery-item">
+                <div class="gallery-item" id="galleryitem-${i.index}">
                     <div class="content"><img src="${item.getSecond()}" alt=""></div>
                     <input type="hidden" name="title" value="${item.getFirst()}"/>
                 </div>

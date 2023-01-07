@@ -56,7 +56,7 @@
                                         <c:set var="hasProfilePic" value="${newsDTO.profilePicture != null && !newsDTO.profilePicture.isEmpty()}"/>
                                         <c:if test="${hasProfilePic}">
                                             <img src="<c:url value="${newsDTO.profilePicture}"/>" class="img-fluid rounded-start ml-2 mb-3"
-                                                 style="max-height: 125px" alt="...">
+                                                 style="height: 100px; width: 100px" alt="...">
                                         </c:if>
                                     </div>
                                     <div class="col-md-7">
