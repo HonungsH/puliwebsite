@@ -31,8 +31,8 @@ window.onload = function() {
         item.addEventListener('click', function () {
             item.classList.toggle('full');
         });
-        item.addEventListener('swiperight', function() { handleSwipe(item, 'right'); });
-        item.addEventListener('swipeleft', function() { handleSwipe(item, 'left'); });
+        Hammer(item).on("swiperight", function() { handleSwipe(item, 'right'); });
+        Hammer(item).on("swipeleft", function() { handleSwipe(item, 'left'); });
     });
 
 
@@ -60,14 +60,11 @@ window.onload = function() {
 
 function handleSwipe(currentItem, swipeDirection) {
     const currentIndex = parseInt(currentItem.id.split('-')[1]);
-    if (currentIndex <= 0)
-        return;
-
     const nextIndex = currentIndex + ((swipeDirection === 'right')? -1 : 1)
     const nextGalleryItemId = "galleryitem-" + nextIndex;
     let nextGalleryItem = $('#'+nextGalleryItemId);
 
-    if (nextGalleryItemId != null) {
+    if (nextGalleryItem != null) {
         currentItem.classList.remove('full');
         console.log("Changing to image: " +nextGalleryItemId);
         nextGalleryItem.toggleClass('full');

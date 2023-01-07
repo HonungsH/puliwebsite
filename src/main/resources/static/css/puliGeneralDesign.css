@@ -45,7 +45,7 @@ topnav a:hover {
     color: black;
 }
 
-a:hover {
+text-dark {
     background-color: transparent;  !important;
 }
 

@@ -36,6 +36,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/dog.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/application.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/hammer.min.js"></script>
 
     <div>
         <a href="${pageContext.request.contextPath}/">
