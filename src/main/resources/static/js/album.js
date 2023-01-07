@@ -58,7 +58,7 @@ function handleSwipe(currentItem, swipeDirection) {
     const nextGalleryItemId = "galleryitem-" + nextIndex;
     let nextGalleryItem = $('#'+nextGalleryItemId);
 
-    if (nextGalleryItem != null) {
+    if (nextGalleryItem.length !== 0) {
         currentItem.classList.remove('full');
         console.log("Changing to image: " +nextGalleryItemId);
         nextGalleryItem.toggleClass('full');
