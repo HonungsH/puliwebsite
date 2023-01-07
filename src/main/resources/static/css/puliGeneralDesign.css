@@ -45,7 +45,7 @@ topnav a:hover {
     color: black;
 }
 
-text-dark {
+a.text-dark:hover a.text-dark:active {
     background-color: transparent;  !important;
 }
 
@@ -84,6 +84,13 @@ text-dark {
     width: auto;
     max-width: 500px;
     max-height: 500px;
+}
+
+center-cropped {
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .readMoreBtn {
