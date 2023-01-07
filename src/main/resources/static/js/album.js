@@ -50,12 +50,6 @@ window.onload = function() {
             });
         }
     });
-
-    $(document).on('swiperight', 'body', function() {
-        if (confirm('Är du säker på att du vill ta bort detta album?')) {
-            console.log('heheheheh');
-        }
-    });
 };
 
 function handleSwipe(currentItem, swipeDirection) {
