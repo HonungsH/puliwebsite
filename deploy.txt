@@ -17,3 +17,11 @@ openssl pkcs12
     -certfile /etc/letsencrypt/live/xaidaz.com/chain.pem
 
 xaidazpuli@gmail.com
+
+
+
+Toby's docker:
+Starta om dator.
+Döda mysql processer
+(evt kör vpn script)
+Starta docker.
