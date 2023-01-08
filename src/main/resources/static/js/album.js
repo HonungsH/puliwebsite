@@ -48,6 +48,10 @@ window.onload = function() {
         }
     })
 
+    $('#gallery-close-icon').on('click', function() {
+        closeAll();
+    });
+
     $(".indicator-b-outer, .indicator-b-inner").on('click', function() {
         const posChange = parseInt($(this).data("pos"));
 
@@ -94,9 +98,7 @@ window.onload = function() {
 
     $('body').on('click', function() {
         if ($('.full').length === 0) {
-            $('#slider-indicators').hide();
-            $('.gallery-arrow').hide();
-            $('#gallery-close-icon').hide();
+            closeAll();
         }
     });
 };
@@ -169,5 +171,10 @@ function animateLeft(sliderButton, float, newFloat, currentGalleryItem, nextGall
         currentGalleryItem.removeClass('full');
         nextGalleryItem.click();
     });
+}
 
+function closeAll() {
+    $('#slider-indicators').hide();
+    $('.gallery-arrow').hide();
+    $('#gallery-close-icon').hide();
 }
