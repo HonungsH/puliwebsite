@@ -516,4 +516,17 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
 .gallery-arrow:hover {
     transform: scale(1.125);
 }
+.gallery-close {
+    background-color: #e98074;
+    opacity: 1;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    border-radius: 100%;
+    top: 2%;
+    right: 1%;
+}
 /* GALLERY ARROW END */
