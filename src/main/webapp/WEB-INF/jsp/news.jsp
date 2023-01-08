@@ -2,7 +2,7 @@
 <%@ include file="fragments/header.jsp" %>
 <%@ include file="fragments/navigation.jsp" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/news.js"></script>
+<script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/news.js"/>"></script>
 <body>
 <div class="container">
     <c:if test="${isAdmin}">

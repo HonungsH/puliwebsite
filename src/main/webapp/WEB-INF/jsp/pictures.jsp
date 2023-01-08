@@ -1,7 +1,7 @@
 <<%@page pageEncoding="UTF-8" %>
 <%@ include file = "fragments/header.jsp" %>
 <%@ include file = "fragments/navigation.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/album.js"></script>
+<script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/gallery.js"/>"></script>
 
 <body>
 

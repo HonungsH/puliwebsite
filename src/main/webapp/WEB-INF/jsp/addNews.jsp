@@ -1,7 +1,7 @@
 <%@page pageEncoding="UTF-8" %>
 <%@ include file="fragments/header.jsp" %>
 <%@ include file="fragments/navigation.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/news.js"></script>
+<script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/news.js"/>"></script>
 
 <body onload="textAreaAdjust($('#newsText').get(0))">
 <h2 style="text-align: center;margin-bottom: 30px;">Lägg till en nyhet</h2>

@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery-ui.min.css">
     <script src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/puliGeneralDesign.css">
+    <link rel="stylesheet" href="<c:url value="${pageContext.request.contextPath}/css/puliGeneralDesign.css"/>">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
     <!-- Google fonts https://fonts.google.com/ -->
@@ -32,11 +33,11 @@
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/textEditing.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/dog.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/application.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/hammer.min.js"></script>
+    <script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/textEditing.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/dog.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/application.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/bootstrap.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/hammer.min.js"/>"></script>
 
     <div>
         <a href="${pageContext.request.contextPath}/">

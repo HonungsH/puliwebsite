@@ -62,7 +62,8 @@
 
 </body>
 <%@ include file="fragments/footer.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/newAlbum.js"></script>
+<script type="text/javascript" src="<c:url value="${pageContext.request.contextPath}/js/newAlbum.js"/>"></script>
+
 </html>
 
 
