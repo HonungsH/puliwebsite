@@ -40,6 +40,14 @@ window.onload = function() {
         Hammer(item).on("swipeleft", function() { handleSwipe(item, 'left'); });
     });
 
+    $('.gallery-arrow').on('click', function() {
+        if ($(this).attr('id') === "gallery-arrow-left") {
+            $('#slider-buttons-3').click();
+        } else {
+            $('#slider-buttons-5').click();
+        }
+    })
+
     $(".indicator-b-outer, .indicator-b-inner").on('click', function() {
         const posChange = parseInt($(this).data("pos"));
 
@@ -87,6 +95,7 @@ window.onload = function() {
     $('body').on('click', function() {
         if ($('.full').length === 0) {
             $('#slider-indicators').hide();
+            $('.gallery-arrow').hide();
         }
     });
 };
@@ -110,6 +119,10 @@ function resetSliderButtons(index, numberOfImages) {
 
     // Reset button visible
     sliderButtons.not(".indicator-b-hidden").css('visibility', 'visible');
+    if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        // Only show arrows when not on mobile
+        $('.gallery-arrow').show();
+    }
 
     // Show slider button div
     $('#slider-indicators').show();
@@ -117,6 +130,7 @@ function resetSliderButtons(index, numberOfImages) {
     switch (index) {
         case 0:
             $(".indicator-b-l").css('visibility', 'hidden');
+            $("#gallery-arrow-left").hide();
             break;
         case 1:
             $(".indicator-b-l.indicator-b-outer").css('visibility', 'hidden');
@@ -126,6 +140,7 @@ function resetSliderButtons(index, numberOfImages) {
             break;
         case (numberOfImages - 1):
             $(".indicator-b-r").css('visibility', 'hidden');
+            $("#gallery-arrow-right").hide();
             break;
     }
 }
