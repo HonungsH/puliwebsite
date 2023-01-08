@@ -464,7 +464,7 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
 
 /* GALLERY SLIDER NAVIGATION START */
 .indicator-b {
-    background-color: #dc3545;
+    background-color: #e98074;
     opacity: 1;
     border: none;
     color: white;
@@ -481,15 +481,15 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
     border: none;
 }
 .indicator-b-inner {
-    background-color: #dc3545;
+    background-color: #e98074;
     opacity: 0.66;
 }
 .indicator-b-outer {
-    background-color: #dc3545;
+    background-color: #e98074;
     opacity: 0.33;
 }
 .indicator-b-hidden {
-    background-color: #dc3545;
+    background-color: #e98074;
     opacity: 0;
 }
 .indicator-b-l {
@@ -501,7 +501,7 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
 /* GALLERY SLIDER DOTS END */
 /* GALLERY ARROW START */
 .gallery-arrow {
-    background-color: #dc3545;
+    background-color: #e98074;
     opacity: 1;
     border: none;
     color: white;
