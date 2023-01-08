@@ -96,6 +96,7 @@ window.onload = function() {
         if ($('.full').length === 0) {
             $('#slider-indicators').hide();
             $('.gallery-arrow').hide();
+            $('#gallery-close-icon').hide();
         }
     });
 };
@@ -126,6 +127,7 @@ function resetSliderButtons(index, numberOfImages) {
 
     // Show slider button div
     $('#slider-indicators').show();
+    $('#gallery-close-icon').show();
 
     switch (index) {
         case 0:

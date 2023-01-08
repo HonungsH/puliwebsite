@@ -53,6 +53,15 @@
         </div>
     </div>
 
+    <div class="row mt-auto d-flex justify-content-between">
+        <div class="bi bi-x" id="gallery-close-icon" style="display: none; right: 5%; top: 5%" onclick="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </div>
+    </div>
+
+
     <div class="row mt-auto fixed-bottom justify-content-center mb-5">
         <div class="row mt-auto" id="slider-indicators" style="display: none">
             <button type="button" id="slider-buttons-1" class="indicator-b indicator-b-hidden indicator-b-l" data-pos="-3" data-opacity="0" data-right="-180"></button>
