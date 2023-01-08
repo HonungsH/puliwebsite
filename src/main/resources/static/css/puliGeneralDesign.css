@@ -526,7 +526,7 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
     position: fixed;
     z-index: 1;
     border-radius: 100%;
-    top: 2%;
-    right: 1%;
+    top: 3%;
+    right: 2%;
 }
 /* GALLERY ARROW END */
