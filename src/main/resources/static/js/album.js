@@ -1,6 +1,5 @@
 window.onload = function() {
 
-
     var gallery = document.querySelector('#gallery');
     var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
     var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
@@ -28,13 +27,47 @@ window.onload = function() {
     window.addEventListener('resize', resizeAll);
 
     gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+        const numberOfImages = parseInt($("#numberOfImages").val());
         item.addEventListener('click', function () {
+
+            // Show picture full screen
             item.classList.toggle('full');
+
+            // Reset slider
+            resetSliderButtons(parseInt(item.dataset.pos), numberOfImages);
         });
         Hammer(item).on("swiperight", function() { handleSwipe(item, 'right'); });
         Hammer(item).on("swipeleft", function() { handleSwipe(item, 'left'); });
     });
 
+    $(".indicator-b-outer, .indicator-b-inner").on('click', function() {
+        const posChange = parseInt($(this).data("pos"));
+
+        let currentGalleryItem = $(".full");
+        const currentIndex = parseInt(currentGalleryItem.data("pos"));
+        const nextIndex = posChange + currentIndex;
+        const nextGalleryItemId = "galleryitem-" + nextIndex;
+
+        let nextGalleryItem = $('#'+nextGalleryItemId);
+
+        if (nextGalleryItem.length !== 0) {
+            $('.indicator-b').each( function() {
+                let sliderButton = $(this);
+                const sliderPS = parseInt($(this).data("pos"));
+
+                const float = parseFloat($(this).css("opacity"));
+                const newFloat = (sliderPS === 0)?
+                    ((posChange < 0)? float - 0.33 : float + 0.33)
+                    : (sliderPS * posChange < 0)? float - 0.33 : float + 0.33;
+
+                if (posChange < 0) {
+                    animateRight(sliderButton, float, newFloat, currentGalleryItem, nextGalleryItem);
+                } else {
+                    animateLeft(sliderButton, float, newFloat, currentGalleryItem, nextGalleryItem);
+                }
+            });
+        }
+    });
 
     $('#deleteAlbumButton').on('click', function() {// TODO felhantering
         if (confirm('Är du säker på att du vill ta bort detta album?')) {
@@ -50,18 +83,74 @@ window.onload = function() {
             });
         }
     });
+
+    $('body').on('click', function() {
+        if ($('.full').length === 0) {
+            $('#slider-indicators').hide();
+        }
+    });
 };
 
 function handleSwipe(currentItem, swipeDirection) {
     const currentIndex = parseInt(currentItem.id.split('-')[1]);
     const nextIndex = currentIndex + ((swipeDirection === 'right')? -1 : 1)
-    const nextGalleryItemId = "galleryitem-" + nextIndex;
-    let nextGalleryItem = $('#'+nextGalleryItemId);
+    const numberOfImages = parseInt($("#numberOfImages").val());
 
-    if (nextGalleryItem.length !== 0) {
-        currentItem.classList.remove('full');
-        console.log("Changing to image: " +nextGalleryItemId);
-        nextGalleryItem.toggleClass('full');
+    if (nextIndex >= 0 && nextIndex < numberOfImages) {
+        if (swipeDirection === 'right') {
+            $('#slider-buttons-3').click();
+        } else {
+            $('#slider-buttons-5').click();
+        }
     }
 }
 
+function resetSliderButtons(index, numberOfImages) {
+    let sliderButtons = $(".indicator-b");
+
+    // Reset button visible
+    sliderButtons.not(".indicator-b-hidden").css('visibility', 'visible');
+
+    // Show slider button div
+    $('#slider-indicators').show();
+
+    switch (index) {
+        case 0:
+            $(".indicator-b-l").css('visibility', 'hidden');
+            break;
+        case 1:
+            $(".indicator-b-l.indicator-b-outer").css('visibility', 'hidden');
+            break;
+        case (numberOfImages - 2):
+            $(".indicator-b-r.indicator-b-outer").css('visibility', 'hidden');
+            break;
+        case (numberOfImages - 1):
+            $(".indicator-b-r").css('visibility', 'hidden');
+            break;
+    }
+}
+
+function animateRight(sliderButton, float, newFloat, currentGalleryItem, nextGalleryItem) {
+    sliderButton.animate({
+        right: "-=60px",
+        opacity: newFloat,
+    }, 200, function() {
+        sliderButton.css('opacity', '');
+        sliderButton.css('right', '');
+        currentGalleryItem.removeClass('full');
+        nextGalleryItem.click();
+    });
+}
+
+function animateLeft(sliderButton, float, newFloat, currentGalleryItem, nextGalleryItem) {
+    sliderButton.animate({
+        right: "+=60px",
+        opacity: newFloat,
+    }, 200, function() {
+        sliderButton.css('opacity', '');
+        sliderButton.css('right', '');
+        currentGalleryItem.removeClass('full');
+        nextGalleryItem.click();
+    });
+
+}

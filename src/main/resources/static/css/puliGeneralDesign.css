@@ -460,3 +460,41 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
     font-size: 90px; !important;
     color: #918e86;
 }
+
+/* SLIDER NAVIGATION START */
+.indicator-b {
+    background-color: #dc3545;
+    opacity: 1;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    margin: 4px 2px;
+    border-radius: 100%;
+
+}
+.indicator-b:active {
+    border: none;
+}
+.indicator-b-inner {
+    background-color: #dc3545;
+    opacity: 0.66;
+}
+.indicator-b-outer {
+    background-color: #dc3545;
+    opacity: 0.33;
+}
+.indicator-b-hidden {
+    background-color: #dc3545;
+    opacity: 0;
+}
+.indicator-b-l {
+    margin-right: 20px;
+}
+.indicator-b-r {
+    margin-left: 20px;
+}
+/* SLIDER DOTS END */
