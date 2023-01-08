@@ -423,12 +423,13 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
 .gallery .content {
     padding: 4px;
 }
-.gallery .gallery-item {
+.gallery .gallery-item:not(.full) {
     transition: transform 300ms ease;
     /*transition: all 0.5s ease;*/
     cursor: pointer;
 }
-.gallery .gallery-item:hover {
+
+.gallery .gallery-item:not(.full):hover {
     transform: scale(1.025);
 }
 @media (max-width: 600px) {
@@ -511,7 +512,8 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
     position: fixed;
     z-index: 1;
     border-radius: 100%;
-    top: 50%
+    top: 50%;
+    cursor: pointer;
 }
 .gallery-arrow:hover {
     transform: scale(1.125);
@@ -528,5 +530,6 @@ span.character-counter-text, span.character-counter-title, .antalTeckenKvarText 
     border-radius: 100%;
     top: 3%;
     right: 2%;
+    cursor: pointer;
 }
 /* GALLERY ARROW END */

@@ -49,6 +49,7 @@ window.onload = function() {
     })
 
     $('#gallery-close-icon').on('click', function() {
+        $('.full').removeClass('full');
         $('body').click();
     });
 
