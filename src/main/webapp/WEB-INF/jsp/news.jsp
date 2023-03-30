@@ -44,8 +44,8 @@
 
                                     <p class="card-text mt-auto">
                                         <span class="text-muted lead">Publicerad ${news.createdAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))}</span>
-                                        <c:if test="${news.createdAt.isEqual(news.modifiedAt)}">
-                                            <span class="text-muted lead"> (Uppdaterad ${news.modifiedAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))})</span>
+                                        <c:if test="${!news.createdAt.isEqual(news.modifiedAt)}">
+                                            <span class="text-muted lead"> (Uppdaterad ${news.modifiedAt.format( DateTimeFormatter.ofPattern("yyyy-MM-dd HH"))})</span>
                                         </c:if>
                                     </p>
                                     <c:if test="${isAdmin}">
